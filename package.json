@@ -18,7 +18,8 @@
   "pnpm": {
     "overrides": {
       "@types/react": "19.1.6",
-      "@types/react-dom": "19.1.6"
+      "@types/react-dom": "19.1.6",
+      "expo-crypto": "~14.0.2"
     }
   },
   "engines": {
