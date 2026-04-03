@@ -1,8 +1,7 @@
-import { auth } from "@clerk/nextjs/server";
-import { redirect } from "next/navigation";
 import { db } from "@/lib/db";
-import { users, vehicles } from "@bwash/database";
+import { vehicles } from "@bwash/database";
 import { eq } from "drizzle-orm";
+import { getAuthenticatedUser } from "@/lib/auth-utils";
 import { Card, CardTitle } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { EmptyState } from "@/components/ui/EmptyState";
@@ -10,11 +9,7 @@ import { VehicleFormClient } from "@/components/dashboard/VehicleFormClient";
 import { Car } from "lucide-react";
 
 export default async function VehiclesPage() {
-  const { userId: clerkId } = await auth();
-  if (!clerkId) redirect("/sign-in");
-
-  const [user] = await db.select().from(users).where(eq(users.clerkId, clerkId)).limit(1);
-  if (!user) redirect("/sign-in");
+  const user = await getAuthenticatedUser();
 
   const userVehicles = await db.select().from(vehicles).where(eq(vehicles.userId, user.id));
 

@@ -1,0 +1,363 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e3]:
+      - link "BWash" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img [ref=e5]
+        - generic [ref=e7]: BWash
+      - generic [ref=e8]:
+        - link "Home" [ref=e9] [cursor=pointer]:
+          - /url: /
+        - link "Services" [ref=e10] [cursor=pointer]:
+          - /url: /services
+        - link "Book Now" [ref=e11] [cursor=pointer]:
+          - /url: /book
+      - generic [ref=e12]:
+        - link "Login" [ref=e13] [cursor=pointer]:
+          - /url: /sign-in
+        - link "Book Now" [ref=e14] [cursor=pointer]:
+          - /url: /book
+  - main [ref=e15]:
+    - generic [ref=e25]:
+      - generic [ref=e26]:
+        - generic [ref=e27]:
+          - img [ref=e28]
+          - generic [ref=e30]: Miami's Premium Mobile Detailing
+        - heading "The Art of Pristine." [level=1] [ref=e31]:
+          - text: The Art of
+          - text: Pristine.
+        - paragraph [ref=e32]: Luxury mobile car wash and detailing, delivered to your door.
+      - iframe [ref=e39]:
+        - main "sketchfab-viewer" [ref=f1e2]:
+          - generic:
+            - generic:
+              - link "Visit 3D Cars Studio's Profile" [ref=f1e3] [cursor=pointer]:
+                - /url: https://sketchfab.com/3DC_STUDIO
+              - generic:
+                - heading "Mercedes - AMG SL 63" [level=1]:
+                  - link "Mercedes - AMG SL 63" [ref=f1e6] [cursor=pointer]:
+                    - /url: https://sketchfab.com/3d-models/mercedes-amg-sl-63-312ab6595d3e4ebd8ee1c18ff25fa048
+                - heading "by 3D Cars Studio" [level=2]:
+                  - text: by
+                  - link "3D Cars Studio" [ref=f1e7] [cursor=pointer]:
+                    - /url: https://sketchfab.com/3DC_STUDIO
+            - generic [ref=f1e8] [cursor=pointer]:
+              - generic [ref=f1e9]: 
+              - text: Share
+          - text: 
+          - generic [ref=f1e10]:
+            - generic "3D view of Mercedes - AMG SL 63" [ref=f1e11]
+            - generic:
+              - generic:
+                - generic:
+                  - paragraph: Loading 3D model
+            - generic:
+              - generic:
+                - generic "close": 
+                - paragraph: Model is too heavy for your device and can not be rendered properly
+              - text:  
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: 
+                    - text: Model Inspector
+              - generic:
+                - link "View on Sketchfab" [ref=f1e13] [cursor=pointer]:
+                  - /url: https://sketchfab.com/3d-models/mercedes-amg-sl-63-312ab6595d3e4ebd8ee1c18ff25fa048
+                - generic:
+                  - generic:
+                    - generic "Play Animation": 
+                    - text: 
+                    - generic: 00:00.00
+                    - generic:
+                      - paragraph
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - radio ""
+                              - generic:
+                                - generic: 
+                              - text: Repeat one
+                            - generic:
+                              - radio ""
+                              - generic:
+                                - generic: 
+                              - text: Repeat all
+                            - generic:
+                              - radio ""
+                              - generic:
+                                - generic: 
+                              - text: No repeat
+                          - generic:
+                            - generic:
+                              - radio "x0.1"
+                              - generic: x0.1
+                              - text: Speed x0.1
+                            - generic:
+                              - radio "x0.5"
+                              - generic: x0.5
+                              - text: Speed x0.5
+                            - generic:
+                              - radio "x1"
+                              - generic: x1
+                              - text: Speed x1
+                            - generic:
+                              - radio "x2"
+                              - generic: x2
+                              - text: Speed x2
+                        - list
+                - text:  
+                - generic:
+                  - generic [ref=f1e14] [cursor=pointer]:
+                    - generic: 
+                    - text: Help
+                  - text: 
+                  - generic [ref=f1e15] [cursor=pointer]:
+                    - generic: 
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - paragraph: Navigation
+                            - paragraph: Orbit
+                    - text: Settings
+                  - generic [ref=f1e16] [cursor=pointer]:
+                    - generic: 
+                    - text: Model Inspector (i)
+                  - generic [ref=f1e17] [cursor=pointer]:
+                    - generic: 
+                    - text: View in VR
+                  - generic [ref=f1e18] [cursor=pointer]:
+                    - generic: 
+                    - text: Fullscreen (f)
+              - generic:
+                - generic:
+                  - generic:
+                    - text: click & hold
+                    - text: to rotate
+          - text:  Fullscreen (f)
+      - paragraph [ref=e40]: Perfection, Detailed.
+      - generic [ref=e42]:
+        - generic [ref=e43]:
+          - generic [ref=e44]:
+            - img [ref=e45]
+            - generic [ref=e47]: 500+
+            - generic [ref=e48]: Clients
+          - generic [ref=e49]:
+            - img [ref=e50]
+            - generic [ref=e52]: "4.9"
+            - generic [ref=e53]: Rating
+          - generic [ref=e54]:
+            - img [ref=e55]
+            - generic [ref=e58]: 2K+
+            - generic [ref=e59]: Details
+          - generic [ref=e60]:
+            - img [ref=e61]
+            - generic [ref=e64]: Same
+            - generic [ref=e65]: Day Service
+        - generic [ref=e66]:
+          - link "Book Now" [ref=e67] [cursor=pointer]:
+            - /url: /book
+            - text: Book Now
+            - img [ref=e68]
+          - link "View Packages" [ref=e70] [cursor=pointer]:
+            - /url: /services
+      - generic [ref=e72]: Scroll
+    - generic [ref=e75]:
+      - generic [ref=e77]:
+        - paragraph [ref=e78]: About Us
+        - heading "The BWash Difference" [level=2] [ref=e79]
+        - paragraph [ref=e80]: BWash is a professional mobile car wash service delivering high-quality cleaning directly to your home or workplace. We combine convenience with premium results.
+      - generic [ref=e81]:
+        - generic [ref=e83]:
+          - img [ref=e85]
+          - heading "Professional Grade" [level=3] [ref=e87]
+          - paragraph [ref=e88]: Our trained staff use premium products and techniques to deliver showroom-quality results every time.
+        - generic [ref=e90]:
+          - img [ref=e92]
+          - heading "Eco-Friendly" [level=3] [ref=e95]
+          - paragraph [ref=e96]: We use water-efficient cleaning methods and biodegradable products that are gentle on the environment.
+        - generic [ref=e98]:
+          - img [ref=e100]
+          - heading "Satisfaction Guaranteed" [level=3] [ref=e103]
+          - paragraph [ref=e104]: If you're not completely satisfied, we'll re-clean your vehicle at no additional charge.
+    - generic [ref=e106]:
+      - generic [ref=e108]:
+        - paragraph [ref=e109]: Our Services
+        - heading "Premium Packages for Every Need" [level=2] [ref=e110]
+      - generic [ref=e111]:
+        - generic [ref=e115]:
+          - img [ref=e117]
+          - heading "Exterior Wash" [level=3] [ref=e121]
+          - paragraph [ref=e122]: Thorough hand wash, tire cleaning, and premium drying for a spotless shine.
+          - generic [ref=e123]:
+            - generic [ref=e124]:
+              - text: Starting at
+              - paragraph [ref=e125]: $35
+            - link "Details" [ref=e126] [cursor=pointer]:
+              - /url: /services
+              - text: Details
+              - img [ref=e127]
+        - generic [ref=e132]:
+          - img [ref=e134]
+          - heading "Interior Detailing" [level=3] [ref=e136]
+          - paragraph [ref=e137]: Deep vacuum, dashboard wipe, window cleaning, and interior refresh.
+          - generic [ref=e138]:
+            - generic [ref=e139]:
+              - text: Starting at
+              - paragraph [ref=e140]: $55
+            - link "Details" [ref=e141] [cursor=pointer]:
+              - /url: /services
+              - text: Details
+              - img [ref=e142]
+        - generic [ref=e147]:
+          - img [ref=e149]
+          - heading "Full Service Wash" [level=3] [ref=e151]
+          - paragraph [ref=e152]: The complete package — deep clean inside and out with wax protection and tire shine.
+          - generic [ref=e153]:
+            - generic [ref=e154]:
+              - text: Starting at
+              - paragraph [ref=e155]: $85
+            - link "Details" [ref=e156] [cursor=pointer]:
+              - /url: /services
+              - text: Details
+              - img [ref=e157]
+    - generic [ref=e160]:
+      - generic [ref=e162]:
+        - paragraph [ref=e163]: Why BWash
+        - heading "Why Choose Us" [level=2] [ref=e164]
+      - generic [ref=e165]:
+        - generic [ref=e167]:
+          - img [ref=e169]
+          - heading "We Come to You" [level=3] [ref=e172]
+          - paragraph [ref=e173]: No need to drive to a car wash. We bring premium service directly to your location.
+        - generic [ref=e175]:
+          - img [ref=e177]
+          - heading "Affordable Pricing" [level=3] [ref=e179]
+          - paragraph [ref=e180]: Premium quality doesn't have to break the bank. Transparent pricing with no hidden fees.
+        - generic [ref=e182]:
+          - img [ref=e184]
+          - heading "Professional Results" [level=3] [ref=e186]
+          - paragraph [ref=e187]: Our trained technicians deliver showroom-quality results every single time.
+        - generic [ref=e189]:
+          - img [ref=e191]
+          - heading "Fast & Reliable" [level=3] [ref=e194]
+          - paragraph [ref=e195]: Book online in seconds, and we'll be there at your preferred time. Simple and efficient.
+    - generic [ref=e197]:
+      - generic [ref=e199]:
+        - paragraph [ref=e200]: Testimonials
+        - heading "What Our Clients Say" [level=2] [ref=e201]
+        - generic [ref=e202]:
+          - generic [ref=e203]:
+            - img [ref=e204]
+            - img [ref=e206]
+            - img [ref=e208]
+            - img [ref=e210]
+            - img [ref=e212]
+          - generic [ref=e214]:
+            - strong [ref=e215]: "4.9"
+            - text: out of 5 based on 200+ reviews
+      - generic [ref=e216]:
+        - generic [ref=e218]:
+          - img [ref=e219]
+          - generic [ref=e222]:
+            - img [ref=e223]
+            - img [ref=e225]
+            - img [ref=e227]
+            - img [ref=e229]
+            - img [ref=e231]
+          - paragraph [ref=e233]: “BWash transformed my SUV. It looked brand new after the Deluxe Detail. Highly recommend!”
+          - generic [ref=e235]:
+            - paragraph [ref=e236]: Marcus J.
+            - paragraph [ref=e237]: SUV Owner
+        - generic [ref=e239]:
+          - img [ref=e240]
+          - generic [ref=e243]:
+            - img [ref=e244]
+            - img [ref=e246]
+            - img [ref=e248]
+            - img [ref=e250]
+            - img [ref=e252]
+          - paragraph [ref=e254]: “So convenient having them come to my office. The Premium Wash is worth every penny.”
+          - generic [ref=e256]:
+            - paragraph [ref=e257]: Sarah T.
+            - paragraph [ref=e258]: Sedan Owner
+        - generic [ref=e260]:
+          - img [ref=e261]
+          - generic [ref=e264]:
+            - img [ref=e265]
+            - img [ref=e267]
+            - img [ref=e269]
+            - img [ref=e271]
+            - img [ref=e273]
+          - paragraph [ref=e275]: “Fast, professional, and my truck has never been cleaner. These guys know what they're doing.”
+          - generic [ref=e277]:
+            - paragraph [ref=e278]: David R.
+            - paragraph [ref=e279]: Truck Owner
+        - generic [ref=e281]:
+          - img [ref=e282]
+          - generic [ref=e285]:
+            - img [ref=e286]
+            - img [ref=e288]
+            - img [ref=e290]
+            - img [ref=e292]
+            - img [ref=e294]
+          - paragraph [ref=e296]: “Great service and very affordable. I've been using the monthly membership and love it.”
+          - generic [ref=e298]:
+            - paragraph [ref=e299]: Michelle K.
+            - paragraph [ref=e300]: Sedan Owner
+    - generic [ref=e306]:
+      - img [ref=e307]
+      - heading "Book your wash today and drive clean!" [level=2] [ref=e309]
+      - paragraph [ref=e310]: Schedule your premium mobile car wash in under 60 seconds.
+      - link "Schedule Now" [ref=e312] [cursor=pointer]:
+        - /url: /book
+        - text: Schedule Now
+        - img [ref=e313]
+  - contentinfo [ref=e315]:
+    - generic [ref=e316]:
+      - generic [ref=e317]:
+        - generic [ref=e318]:
+          - link "BWash" [ref=e319] [cursor=pointer]:
+            - /url: /
+            - img [ref=e320]
+            - generic [ref=e322]: BWash
+          - paragraph [ref=e323]: Premium mobile car wash service delivering high-quality cleaning directly to your home or workplace.
+        - generic [ref=e324]:
+          - heading "Quick Links" [level=3] [ref=e325]
+          - list [ref=e326]:
+            - listitem [ref=e327]:
+              - link "Home" [ref=e328] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e329]:
+              - link "Services & Pricing" [ref=e330] [cursor=pointer]:
+                - /url: /services
+            - listitem [ref=e331]:
+              - link "Book Now" [ref=e332] [cursor=pointer]:
+                - /url: /book
+            - listitem [ref=e333]:
+              - link "Customer Login" [ref=e334] [cursor=pointer]:
+                - /url: /sign-in
+        - generic [ref=e335]:
+          - heading "Contact" [level=3] [ref=e336]
+          - list [ref=e337]:
+            - listitem [ref=e338]:
+              - img [ref=e339]
+              - generic [ref=e341]: (305) 555-WASH
+            - listitem [ref=e342]:
+              - img [ref=e343]
+              - generic [ref=e346]: info@bwash.com
+            - listitem [ref=e347]:
+              - img [ref=e348]
+              - generic [ref=e351]: Serving Miami-Dade County
+      - paragraph [ref=e353]: © 2026 BWash. All rights reserved.
+  - generic [ref=e354]:
+    - link "Contact via WhatsApp" [ref=e355] [cursor=pointer]:
+      - /url: https://wa.me/13055559274
+      - img [ref=e356]
+    - link "Call us" [ref=e358] [cursor=pointer]:
+      - /url: tel:+13055559274
+      - img [ref=e359]
+  - region "Notifications alt+T"
+  - alert [ref=e361]

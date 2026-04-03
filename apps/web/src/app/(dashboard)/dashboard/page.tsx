@@ -1,8 +1,7 @@
-import { auth } from "@clerk/nextjs/server";
-import { redirect } from "next/navigation";
 import { db } from "@/lib/db";
-import { users, bookings, vehicles, invoices, memberships, packages } from "@bwash/database";
+import { bookings, vehicles, invoices, memberships, packages } from "@bwash/database";
 import { eq, desc, and } from "drizzle-orm";
+import { getAuthenticatedUser } from "@/lib/auth-utils";
 import { Card, CardTitle } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -20,16 +19,7 @@ import {
 import { formatCurrency, formatDate, BOOKING_STATUS_COLORS } from "@/lib/utils";
 
 export default async function DashboardPage() {
-  const { userId: clerkId } = await auth();
-  if (!clerkId) redirect("/sign-in");
-
-  const [user] = await db
-    .select()
-    .from(users)
-    .where(eq(users.clerkId, clerkId))
-    .limit(1);
-
-  if (!user) redirect("/sign-in");
+  const user = await getAuthenticatedUser();
 
   // Fetch dashboard data
   const upcomingBookings = await db

@@ -1,8 +1,7 @@
-import { auth } from "@clerk/nextjs/server";
-import { redirect } from "next/navigation";
 import { db } from "@/lib/db";
-import { users, bookings, packages } from "@bwash/database";
+import { bookings, packages } from "@bwash/database";
 import { eq, desc } from "drizzle-orm";
+import { getAuthenticatedUser } from "@/lib/auth-utils";
 import { Card, CardTitle } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { EmptyState } from "@/components/ui/EmptyState";
@@ -20,11 +19,7 @@ const statusVariant: Record<string, "info" | "success" | "warning" | "danger" | 
 };
 
 export default async function BookingsPage() {
-  const { userId: clerkId } = await auth();
-  if (!clerkId) redirect("/sign-in");
-
-  const [user] = await db.select().from(users).where(eq(users.clerkId, clerkId)).limit(1);
-  if (!user) redirect("/sign-in");
+  const user = await getAuthenticatedUser();
 
   const userBookings = await db
     .select({

@@ -1,20 +1,13 @@
-import { auth, currentUser } from "@clerk/nextjs/server";
-import { redirect } from "next/navigation";
-import { db } from "@/lib/db";
-import { users } from "@bwash/database";
-import { eq } from "drizzle-orm";
+import { currentUser } from "@clerk/nextjs/server";
+import { getAuthenticatedUser } from "@/lib/auth-utils";
 import { Card, CardTitle } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { User, Mail, Phone, Calendar } from "lucide-react";
 import { formatDate } from "@/lib/utils";
 
 export default async function ProfilePage() {
-  const { userId: clerkId } = await auth();
-  if (!clerkId) redirect("/sign-in");
-
+  const user = await getAuthenticatedUser();
   const clerkUser = await currentUser();
-  const [user] = await db.select().from(users).where(eq(users.clerkId, clerkId)).limit(1);
-  if (!user) redirect("/sign-in");
 
   return (
     <div className="space-y-8">

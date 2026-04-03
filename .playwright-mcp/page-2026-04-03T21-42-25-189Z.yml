@@ -1,0 +1,372 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e3]:
+      - link "BWash" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img [ref=e5]
+        - generic [ref=e7]: BWash
+      - generic [ref=e8]:
+        - link "Home" [ref=e9] [cursor=pointer]:
+          - /url: /
+        - link "Services" [ref=e10] [cursor=pointer]:
+          - /url: /services
+        - link "Book Now" [ref=e11] [cursor=pointer]:
+          - /url: /book
+  - main [ref=e12]:
+    - generic [ref=e13]:
+      - generic [ref=e15]:
+        - paragraph [ref=e16]: Services & Pricing
+        - heading "Choose Your Package" [level=1] [ref=e17]
+        - paragraph [ref=e18]: Transparent pricing for every vehicle type. No hidden fees, no surprises — just premium results.
+      - generic [ref=e21]:
+        - generic [ref=e23]:
+          - generic [ref=e24]:
+            - img [ref=e25]
+            - heading "Basic Wash" [level=3] [ref=e27]
+            - paragraph [ref=e28]: A thorough exterior hand wash to keep your car looking clean.
+          - generic [ref=e29]:
+            - generic [ref=e30]:
+              - generic [ref=e31]: sedan
+              - generic [ref=e32]: $35
+            - generic [ref=e33]:
+              - generic [ref=e34]: suv
+              - generic [ref=e35]: $45
+            - generic [ref=e36]:
+              - generic [ref=e37]: truck
+              - generic [ref=e38]: $55
+          - list [ref=e39]:
+            - listitem [ref=e40]:
+              - img [ref=e41]
+              - generic [ref=e43]: Exterior hand wash
+            - listitem [ref=e44]:
+              - img [ref=e45]
+              - generic [ref=e47]: Tire cleaning
+            - listitem [ref=e48]:
+              - img [ref=e49]
+              - generic [ref=e51]: Hand drying
+          - link "Book Now" [ref=e52] [cursor=pointer]:
+            - /url: /book
+            - text: Book Now
+            - img [ref=e53]
+        - generic [ref=e56]:
+          - generic [ref=e57]: MOST POPULAR
+          - generic [ref=e58]:
+            - img [ref=e59]
+            - heading "Premium Wash" [level=3] [ref=e61]
+            - paragraph [ref=e62]: Complete interior and exterior cleaning for a like-new feel.
+          - generic [ref=e63]:
+            - generic [ref=e64]:
+              - generic [ref=e65]: sedan
+              - generic [ref=e66]: $55
+            - generic [ref=e67]:
+              - generic [ref=e68]: suv
+              - generic [ref=e69]: $65
+            - generic [ref=e70]:
+              - generic [ref=e71]: truck
+              - generic [ref=e72]: $75
+          - list [ref=e73]:
+            - listitem [ref=e74]:
+              - img [ref=e75]
+              - generic [ref=e77]: Everything in Basic Wash
+            - listitem [ref=e78]:
+              - img [ref=e79]
+              - generic [ref=e81]: Interior vacuum
+            - listitem [ref=e82]:
+              - img [ref=e83]
+              - generic [ref=e85]: Window cleaning
+            - listitem [ref=e86]:
+              - img [ref=e87]
+              - generic [ref=e89]: Dashboard wipe
+          - link "Book Now" [ref=e90] [cursor=pointer]:
+            - /url: /book
+            - text: Book Now
+            - img [ref=e91]
+        - generic [ref=e94]:
+          - generic [ref=e95]:
+            - img [ref=e96]
+            - heading "Deluxe Detail" [level=3] [ref=e98]
+            - paragraph [ref=e99]: The ultimate detailing experience with premium wax protection.
+          - generic [ref=e100]:
+            - generic [ref=e101]:
+              - generic [ref=e102]: sedan
+              - generic [ref=e103]: $85
+            - generic [ref=e104]:
+              - generic [ref=e105]: suv
+              - generic [ref=e106]: $95
+            - generic [ref=e107]:
+              - generic [ref=e108]: truck
+              - generic [ref=e109]: $110
+          - list [ref=e110]:
+            - listitem [ref=e111]:
+              - img [ref=e112]
+              - generic [ref=e114]: Everything in Premium Wash
+            - listitem [ref=e115]:
+              - img [ref=e116]
+              - generic [ref=e118]: Deep interior cleaning
+            - listitem [ref=e119]:
+              - img [ref=e120]
+              - generic [ref=e122]: Wax protection
+            - listitem [ref=e123]:
+              - img [ref=e124]
+              - generic [ref=e126]: Tire shine
+          - link "Book Now" [ref=e127] [cursor=pointer]:
+            - /url: /book
+            - text: Book Now
+            - img [ref=e128]
+      - generic [ref=e131]:
+        - generic [ref=e133]:
+          - heading "Package Comparison" [level=2] [ref=e134]
+          - paragraph [ref=e135]: See what's included in each package at a glance.
+        - table [ref=e138]:
+          - rowgroup [ref=e139]:
+            - row "Feature Basic Premium Deluxe" [ref=e140]:
+              - columnheader "Feature" [ref=e141]
+              - columnheader "Basic" [ref=e142]
+              - columnheader "Premium" [ref=e143]
+              - columnheader "Deluxe" [ref=e144]
+          - rowgroup [ref=e145]:
+            - row "Exterior hand wash" [ref=e146]:
+              - cell "Exterior hand wash" [ref=e147]
+              - cell [ref=e148]:
+                - img [ref=e150]
+              - cell [ref=e152]:
+                - img [ref=e154]
+              - cell [ref=e156]:
+                - img [ref=e158]
+            - row "Tire cleaning" [ref=e160]:
+              - cell "Tire cleaning" [ref=e161]
+              - cell [ref=e162]:
+                - img [ref=e164]
+              - cell [ref=e166]:
+                - img [ref=e168]
+              - cell [ref=e170]:
+                - img [ref=e172]
+            - row "Hand drying" [ref=e174]:
+              - cell "Hand drying" [ref=e175]
+              - cell [ref=e176]:
+                - img [ref=e178]
+              - cell [ref=e180]:
+                - img [ref=e182]
+              - cell [ref=e184]:
+                - img [ref=e186]
+            - row "Interior vacuum" [ref=e188]:
+              - cell "Interior vacuum" [ref=e189]
+              - cell [ref=e190]:
+                - img [ref=e192]
+              - cell [ref=e195]:
+                - img [ref=e197]
+              - cell [ref=e199]:
+                - img [ref=e201]
+            - row "Window cleaning" [ref=e203]:
+              - cell "Window cleaning" [ref=e204]
+              - cell [ref=e205]:
+                - img [ref=e207]
+              - cell [ref=e210]:
+                - img [ref=e212]
+              - cell [ref=e214]:
+                - img [ref=e216]
+            - row "Dashboard wipe" [ref=e218]:
+              - cell "Dashboard wipe" [ref=e219]
+              - cell [ref=e220]:
+                - img [ref=e222]
+              - cell [ref=e225]:
+                - img [ref=e227]
+              - cell [ref=e229]:
+                - img [ref=e231]
+            - row "Deep interior cleaning" [ref=e233]:
+              - cell "Deep interior cleaning" [ref=e234]
+              - cell [ref=e235]:
+                - img [ref=e237]
+              - cell [ref=e240]:
+                - img [ref=e242]
+              - cell [ref=e245]:
+                - img [ref=e247]
+            - row "Wax protection" [ref=e249]:
+              - cell "Wax protection" [ref=e250]
+              - cell [ref=e251]:
+                - img [ref=e253]
+              - cell [ref=e256]:
+                - img [ref=e258]
+              - cell [ref=e261]:
+                - img [ref=e263]
+            - row "Tire shine" [ref=e265]:
+              - cell "Tire shine" [ref=e266]
+              - cell [ref=e267]:
+                - img [ref=e269]
+              - cell [ref=e272]:
+                - img [ref=e274]
+              - cell [ref=e277]:
+                - img [ref=e279]
+      - generic [ref=e282]:
+        - generic [ref=e284]:
+          - paragraph [ref=e285]: Save More
+          - heading "Monthly Membership Plans" [level=2] [ref=e286]
+          - paragraph [ref=e287]: Subscribe and save. Get recurring washes at a fraction of the one-time price — delivered on your schedule.
+        - generic [ref=e288]:
+          - generic [ref=e290]:
+            - generic [ref=e291]:
+              - img [ref=e293]
+              - heading "Weekly Basic" [level=3] [ref=e298]
+              - paragraph [ref=e299]: Basic Wash • every week
+              - paragraph [ref=e300]: Basic wash once a week — keep your car spotless effortlessly.
+            - generic [ref=e301]:
+              - generic [ref=e302]:
+                - generic [ref=e303]: sedan
+                - generic [ref=e304]:
+                  - generic [ref=e305]: $120
+                  - generic [ref=e306]: /week
+              - generic [ref=e307]:
+                - generic [ref=e308]: suv
+                - generic [ref=e309]:
+                  - generic [ref=e310]: $160
+                  - generic [ref=e311]: /week
+              - generic [ref=e312]:
+                - generic [ref=e313]: truck
+                - generic [ref=e314]:
+                  - generic [ref=e315]: $200
+                  - generic [ref=e316]: /week
+            - list [ref=e317]:
+              - listitem [ref=e318]:
+                - img [ref=e319]
+                - generic [ref=e321]: Exterior hand wash every week
+              - listitem [ref=e322]:
+                - img [ref=e323]
+                - generic [ref=e325]: Tire cleaning included
+              - listitem [ref=e326]:
+                - img [ref=e327]
+                - generic [ref=e329]: Priority scheduling
+              - listitem [ref=e330]:
+                - img [ref=e331]
+                - generic [ref=e333]: Cancel anytime
+            - link "Subscribe" [ref=e334] [cursor=pointer]:
+              - /url: /sign-up
+              - img [ref=e335]
+              - text: Subscribe
+              - img [ref=e337]
+          - generic [ref=e340]:
+            - generic [ref=e341]: BEST VALUE
+            - generic [ref=e342]:
+              - img [ref=e344]
+              - heading "Biweekly Premium" [level=3] [ref=e349]
+              - paragraph [ref=e350]: Premium Wash • every 2 weeks
+              - paragraph [ref=e351]: Full premium wash every two weeks at a discounted rate.
+            - generic [ref=e352]:
+              - generic [ref=e353]:
+                - generic [ref=e354]: sedan
+                - generic [ref=e355]:
+                  - generic [ref=e356]: $95
+                  - generic [ref=e357]: /2 weeks
+              - generic [ref=e358]:
+                - generic [ref=e359]: suv
+                - generic [ref=e360]:
+                  - generic [ref=e361]: $115
+                  - generic [ref=e362]: /2 weeks
+              - generic [ref=e363]:
+                - generic [ref=e364]: truck
+                - generic [ref=e365]:
+                  - generic [ref=e366]: $135
+                  - generic [ref=e367]: /2 weeks
+            - list [ref=e368]:
+              - listitem [ref=e369]:
+                - img [ref=e370]
+                - generic [ref=e372]: Interior + exterior every 2 weeks
+              - listitem [ref=e373]:
+                - img [ref=e374]
+                - generic [ref=e376]: Window & dashboard cleaning
+              - listitem [ref=e377]:
+                - img [ref=e378]
+                - generic [ref=e380]: Savings vs. single bookings
+              - listitem [ref=e381]:
+                - img [ref=e382]
+                - generic [ref=e384]: Cancel anytime
+            - link "Subscribe" [ref=e385] [cursor=pointer]:
+              - /url: /sign-up
+              - img [ref=e386]
+              - text: Subscribe
+              - img [ref=e388]
+          - generic [ref=e391]:
+            - generic [ref=e392]:
+              - img [ref=e394]
+              - heading "Monthly Deluxe" [level=3] [ref=e399]
+              - paragraph [ref=e400]: Deluxe Detail • every month
+              - paragraph [ref=e401]: Complete deluxe detail once a month for showroom shine.
+            - generic [ref=e402]:
+              - generic [ref=e403]:
+                - generic [ref=e404]: sedan
+                - generic [ref=e405]:
+                  - generic [ref=e406]: $75
+                  - generic [ref=e407]: /month
+              - generic [ref=e408]:
+                - generic [ref=e409]: suv
+                - generic [ref=e410]:
+                  - generic [ref=e411]: $85
+                  - generic [ref=e412]: /month
+              - generic [ref=e413]:
+                - generic [ref=e414]: truck
+                - generic [ref=e415]:
+                  - generic [ref=e416]: $100
+                  - generic [ref=e417]: /month
+            - list [ref=e418]:
+              - listitem [ref=e419]:
+                - img [ref=e420]
+                - generic [ref=e422]: Full deep-clean detail monthly
+              - listitem [ref=e423]:
+                - img [ref=e424]
+                - generic [ref=e426]: Wax protection & tire shine
+              - listitem [ref=e427]:
+                - img [ref=e428]
+                - generic [ref=e430]: Best value per detail
+              - listitem [ref=e431]:
+                - img [ref=e432]
+                - generic [ref=e434]: Cancel anytime
+            - link "Subscribe" [ref=e435] [cursor=pointer]:
+              - /url: /sign-up
+              - img [ref=e436]
+              - text: Subscribe
+              - img [ref=e438]
+  - contentinfo [ref=e440]:
+    - generic [ref=e441]:
+      - generic [ref=e442]:
+        - generic [ref=e443]:
+          - link "BWash" [ref=e444] [cursor=pointer]:
+            - /url: /
+            - img [ref=e445]
+            - generic [ref=e447]: BWash
+          - paragraph [ref=e448]: Premium mobile car wash service delivering high-quality cleaning directly to your home or workplace.
+        - generic [ref=e449]:
+          - heading "Quick Links" [level=3] [ref=e450]
+          - list [ref=e451]:
+            - listitem [ref=e452]:
+              - link "Home" [ref=e453] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e454]:
+              - link "Services & Pricing" [ref=e455] [cursor=pointer]:
+                - /url: /services
+            - listitem [ref=e456]:
+              - link "Book Now" [ref=e457] [cursor=pointer]:
+                - /url: /book
+            - listitem [ref=e458]:
+              - link "Customer Login" [ref=e459] [cursor=pointer]:
+                - /url: /sign-in
+        - generic [ref=e460]:
+          - heading "Contact" [level=3] [ref=e461]
+          - list [ref=e462]:
+            - listitem [ref=e463]:
+              - img [ref=e464]
+              - generic [ref=e466]: (305) 555-WASH
+            - listitem [ref=e467]:
+              - img [ref=e468]
+              - generic [ref=e471]: info@bwash.com
+            - listitem [ref=e472]:
+              - img [ref=e473]
+              - generic [ref=e476]: Serving Miami-Dade County
+      - paragraph [ref=e478]: © 2026 BWash. All rights reserved.
+  - generic [ref=e479]:
+    - link "Contact via WhatsApp" [ref=e480] [cursor=pointer]:
+      - /url: https://wa.me/13055559274
+      - img [ref=e481]
+    - link "Call us" [ref=e483] [cursor=pointer]:
+      - /url: tel:+13055559274
+      - img [ref=e484]
+  - region "Notifications alt+T"
+  - alert [ref=e486]

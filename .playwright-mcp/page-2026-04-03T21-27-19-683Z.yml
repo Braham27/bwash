@@ -1,0 +1,135 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e3]:
+      - link "BWash" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img [ref=e5]
+        - generic [ref=e7]: BWash
+      - generic [ref=e8]:
+        - link "Home" [ref=e9] [cursor=pointer]:
+          - /url: /
+        - link "Services" [ref=e10] [cursor=pointer]:
+          - /url: /services
+        - link "Book Now" [ref=e11] [cursor=pointer]:
+          - /url: /book
+  - main [ref=e12]:
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - paragraph [ref=e17]: Book Your Wash
+        - heading "Schedule Your Service" [level=1] [ref=e18]
+        - paragraph [ref=e19]: Fill out the form below and we'll confirm your appointment shortly. Quick, easy, and hassle-free.
+      - generic [ref=e21]:
+        - generic [ref=e22]:
+          - generic [ref=e23]:
+            - generic [ref=e24]: Full Name
+            - textbox "Full Name" [ref=e25]:
+              - /placeholder: John Doe
+          - generic [ref=e26]:
+            - generic [ref=e27]: Phone Number
+            - textbox "Phone Number" [ref=e28]:
+              - /placeholder: (305) 555-1234
+        - generic [ref=e29]:
+          - generic [ref=e30]: Email
+          - textbox "Email" [ref=e31]:
+            - /placeholder: john@example.com
+        - generic [ref=e32]:
+          - generic [ref=e33]: Address / Location
+          - textbox "Address / Location" [ref=e34]:
+            - /placeholder: 123 Main St, Miami, FL 33101
+        - generic [ref=e35]:
+          - generic [ref=e36]:
+            - generic [ref=e37]: Vehicle Type
+            - combobox "Vehicle Type" [ref=e38]:
+              - option "Select vehicle type" [disabled] [selected]
+              - option "Sedan"
+              - option "SUV"
+              - option "Truck"
+          - generic [ref=e39]:
+            - generic [ref=e40]: Select Package
+            - combobox "Select Package" [ref=e41]:
+              - option "Select a package" [disabled] [selected]
+              - option "Basic Wash"
+              - option "Premium Wash"
+              - option "Deluxe Detail"
+        - generic [ref=e42]:
+          - generic [ref=e43]:
+            - generic [ref=e44]: Preferred Date
+            - textbox "Preferred Date" [ref=e45]
+          - generic [ref=e46]:
+            - generic [ref=e47]: Preferred Time
+            - combobox "Preferred Time" [ref=e48]:
+              - option "Select a time" [disabled] [selected]
+              - option "8:00 AM"
+              - option "9:00 AM"
+              - option "10:00 AM"
+              - option "11:00 AM"
+              - option "12:00 PM"
+              - option "1:00 PM"
+              - option "2:00 PM"
+              - option "3:00 PM"
+              - option "4:00 PM"
+              - option "5:00 PM"
+        - generic [ref=e49]:
+          - generic [ref=e50]: Notes (optional)
+          - textbox "Notes (optional)" [ref=e51]:
+            - /placeholder: Special requests, preferred contact method...
+        - generic [ref=e52]:
+          - generic [ref=e53]: Gate Code / Access Instructions (optional)
+          - textbox "Gate Code / Access Instructions (optional)" [ref=e54]:
+            - /placeholder: "Gate code #1234, park in visitor spot, ring doorbell..."
+        - button "Submit Booking Request" [ref=e55]
+      - generic [ref=e56]:
+        - heading "Payment Options" [level=3] [ref=e57]
+        - generic [ref=e58]:
+          - generic [ref=e59]: Zelle
+          - generic [ref=e60]: Cash App
+          - generic [ref=e61]: Apple Pay
+          - generic [ref=e62]: Credit/Debit
+          - generic [ref=e63]: Cash
+        - paragraph [ref=e64]: Payment is collected after service completion. No upfront charges.
+  - contentinfo [ref=e65]:
+    - generic [ref=e66]:
+      - generic [ref=e67]:
+        - generic [ref=e68]:
+          - link "BWash" [ref=e69] [cursor=pointer]:
+            - /url: /
+            - img [ref=e70]
+            - generic [ref=e72]: BWash
+          - paragraph [ref=e73]: Premium mobile car wash service delivering high-quality cleaning directly to your home or workplace.
+        - generic [ref=e74]:
+          - heading "Quick Links" [level=3] [ref=e75]
+          - list [ref=e76]:
+            - listitem [ref=e77]:
+              - link "Home" [ref=e78] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e79]:
+              - link "Services & Pricing" [ref=e80] [cursor=pointer]:
+                - /url: /services
+            - listitem [ref=e81]:
+              - link "Book Now" [ref=e82] [cursor=pointer]:
+                - /url: /book
+            - listitem [ref=e83]:
+              - link "Customer Login" [ref=e84] [cursor=pointer]:
+                - /url: /sign-in
+        - generic [ref=e85]:
+          - heading "Contact" [level=3] [ref=e86]
+          - list [ref=e87]:
+            - listitem [ref=e88]:
+              - img [ref=e89]
+              - generic [ref=e91]: (305) 555-WASH
+            - listitem [ref=e92]:
+              - img [ref=e93]
+              - generic [ref=e96]: info@bwash.com
+            - listitem [ref=e97]:
+              - img [ref=e98]
+              - generic [ref=e101]: Serving Miami-Dade County
+      - paragraph [ref=e103]: © 2026 BWash. All rights reserved.
+  - generic [ref=e104]:
+    - link "Contact via WhatsApp" [ref=e105] [cursor=pointer]:
+      - /url: https://wa.me/13055559274
+      - img [ref=e106]
+    - link "Call us" [ref=e108] [cursor=pointer]:
+      - /url: tel:+13055559274
+      - img [ref=e109]
+  - region "Notifications alt+T"
+  - alert [ref=e111]
