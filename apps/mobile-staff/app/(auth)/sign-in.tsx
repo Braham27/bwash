@@ -1,0 +1,98 @@
+import { View, Text, TouchableOpacity, TextInput } from "react-native";
+import { useSignIn } from "@clerk/clerk-expo";
+import { useState } from "react";
+
+const GOLD = "#C9A84C";
+
+export default function StaffSignInScreen() {
+  const { signIn, setActive, isLoaded } = useSignIn();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  async function handleSignIn() {
+    if (!isLoaded) return;
+    setIsLoading(true);
+    setError("");
+    try {
+      const result = await signIn.create({ identifier: email, password });
+      if (result.status === "complete") {
+        await setActive({ session: result.createdSessionId });
+      }
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "Sign in failed";
+      setError(message);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  return (
+    <View style={{ flex: 1, backgroundColor: "#0A0A0A", justifyContent: "center", padding: 24 }}>
+      <Text style={{ fontSize: 32, fontWeight: "bold", color: GOLD, textAlign: "center" }}>
+        BWash
+      </Text>
+      <Text style={{ fontSize: 14, color: "rgba(255,255,255,0.4)", textAlign: "center", marginTop: 4, marginBottom: 40 }}>
+        Staff Portal
+      </Text>
+
+      {error ? (
+        <Text style={{ color: "#EF4444", textAlign: "center", marginBottom: 16, fontSize: 13 }}>
+          {error}
+        </Text>
+      ) : null}
+
+      <TextInput
+        placeholder="Email"
+        placeholderTextColor="rgba(255,255,255,0.2)"
+        value={email}
+        onChangeText={setEmail}
+        keyboardType="email-address"
+        autoCapitalize="none"
+        style={{
+          backgroundColor: "#111111",
+          borderRadius: 12,
+          padding: 16,
+          color: "#fff",
+          borderWidth: 1,
+          borderColor: "rgba(255,255,255,0.05)",
+          marginBottom: 12,
+        }}
+      />
+
+      <TextInput
+        placeholder="Password"
+        placeholderTextColor="rgba(255,255,255,0.2)"
+        value={password}
+        onChangeText={setPassword}
+        secureTextEntry
+        style={{
+          backgroundColor: "#111111",
+          borderRadius: 12,
+          padding: 16,
+          color: "#fff",
+          borderWidth: 1,
+          borderColor: "rgba(255,255,255,0.05)",
+          marginBottom: 24,
+        }}
+      />
+
+      <TouchableOpacity
+        onPress={handleSignIn}
+        disabled={isLoading}
+        style={{
+          backgroundColor: GOLD,
+          borderRadius: 14,
+          paddingVertical: 16,
+          alignItems: "center",
+          opacity: isLoading ? 0.6 : 1,
+        }}
+      >
+        <Text style={{ color: "#0A0A0A", fontWeight: "bold", fontSize: 16 }}>
+          {isLoading ? "Signing in..." : "Sign In"}
+        </Text>
+      </TouchableOpacity>
+    </View>
+  );
+}
