@@ -80,7 +80,21 @@ export default async function InvoicesPage() {
         <EmptyState
           icon={<FileText className="h-8 w-8" />}
           title="No invoices yet"
-          description="Your invoices will appear here after your first completed service."
+          description={
+            eligibleBookings.length > 0
+              ? `You have ${eligibleBookings.length} completed booking${eligibleBookings.length > 1 ? "s" : ""} ready for invoicing. Click "Create Invoice" above to get started.`
+              : "Book a car wash service, and once it's completed you'll be able to generate invoices here."
+          }
+          action={
+            eligibleBookings.length === 0 ? (
+              <a
+                href="/book"
+                className="inline-flex items-center gap-2 rounded-lg bg-gold px-6 py-3 text-sm font-semibold text-black transition-all hover:bg-gold/90 hover:shadow-lg hover:shadow-gold/20"
+              >
+                Book a Service
+              </a>
+            ) : undefined
+          }
         />
       ) : (
         <div className="space-y-4">

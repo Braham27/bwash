@@ -50,7 +50,18 @@ export function CreateInvoiceButton({
     }
   }
 
-  if (bookings.length === 0) return null;
+  if (bookings.length === 0) {
+    return (
+      <button
+        disabled
+        className="inline-flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-4 py-2.5 text-sm font-medium text-white/30 cursor-not-allowed"
+        title="Complete a booking first to create an invoice"
+      >
+        <Plus className="h-4 w-4" />
+        Create Invoice
+      </button>
+    );
+  }
 
   return (
     <>
