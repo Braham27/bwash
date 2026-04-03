@@ -1,5 +1,6 @@
 import { PricingCards } from "@/components/services/PricingCards";
 import { ServiceComparison } from "@/components/services/ServiceComparison";
+import { MembershipPlans } from "@/components/services/MembershipPlans";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -32,6 +33,9 @@ export default function ServicesPage() {
 
       {/* Comparison */}
       <ServiceComparison />
+
+      {/* Membership Plans */}
+      <MembershipPlans />
     </div>
   );
 }
