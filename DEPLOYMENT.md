@@ -1,85 +1,106 @@
 # BWash — Deployment & Presentation Guide
 
+## Live URLs
+
+| Service | URL |
+|---|---|
+| **Production Website** | [https://bwash.vercel.app](https://bwash.vercel.app) |
+| **GitHub Repository** | [https://github.com/Braham27/bwash](https://github.com/Braham27/bwash) |
+| **Vercel Dashboard** | [Vercel Project](https://vercel.com/homecares-projects-c9481da2) |
+| **Neon Database** | [Neon Console](https://console.neon.tech) — Project: `floral-hill-54541608` |
+| **Clerk Auth** | [Clerk Dashboard](https://dashboard.clerk.com) |
+| **Expo EAS** | Project ID: `a2a2e256-13f2-4278-8fe7-1c95d2fc425c` / Owner: `acadet` |
+
 ## Table of Contents
 - [Quick Deploy to Vercel](#quick-deploy-to-vercel)
 - [Environment Variables Setup](#environment-variables-setup)
 - [Local Development](#local-development)
+- [Mobile App (Expo EAS)](#mobile-app-expo-eas)
 - [Presenting the Mobile App to Stakeholders](#presenting-the-mobile-app-to-stakeholders)
 
 ---
 
 ## Quick Deploy to Vercel
 
-### Option A: Vercel Dashboard (Easiest)
+The project is already deployed and connected:
 
-1. **Push to GitHub** (if not already):
-   ```bash
-   git add .
-   git commit -m "BWash v1.0 — production ready"
-   git push origin main
-   ```
+- **GitHub**: [Braham27/bwash](https://github.com/Braham27/bwash) (public)
+- **Vercel**: Project `prj_OsaUUqCRdjF6BoJbRCJJyPT4bCGs`, Root Directory set to `apps/web`
+- **Auto-deploy**: Every push to `main` triggers a Vercel production deployment
 
-2. **Import on Vercel**:
-   - Go to [vercel.com/new](https://vercel.com/new)
-   - Import your GitHub repo
-   - **Root Directory**: `apps/web`
-   - **Framework Preset**: Next.js (auto-detected)
-   - Build & install commands are configured in `vercel.json`
-
-3. **Add Environment Variables** (see section below)
-
-4. **Deploy** — Vercel handles the rest
-
-### Option B: Vercel CLI
+### Re-deploying
 
 ```bash
-# Install Vercel CLI
-npm i -g vercel
-
-# From project root
-cd apps/web
-vercel
-
-# Follow prompts, then set env vars:
-vercel env add DATABASE_URL production
-vercel env add NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY production
-vercel env add CLERK_SECRET_KEY production
-vercel env add CLERK_WEBHOOK_SECRET production
-vercel env add NEXT_PUBLIC_CLERK_SIGN_IN_URL production    # /sign-in
-vercel env add NEXT_PUBLIC_CLERK_SIGN_UP_URL production    # /sign-up
-vercel env add NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL production  # /dashboard
-vercel env add NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL production  # /dashboard
-vercel env add NEXT_PUBLIC_APP_URL production  # https://your-domain.vercel.app
-
-# Deploy to production
-vercel --prod
+# Push changes — Vercel auto-deploys from main
+git add .
+git commit -m "your changes"
+git push origin main
 ```
+
+Or manually via CLI:
+
+```bash
+cd apps/web
+npx vercel deploy --prod
+```
+
+### Vercel Project Settings
+
+| Setting | Value |
+|---|---|
+| Root Directory | `apps/web` |
+| Framework | Next.js |
+| Build Command | `next build` (via `vercel.json`) |
+| Install Command | `cd ../.. && pnpm install` (via `vercel.json`) |
+| Output Directory | `.next` |
+| Node.js Version | 22.x |
 
 ---
 
 ## Environment Variables Setup
 
-| Variable | Where to Get It | Example |
+### Required Environment Variables (Vercel)
+
+Set these in the [Vercel Dashboard](https://vercel.com/homecares-projects-c9481da2/bwash/settings/environment-variables):
+
+| Variable | Where to Get It | Status |
 |---|---|---|
-| `DATABASE_URL` | [Neon Console](https://console.neon.tech) → Project → Connection Details | `postgresql://user:pass@ep-xxx.us-east-2.aws.neon.tech/bwash?sslmode=require` |
-| `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` | [Clerk Dashboard](https://dashboard.clerk.com/last-active?path=api-keys) | `pk_test_...` or `pk_live_...` |
-| `CLERK_SECRET_KEY` | [Clerk Dashboard](https://dashboard.clerk.com/last-active?path=api-keys) | `sk_test_...` or `sk_live_...` |
-| `CLERK_WEBHOOK_SECRET` | [Clerk Dashboard](https://dashboard.clerk.com/last-active?path=webhooks) → endpoint → Signing Secret | `whsec_...` |
+| `DATABASE_URL` | [Neon Console](https://console.neon.tech) → Project `floral-hill-54541608` → Connection Details → Connection string | ⚠️ **Set manually** (password not exportable via API) |
+| `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` | [Clerk Dashboard](https://dashboard.clerk.com/last-active?path=api-keys) | ✅ Set |
+| `CLERK_SECRET_KEY` | [Clerk Dashboard](https://dashboard.clerk.com/last-active?path=api-keys) | ✅ Set |
+| `CLERK_WEBHOOK_SECRET` | [Clerk Dashboard](https://dashboard.clerk.com/last-active?path=webhooks) → endpoint → Signing Secret | ⚠️ Set after creating webhook |
+| `RESEND_API_KEY` | [Resend Dashboard](https://resend.com/api-keys) → Create API key | ⚠️ **Set manually** |
+| `NEXT_PUBLIC_APP_URL` | Your production URL | Set to `https://bwash.vercel.app` |
+
+### Neon Database Details
+
+| Property | Value |
+|---|---|
+| Project | `floral-hill-54541608` |
+| Endpoint | `ep-muddy-glitter-aelo7t2i` |
+| Region | `aws-us-east-2` |
+| Database | `neondb` |
+| User | `neondb_owner` |
+| Tables | 14 (users, bookings, vehicles, packages, services, invoices, memberships, notifications, etc.) |
+
+**DATABASE_URL format**: `postgresql://neondb_owner:<PASSWORD>@ep-muddy-glitter-aelo7t2i.us-east-2.aws.neon.tech/neondb?sslmode=require`
+
+> Get the password from the [Neon Console](https://console.neon.tech) → Project → Connection Details → show password
 
 ### After Deploy: Set Clerk Webhook
 
 1. Go to [Clerk Webhooks](https://dashboard.clerk.com/last-active?path=webhooks)
-2. Add endpoint: `https://your-domain.vercel.app/api/webhooks/clerk`
+2. Add endpoint: `https://bwash.vercel.app/api/webhooks/clerk`
 3. Subscribe to events: `user.created`, `user.updated`, `user.deleted`
 4. Copy the Signing Secret → set as `CLERK_WEBHOOK_SECRET` in Vercel
 
 ### After Deploy: Update Clerk Redirect URLs
 
 In [Clerk Dashboard](https://dashboard.clerk.com) → **Paths**:
-- Sign-in URL: `https://your-domain.vercel.app/sign-in`
-- Sign-up URL: `https://your-domain.vercel.app/sign-up`
-- After sign-in: `https://your-domain.vercel.app/dashboard`
-- After sign-up: `https://your-domain.vercel.app/dashboard`
+- Sign-in URL: `https://bwash.vercel.app/sign-in`
+- Sign-up URL: `https://bwash.vercel.app/sign-up`
+- After sign-in: `https://bwash.vercel.app/dashboard`
+- After sign-up: `https://bwash.vercel.app/dashboard`
 
 ---
 
@@ -103,6 +124,44 @@ pnpm db:seed
 pnpm dev
 # → Web: http://localhost:3000
 ```
+
+---
+
+## Mobile App (Expo EAS)
+
+The mobile customer app is linked to Expo EAS for building and distributing.
+
+| Property | Value |
+|---|---|
+| Project ID | `a2a2e256-13f2-4278-8fe7-1c95d2fc425c` |
+| Owner | `acadet` |
+| Slug | `bwash` |
+| Bundle ID (iOS) | `com.bwash.customer` |
+| Package (Android) | `com.bwash.customer` |
+| App Directory | `apps/mobile-customer/` |
+
+### Building with EAS
+
+```bash
+cd apps/mobile-customer
+
+# Set your Expo token (or use `eas login`)
+export EXPO_TOKEN=<your-expo-access-token>
+
+# Build for Android (APK for testing)
+npx eas-cli build --platform android --profile preview
+
+# Build for iOS Simulator
+npx eas-cli build --platform ios --profile preview
+
+# Production builds
+npx eas-cli build --platform android --profile production
+npx eas-cli build --platform ios --profile production
+```
+
+### Staff App
+
+The staff app is at `apps/mobile-staff/`. It has not yet been linked to EAS — run `eas init` in that directory when ready.
 
 ---
 
@@ -203,17 +262,30 @@ bwash/
 └── package.json
 ```
 
-## Key URLs (After Deploy)
+## Key URLs (Production: https://bwash.vercel.app)
 
 | Page | URL |
 |---|---|
-| Home | `/` |
-| Services | `/services` |
-| Book a Wash | `/book` |
-| Customer Dashboard | `/dashboard` |
-| Customer Bookings | `/dashboard/bookings` |
-| Admin Dashboard | `/admin` |
-| Admin Bookings | `/admin/bookings` |
-| Staff Dashboard | `/staff` |
-| Sign In | `/sign-in` |
-| Sign Up | `/sign-up` |
+| Home | [`/`](https://bwash.vercel.app/) |
+| Services | [`/services`](https://bwash.vercel.app/services) |
+| Book a Wash | [`/book`](https://bwash.vercel.app/book) |
+| Customer Dashboard | [`/dashboard`](https://bwash.vercel.app/dashboard) |
+| Customer Bookings | [`/dashboard/bookings`](https://bwash.vercel.app/dashboard/bookings) |
+| Customer Membership | [`/dashboard/membership`](https://bwash.vercel.app/dashboard/membership) |
+| Admin Dashboard | [`/admin`](https://bwash.vercel.app/admin) |
+| Admin Bookings | [`/admin/bookings`](https://bwash.vercel.app/admin/bookings) |
+| Staff Dashboard | [`/staff`](https://bwash.vercel.app/staff) |
+| Sign In | [`/sign-in`](https://bwash.vercel.app/sign-in) |
+| Sign Up | [`/sign-up`](https://bwash.vercel.app/sign-up) |
+
+## Systems Status
+
+| System | Status | Notes |
+|---|---|---|
+| **Booking + Tips** | ✅ Ready | Tip presets ($5/$10/$15/$20) + custom amount on booking form |
+| **Membership** | ✅ Ready | Subscribe/pause/cancel/resume via API + dashboard UI |
+| **Email (Resend)** | ✅ Ready | Booking confirmation, invoice, payment receipt, membership welcome — requires `RESEND_API_KEY` |
+| **Notifications** | ✅ Ready | In-app notifications for booking lifecycle, payments, invoices, memberships, staff assignments |
+| **Auth (Clerk)** | ✅ Ready | Role-based: customer/staff/admin — keys configured |
+| **Database (Neon)** | ✅ Ready | 14 tables, Drizzle ORM, pooled connection |
+| **Mobile (Expo)** | 🔄 In Progress | Customer app linked to EAS, staff app pending |

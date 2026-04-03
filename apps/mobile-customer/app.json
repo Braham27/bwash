@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "BWash",
-    "slug": "bwash-customer",
+    "slug": "bwash",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -26,6 +26,15 @@
     "plugins": [
       "expo-router",
       "expo-secure-store"
-    ]
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "a2a2e256-13f2-4278-8fe7-1c95d2fc425c"
+      }
+    },
+    "owner": "acadet"
   }
 }
