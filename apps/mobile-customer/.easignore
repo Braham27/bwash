@@ -1,0 +1,8 @@
+# EAS Build ignore file - exclude large/unnecessary files from upload
+# Keep workspace structure intact for pnpm install resolution
+node_modules/
+.git/
+.turbo/
+.next/
+.env.local
+.env*.local
