@@ -1,6 +1,6 @@
 import { db } from "@/lib/db";
-import { invoices } from "@bwash/database";
-import { eq, desc } from "drizzle-orm";
+import { invoices, bookings, packages } from "@bwash/database";
+import { eq, desc, and, notInArray } from "drizzle-orm";
 import { getAuthenticatedUser } from "@/lib/auth-utils";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
@@ -8,6 +8,7 @@ import { EmptyState } from "@/components/ui/EmptyState";
 import { FileText } from "lucide-react";
 import { formatCurrency, formatDate } from "@/lib/utils";
 import { InvoiceActions } from "@/components/dashboard/InvoiceActions";
+import { CreateInvoiceButton } from "@/components/dashboard/CreateInvoiceButton";
 
 const paymentVariant: Record<string, "warning" | "success" | "danger" | "info"> = {
   pending: "warning",
@@ -26,13 +27,53 @@ export default async function InvoicesPage() {
     .where(eq(invoices.userId, user.id))
     .orderBy(desc(invoices.createdAt));
 
+  // Booking IDs that already have invoices
+  const invoicedBookingIds = userInvoices
+    .map((inv) => inv.bookingId)
+    .filter(Boolean) as string[];
+
+  // Completed bookings without invoices
+  const eligibleQuery = db
+    .select({
+      id: bookings.id,
+      packageName: packages.name,
+      vehicleType: bookings.vehicleType,
+      preferredDate: bookings.preferredDate,
+      price: bookings.price,
+    })
+    .from(bookings)
+    .innerJoin(packages, eq(bookings.packageId, packages.id))
+    .where(
+      and(
+        eq(bookings.userId, user.id),
+        eq(bookings.status, "completed"),
+        ...(invoicedBookingIds.length > 0
+          ? [notInArray(bookings.id, invoicedBookingIds)]
+          : [])
+      )
+    )
+    .orderBy(desc(bookings.completedAt));
+
+  const eligibleBookings = await eligibleQuery;
+
   return (
     <div className="space-y-8">
-      <div>
-        <h1 className="text-2xl font-bold">My Invoices</h1>
-        <p className="mt-1 text-sm text-white/50">
-          View, preview, and send your invoices
-        </p>
+      <div className="flex items-center justify-between">
+        <div>
+          <h1 className="text-2xl font-bold">My Invoices</h1>
+          <p className="mt-1 text-sm text-white/50">
+            Create, preview, and send your invoices
+          </p>
+        </div>
+        <CreateInvoiceButton
+          bookings={eligibleBookings.map((b) => ({
+            id: b.id,
+            packageName: b.packageName,
+            vehicleType: b.vehicleType,
+            preferredDate: b.preferredDate,
+            price: b.price,
+          }))}
+        />
       </div>
 
       {userInvoices.length === 0 ? (
