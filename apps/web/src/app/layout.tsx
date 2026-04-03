@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 import { Toaster } from "sonner";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 export const dynamic = "force-dynamic";
@@ -56,6 +57,7 @@ export default function RootLayout({
               },
             }}
           />
+          <Analytics />
         </body>
       </html>
     </ClerkProvider>
