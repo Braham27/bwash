@@ -1,6 +1,10 @@
 import { View, Text, ScrollView, TouchableOpacity, TextInput, Alert } from "react-native";
 import { useState } from "react";
 import { useAuth } from "@clerk/clerk-expo";
+import Animated, { FadeInDown, ZoomIn } from "react-native-reanimated";
+import { FadeInStagger, usePressAnimation } from "../components/Animations";
+
+const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
 
 const GOLD = "#C9A84C";
 const API_URL = process.env.EXPO_PUBLIC_API_URL || "http://localhost:3000";
@@ -66,32 +70,33 @@ export default function BookScreen() {
       style={{ flex: 1, backgroundColor: "#0A0A0A" }}
       contentContainerStyle={{ padding: 20 }}
     >
-      <Text style={{ fontSize: 24, fontWeight: "bold", color: "#fff", marginBottom: 24 }}>
+      <Animated.Text entering={FadeInDown.duration(500).springify()} style={{ fontSize: 24, fontWeight: "bold", color: "#fff", marginBottom: 24 }}>
         Book a Wash
-      </Text>
+      </Animated.Text>
 
       {/* Package Selection */}
-      <Text style={{ fontSize: 14, color: "rgba(255,255,255,0.4)", marginBottom: 8 }}>
+      <Animated.Text entering={FadeInDown.delay(100).duration(400)} style={{ fontSize: 14, color: "rgba(255,255,255,0.4)", marginBottom: 8 }}>
         SELECT PACKAGE
-      </Text>
+      </Animated.Text>
       {PACKAGES.map((p, i) => (
-        <TouchableOpacity
-          key={p.slug}
-          onPress={() => setSelectedPackage(i)}
-          style={{
-            backgroundColor: i === selectedPackage ? "rgba(201,168,76,0.1)" : "#111111",
-            borderRadius: 12,
-            padding: 16,
-            marginBottom: 8,
-            borderWidth: 1,
-            borderColor: i === selectedPackage ? GOLD : "rgba(255,255,255,0.05)",
-          }}
-        >
-          <Text style={{ color: "#fff", fontWeight: "600" }}>{p.name}</Text>
-          <Text style={{ color: GOLD, fontSize: 16, fontWeight: "bold", marginTop: 4 }}>
-            From ${p.sedan}
-          </Text>
-        </TouchableOpacity>
+        <FadeInStagger key={p.slug} index={i} delay={100}>
+          <TouchableOpacity
+            onPress={() => setSelectedPackage(i)}
+            style={{
+              backgroundColor: i === selectedPackage ? "rgba(201,168,76,0.1)" : "#111111",
+              borderRadius: 12,
+              padding: 16,
+              marginBottom: 8,
+              borderWidth: 1,
+              borderColor: i === selectedPackage ? GOLD : "rgba(255,255,255,0.05)",
+            }}
+          >
+            <Text style={{ color: "#fff", fontWeight: "600" }}>{p.name}</Text>
+            <Text style={{ color: GOLD, fontSize: 16, fontWeight: "bold", marginTop: 4 }}>
+              From ${p.sedan}
+            </Text>
+          </TouchableOpacity>
+        </FadeInStagger>
       ))}
 
       {/* Vehicle Type */}
@@ -186,7 +191,7 @@ export default function BookScreen() {
       />
 
       {/* Price & Book Button */}
-      <View style={{ marginTop: 24, alignItems: "center" }}>
+      <Animated.View entering={ZoomIn.delay(400).springify()} style={{ marginTop: 24, alignItems: "center" }}>
         <Text style={{ fontSize: 14, color: "rgba(255,255,255,0.4)" }}>Total</Text>
         <Text style={{ fontSize: 32, fontWeight: "bold", color: GOLD, marginVertical: 8 }}>
           ${price}
@@ -207,7 +212,7 @@ export default function BookScreen() {
             {isBooking ? "Booking..." : "Confirm Booking"}
           </Text>
         </TouchableOpacity>
-      </View>
+      </Animated.View>
 
       <View style={{ height: 40 }} />
     </ScrollView>

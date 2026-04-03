@@ -1,7 +1,9 @@
 import { View, Text, TouchableOpacity, TextInput } from "react-native";
+import Animated, { FadeInDown, ZoomIn } from "react-native-reanimated";
 import { useSignUp } from "@clerk/clerk-expo";
 import { useState } from "react";
 import { Link } from "expo-router";
+import AnimatedCar from "../components/AnimatedCar";
 
 const GOLD = "#C9A84C";
 
@@ -38,12 +40,15 @@ export default function SignUpScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: "#0A0A0A", justifyContent: "center", padding: 24 }}>
-      <Text style={{ fontSize: 32, fontWeight: "bold", color: GOLD, textAlign: "center" }}>
+      <Animated.View entering={ZoomIn.duration(600).springify()} style={{ alignItems: "center", marginBottom: 8 }}>
+        <AnimatedCar />
+      </Animated.View>
+      <Animated.Text entering={FadeInDown.delay(200).duration(500).springify()} style={{ fontSize: 32, fontWeight: "bold", color: GOLD, textAlign: "center" }}>
         BWash
-      </Text>
-      <Text style={{ fontSize: 14, color: "rgba(255,255,255,0.4)", textAlign: "center", marginTop: 4, marginBottom: 40 }}>
+      </Animated.Text>
+      <Animated.Text entering={FadeInDown.delay(350).duration(500).springify()} style={{ fontSize: 14, color: "rgba(255,255,255,0.4)", textAlign: "center", marginTop: 4, marginBottom: 40 }}>
         Create your account
-      </Text>
+      </Animated.Text>
 
       {error ? (
         <Text style={{ color: "#EF4444", textAlign: "center", marginBottom: 16, fontSize: 13 }}>
