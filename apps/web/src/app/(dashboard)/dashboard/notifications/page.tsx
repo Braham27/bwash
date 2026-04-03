@@ -5,11 +5,11 @@ import { getAuthenticatedUser } from "@/lib/auth-utils";
 import { Card, CardTitle } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { EmptyState } from "@/components/ui/EmptyState";
-import { Bell, Calendar, CreditCard, Shield, Info } from "lucide-react";
+import { Bell, Calendar, CreditCard, Shield, Info, type LucideIcon } from "lucide-react";
 import { formatDate } from "@/lib/utils";
 import { MarkAllReadButton } from "@/components/dashboard/MarkAllReadButton";
 
-const typeIcons: Record<string, React.ElementType> = {
+const typeIcons: Record<string, LucideIcon> = {
   booking: Calendar,
   payment: CreditCard,
   membership: Shield,

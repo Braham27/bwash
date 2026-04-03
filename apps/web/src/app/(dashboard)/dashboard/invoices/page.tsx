@@ -2,11 +2,12 @@ import { db } from "@/lib/db";
 import { invoices } from "@bwash/database";
 import { eq, desc } from "drizzle-orm";
 import { getAuthenticatedUser } from "@/lib/auth-utils";
-import { Card, CardTitle } from "@/components/ui/Card";
+import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { FileText } from "lucide-react";
 import { formatCurrency, formatDate } from "@/lib/utils";
+import { InvoiceActions } from "@/components/dashboard/InvoiceActions";
 
 const paymentVariant: Record<string, "warning" | "success" | "danger" | "info"> = {
   pending: "warning",
@@ -29,7 +30,9 @@ export default async function InvoicesPage() {
     <div className="space-y-8">
       <div>
         <h1 className="text-2xl font-bold">My Invoices</h1>
-        <p className="mt-1 text-sm text-white/50">View your payment history</p>
+        <p className="mt-1 text-sm text-white/50">
+          View, preview, and send your invoices
+        </p>
       </div>
 
       {userInvoices.length === 0 ? (
@@ -52,6 +55,11 @@ export default async function InvoicesPage() {
                     <p className="mt-1 text-xs text-white/40">
                       {formatDate(inv.createdAt)}
                     </p>
+                    <p className="mt-0.5 text-xs text-white/30">
+                      {(inv.items as { description: string }[])
+                        .map((i) => i.description)
+                        .join(", ")}
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -61,6 +69,28 @@ export default async function InvoicesPage() {
                   <p className="text-lg font-bold text-gold">
                     {formatCurrency(inv.total)}
                   </p>
+                  <InvoiceActions
+                    invoice={{
+                      id: inv.id,
+                      invoiceNumber: inv.invoiceNumber,
+                      items: inv.items as {
+                        description: string;
+                        quantity: number;
+                        unitPrice: number;
+                        total: number;
+                      }[],
+                      subtotal: inv.subtotal,
+                      taxRate: inv.taxRate,
+                      taxAmount: inv.taxAmount,
+                      tipAmount: inv.tipAmount,
+                      total: inv.total,
+                      paymentStatus: inv.paymentStatus,
+                      paymentMethod: inv.paymentMethod,
+                      paidAt: inv.paidAt,
+                      notes: inv.notes,
+                      createdAt: inv.createdAt,
+                    }}
+                  />
                 </div>
               </div>
             </Card>
