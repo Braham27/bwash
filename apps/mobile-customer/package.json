@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "expo-router/entry",
   "scripts": {
+    "eas-build-pre-install": "cd ../.. && echo node-linker=hoisted > .npmrc",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
