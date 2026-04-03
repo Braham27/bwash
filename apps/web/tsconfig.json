@@ -6,7 +6,10 @@
     "moduleResolution": "bundler",
     "allowJs": true,
     "noEmit": true,
+    "declaration": false,
+    "declarationMap": false,
     "incremental": true,
+    "skipLibCheck": true,
     "plugins": [{ "name": "next" }],
     "paths": {
       "@/*": ["./src/*"]
