@@ -1,6 +1,7 @@
 "use client";
 
-import { Suspense, useRef, useMemo } from "react";
+import { Component, Suspense, useRef, useMemo } from "react";
+import type { ReactNode, ErrorInfo } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -8,6 +9,24 @@ import { ArrowRight, Star } from "lucide-react";
 
 /* Lazy-load the heavy R3F canvas to keep initial JS bundle small */
 const CarScene = dynamic(() => import("./CarScene"), { ssr: false });
+
+/* Catch WebGL / Three.js crashes so the rest of the page still renders */
+class SceneErrorBoundary extends Component<
+  { children: ReactNode },
+  { hasError: boolean }
+> {
+  state = { hasError: false };
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+  componentDidCatch(_: Error, info: ErrorInfo) {
+    console.warn("3D scene failed to load:", info);
+  }
+  render() {
+    if (this.state.hasError) return null;
+    return this.props.children;
+  }
+}
 
 export function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -31,21 +50,23 @@ export function HeroSection() {
 
         {/* ── 3D Car (R3F Canvas) ── */}
         <div className="absolute inset-0 z-[5]">
-          <Suspense
-            fallback={
-              <div className="flex h-full items-center justify-center">
-                <div className="h-[2px] w-32 overflow-hidden rounded-full bg-white/[0.06]">
-                  <motion.div
-                    className="h-full rounded-full bg-gradient-to-r from-gold/30 to-gold/50"
-                    animate={{ width: ["0%", "70%", "90%", "70%"] }}
-                    transition={{ duration: 2.5, repeat: Infinity }}
-                  />
+          <SceneErrorBoundary>
+            <Suspense
+              fallback={
+                <div className="flex h-full items-center justify-center">
+                  <div className="h-[2px] w-32 overflow-hidden rounded-full bg-white/[0.06]">
+                    <motion.div
+                      className="h-full rounded-full bg-gradient-to-r from-gold/30 to-gold/50"
+                      animate={{ width: ["0%", "70%", "90%", "70%"] }}
+                      transition={{ duration: 2.5, repeat: Infinity }}
+                    />
+                  </div>
                 </div>
-              </div>
-            }
-          >
-            <CarScene scrollProgress={scrollYProgress} />
-          </Suspense>
+              }
+            >
+              <CarScene scrollProgress={scrollYProgress} />
+            </Suspense>
+          </SceneErrorBoundary>
         </div>
 
         {/* ── Cinematic overlays ── */}
