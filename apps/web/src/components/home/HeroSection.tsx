@@ -24,8 +24,8 @@ function SketchfabCar({ className }: { className?: string }) {
       )}
       <iframe
         title="BWash 3D Car"
-        src={`https://sketchfab.com/models/${SKETCHFAB_MODEL_UID}/embed?autostart=1&autospin=0.15&transparent=1&ui_controls=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_help=0&ui_settings=0&ui_watermark_link=0&ui_watermark=0&ui_annotations=0&ui_color=C9A84C&camera=0&preload=1&dnt=1`}
-        className="h-full w-full border-0"
+        src={`https://sketchfab.com/models/${SKETCHFAB_MODEL_UID}/embed?autostart=1&autospin=0.15&transparent=1&ui_controls=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_help=0&ui_settings=0&ui_watermark_link=0&ui_watermark=0&ui_annotations=0&ui_hint=0&annotation_cycle=0&scrollwheel=0&ui_color=C9A84C&camera=0&preload=1&dnt=1`}
+        className="h-full w-full border-0 pointer-events-none"
         style={{ opacity: loaded ? 1 : 0, transition: "opacity 0.8s ease-in-out" }}
         allow="autoplay; fullscreen; xr-spatial-tracking"
         onLoad={() => setLoaded(true)}
