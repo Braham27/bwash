@@ -6,5 +6,6 @@ node_modules/
 .next/
 .env.local
 .env*.local
-# Include android/ and ios/ from local prebuild so EAS uses correct autolinking
-# (pnpm strict mode causes remote prebuild to resolve packages incorrectly)
+# Let EAS run expo prebuild (CNG mode) so autolinking handles all hoisted packages
+android/
+ios/
