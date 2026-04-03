@@ -161,7 +161,7 @@ export default async function DashboardPage() {
                     </p>
                     <p className="text-xs text-white/40 flex items-center gap-1">
                       <MapPin className="h-3 w-3" />
-                      {b.address.slice(0, 40)}...
+                      {(b.address ?? "").slice(0, 40)}...
                     </p>
                   </div>
                 </div>

@@ -71,6 +71,10 @@ Set these in the [Vercel Dashboard](https://vercel.com/homecares-projects-c9481d
 | `CLERK_WEBHOOK_SECRET` | [Clerk Dashboard](https://dashboard.clerk.com/last-active?path=webhooks) → endpoint → Signing Secret | ⚠️ Set after creating webhook |
 | `RESEND_API_KEY` | [Resend Dashboard](https://resend.com/api-keys) → Create API key | ⚠️ **Set manually** |
 | `NEXT_PUBLIC_APP_URL` | Your production URL | Set to `https://bwash.vercel.app` |
+| `NEXT_PUBLIC_CLERK_SIGN_IN_URL` | Static value: `/sign-in` | ✅ Set |
+| `NEXT_PUBLIC_CLERK_SIGN_UP_URL` | Static value: `/sign-up` | ✅ Set |
+| `NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL` | Static value: `/dashboard` | ✅ Set |
+| `NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL` | Static value: `/dashboard` | ✅ Set |
 
 ### Neon Database Details
 

@@ -1,160 +1,36 @@
 "use client";
 
 import Link from "next/link";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import {
   motion,
   useScroll,
   useTransform,
-  useMotionValueEvent,
 } from "framer-motion";
 import { ArrowRight, Star, Droplets, Shield, Clock } from "lucide-react";
 
-function CarSilhouette({ className }: { className?: string }) {
+const SKETCHFAB_MODEL_UID = "312ab6595d3e4ebd8ee1c18ff25fa048"; // Mercedes-AMG SL 63
+
+function SketchfabCar({ className }: { className?: string }) {
+  const [loaded, setLoaded] = useState(false);
+
   return (
-    <svg
-      viewBox="0 0 900 340"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-    >
-      {/* SUV Body */}
-      <path
-        d="M120 240 C120 240 140 235 160 230 L200 160 C210 145 230 110 270 95 C310 80 380 70 450 68 C520 70 590 80 630 95 C670 110 690 145 700 160 L740 230 C760 235 780 240 780 240 L780 260 C780 265 775 270 770 270 L130 270 C125 270 120 265 120 260 Z"
-        fill="url(#bodyGradient)"
-        stroke="url(#bodyStroke)"
-        strokeWidth="0.5"
+    <div className={`relative ${className ?? ""}`}>
+      {/* Loading shimmer while 3D model loads */}
+      {!loaded && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="h-full w-full animate-pulse rounded-2xl bg-gradient-to-r from-white/[0.02] via-white/[0.05] to-white/[0.02]" />
+        </div>
+      )}
+      <iframe
+        title="BWash 3D Car"
+        src={`https://sketchfab.com/models/${SKETCHFAB_MODEL_UID}/embed?autostart=1&autospin=0.15&transparent=1&ui_controls=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_help=0&ui_settings=0&ui_watermark_link=0&ui_watermark=0&ui_annotations=0&ui_color=C9A84C&camera=0&preload=1&dnt=1`}
+        className="h-full w-full border-0"
+        style={{ opacity: loaded ? 1 : 0, transition: "opacity 0.8s ease-in-out" }}
+        allow="autoplay; fullscreen; xr-spatial-tracking"
+        onLoad={() => setLoaded(true)}
       />
-      {/* Roof line */}
-      <path
-        d="M235 105 C250 78 290 55 370 48 C420 45 480 45 530 48 C610 55 650 78 665 105"
-        fill="url(#roofGradient)"
-        stroke="url(#bodyStroke)"
-        strokeWidth="0.5"
-      />
-      {/* Windshield */}
-      <path
-        d="M245 105 C260 80 295 60 375 52 C425 49 475 49 525 52 C605 60 640 80 655 105 L630 100 C615 85 580 72 520 67 C480 65 420 65 380 67 C320 72 285 85 270 100 Z"
-        fill="url(#glassGradient)"
-        opacity="0.6"
-      />
-      {/* Side windows */}
-      <path
-        d="M270 100 L250 155 L365 150 L370 68 C320 73 288 86 270 100Z"
-        fill="url(#glassGradient)"
-        opacity="0.5"
-      />
-      <path
-        d="M630 100 L650 155 L535 150 L530 68 C580 73 612 86 630 100Z"
-        fill="url(#glassGradient)"
-        opacity="0.5"
-      />
-      {/* Window pillar */}
-      <rect x="370" y="65" width="8" height="88" rx="2" fill="#0a0a0a" opacity="0.8" />
-      <rect x="522" y="65" width="8" height="88" rx="2" fill="#0a0a0a" opacity="0.8" />
-      {/* Headlights */}
-      <ellipse cx="175" cy="215" rx="30" ry="8" fill="url(#headlightGlow)" opacity="0.9" />
-      <ellipse cx="725" cy="215" rx="30" ry="8" fill="url(#headlightGlow)" opacity="0.9" />
-      {/* DRL light strips */}
-      <path d="M148 210 L200 208" stroke="url(#drlGradient)" strokeWidth="2" strokeLinecap="round" />
-      <path d="M752 210 L700 208" stroke="url(#drlGradient)" strokeWidth="2" strokeLinecap="round" />
-      {/* Front grille */}
-      <rect x="380" y="210" width="140" height="35" rx="4" fill="#080808" stroke="#1a1a1a" strokeWidth="0.5" />
-      <line x1="400" y1="218" x2="500" y2="218" stroke="#C9A84C" strokeWidth="0.8" opacity="0.4" />
-      <line x1="400" y1="225" x2="500" y2="225" stroke="#1a1a1a" strokeWidth="0.5" />
-      <line x1="400" y1="232" x2="500" y2="232" stroke="#1a1a1a" strokeWidth="0.5" />
-      {/* Wheels */}
-      <circle cx="230" cy="272" r="42" fill="#0a0a0a" />
-      <circle cx="230" cy="272" r="36" fill="url(#wheelGradient)" />
-      <circle cx="230" cy="272" r="20" fill="#111" stroke="#222" strokeWidth="1" />
-      <circle cx="230" cy="272" r="8" fill="#C9A84C" opacity="0.3" />
-      <circle cx="670" cy="272" r="42" fill="#0a0a0a" />
-      <circle cx="670" cy="272" r="36" fill="url(#wheelGradient)" />
-      <circle cx="670" cy="272" r="20" fill="#111" stroke="#222" strokeWidth="1" />
-      <circle cx="670" cy="272" r="8" fill="#C9A84C" opacity="0.3" />
-      {/* Wheel spokes */}
-      {[0, 60, 120, 180, 240, 300].map((angle) => (
-        <g key={`left-${angle}`}>
-          <line
-            x1={230 + 10 * Math.cos((angle * Math.PI) / 180)}
-            y1={272 + 10 * Math.sin((angle * Math.PI) / 180)}
-            x2={230 + 33 * Math.cos((angle * Math.PI) / 180)}
-            y2={272 + 33 * Math.sin((angle * Math.PI) / 180)}
-            stroke="#222"
-            strokeWidth="2.5"
-          />
-        </g>
-      ))}
-      {[0, 60, 120, 180, 240, 300].map((angle) => (
-        <g key={`right-${angle}`}>
-          <line
-            x1={670 + 10 * Math.cos((angle * Math.PI) / 180)}
-            y1={272 + 10 * Math.sin((angle * Math.PI) / 180)}
-            x2={670 + 33 * Math.cos((angle * Math.PI) / 180)}
-            y2={272 + 33 * Math.sin((angle * Math.PI) / 180)}
-            stroke="#222"
-            strokeWidth="2.5"
-          />
-        </g>
-      ))}
-      {/* Body highlight line */}
-      <path
-        d="M160 200 C200 195 350 188 450 186 C550 188 700 195 740 200"
-        stroke="url(#highlightStroke)"
-        strokeWidth="1"
-        fill="none"
-        opacity="0.4"
-      />
-      {/* Lower body trim */}
-      <path
-        d="M150 250 L750 250"
-        stroke="#1a1a1a"
-        strokeWidth="1"
-      />
-      {/* Gradients */}
-      <defs>
-        <linearGradient id="bodyGradient" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#1a1a1a" />
-          <stop offset="40%" stopColor="#111111" />
-          <stop offset="60%" stopColor="#0d0d0d" />
-          <stop offset="100%" stopColor="#080808" />
-        </linearGradient>
-        <linearGradient id="bodyStroke" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stopColor="#1a1a1a" />
-          <stop offset="50%" stopColor="#333" />
-          <stop offset="100%" stopColor="#1a1a1a" />
-        </linearGradient>
-        <linearGradient id="roofGradient" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#1e1e1e" />
-          <stop offset="100%" stopColor="#111" />
-        </linearGradient>
-        <linearGradient id="glassGradient" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#1a2030" />
-          <stop offset="50%" stopColor="#0f1520" />
-          <stop offset="100%" stopColor="#0a1018" />
-        </linearGradient>
-        <radialGradient id="headlightGlow">
-          <stop offset="0%" stopColor="#C9A84C" stopOpacity="0.8" />
-          <stop offset="60%" stopColor="#C9A84C" stopOpacity="0.3" />
-          <stop offset="100%" stopColor="#C9A84C" stopOpacity="0" />
-        </radialGradient>
-        <linearGradient id="drlGradient" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stopColor="#C9A84C" stopOpacity="0.8" />
-          <stop offset="100%" stopColor="#C9A84C" stopOpacity="0.1" />
-        </linearGradient>
-        <radialGradient id="wheelGradient">
-          <stop offset="0%" stopColor="#1a1a1a" />
-          <stop offset="100%" stopColor="#0a0a0a" />
-        </radialGradient>
-        <linearGradient id="highlightStroke" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stopColor="transparent" />
-          <stop offset="30%" stopColor="#C9A84C" stopOpacity="0.2" />
-          <stop offset="50%" stopColor="#fff" stopOpacity="0.15" />
-          <stop offset="70%" stopColor="#C9A84C" stopOpacity="0.2" />
-          <stop offset="100%" stopColor="transparent" />
-        </linearGradient>
-      </defs>
-    </svg>
+    </div>
   );
 }
 
@@ -235,7 +111,6 @@ export function HeroSection() {
   });
 
   // Scroll-driven transforms
-  const carRotateY = useTransform(scrollYProgress, [0, 0.5], ["-12deg", "0deg"]);
   const carScale = useTransform(scrollYProgress, [0, 0.3, 0.6], [0.85, 1, 1.05]);
   const lightX = useTransform(scrollYProgress, [0, 0.6], ["-60%", "120%"]);
   const foamOpacity = useTransform(scrollYProgress, [0.2, 0.4, 0.6, 0.8], [0, 1, 1, 0]);
@@ -341,9 +216,7 @@ export function HeroSection() {
             {/* Car with perspective rotation */}
             <motion.div
               style={{
-                rotateY: carRotateY,
                 scale: carScale,
-                perspective: 1200,
               }}
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -352,7 +225,7 @@ export function HeroSection() {
               {/* Car shadow on ground */}
               <div className="absolute -bottom-6 left-[10%] right-[10%] h-[30px] bg-black/50 blur-[25px] rounded-[50%]" />
 
-              <CarSilhouette className="w-full h-auto relative z-10 drop-shadow-[0_20px_60px_rgba(0,0,0,0.8)]" />
+              <SketchfabCar className="w-full aspect-[16/9] relative z-10" />
 
               {/* Paint sheen overlay */}
               <motion.div

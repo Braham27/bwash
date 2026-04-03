@@ -76,7 +76,7 @@ export default async function BookingsPage() {
                       </span>
                       <span className="flex items-center gap-1">
                         <MapPin className="h-3 w-3" />
-                        {b.address.length > 50 ? `${b.address.slice(0, 50)}...` : b.address}
+                        {(b.address ?? "").length > 50 ? `${b.address.slice(0, 50)}...` : (b.address ?? "")}
                       </span>
                     </div>
                     <p className="mt-1 text-xs text-white/30 capitalize">
