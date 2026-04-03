@@ -217,7 +217,7 @@ export default async function DashboardPage() {
                   </div>
                 </div>
                 <Link
-                  href={`/book?rebook=${b.id}&package=${pkg.slug}&vehicle=${b.vehicleType}&address=${encodeURIComponent(b.address)}`}
+                  href={`/book?rebook=${b.id}&package=${pkg.slug}&vehicle=${b.vehicleType}&address=${encodeURIComponent(b.address ?? "")}`}
                   className="btn-primary text-xs px-4 py-2"
                 >
                   Rebook

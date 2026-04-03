@@ -76,7 +76,7 @@ export default async function BookingsPage() {
                       </span>
                       <span className="flex items-center gap-1">
                         <MapPin className="h-3 w-3" />
-                        {(b.address ?? "").length > 50 ? `${b.address.slice(0, 50)}...` : (b.address ?? "")}
+                        {(b.address ?? "").length > 50 ? `${(b.address ?? "").slice(0, 50)}...` : (b.address ?? "")}
                       </span>
                     </div>
                     <p className="mt-1 text-xs text-white/30 capitalize">
@@ -89,7 +89,7 @@ export default async function BookingsPage() {
                   <p className="text-xs text-white/40 capitalize">{b.paymentStatus}</p>
                   {b.status === "completed" && (
                     <Link
-                      href={`/book?rebook=${b.id}&package=${pkg.slug}&vehicle=${b.vehicleType}&address=${encodeURIComponent(b.address)}`}
+                      href={`/book?rebook=${b.id}&package=${pkg.slug}&vehicle=${b.vehicleType}&address=${encodeURIComponent(b.address ?? "")}`}
                       className="inline-flex items-center gap-1.5 text-xs font-medium text-gold hover:text-gold/80 transition-colors"
                     >
                       <RotateCcw className="h-3 w-3" />

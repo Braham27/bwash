@@ -81,13 +81,13 @@ Set these in the [Vercel Dashboard](https://vercel.com/homecares-projects-c9481d
 | Property | Value |
 |---|---|
 | Project | `floral-hill-54541608` |
-| Endpoint | `ep-muddy-glitter-aelo7t2i` |
-| Region | `aws-us-east-2` |
+| Endpoint | `ep-calm-smoke-an5yvii7-pooler` |
+| Region | `aws-us-east-1` |
 | Database | `neondb` |
 | User | `neondb_owner` |
 | Tables | 14 (users, bookings, vehicles, packages, services, invoices, memberships, notifications, etc.) |
 
-**DATABASE_URL format**: `postgresql://neondb_owner:<PASSWORD>@ep-muddy-glitter-aelo7t2i.us-east-2.aws.neon.tech/neondb?sslmode=require`
+**DATABASE_URL format**: `postgresql://neondb_owner:<PASSWORD>@ep-calm-smoke-an5yvii7-pooler.c-6.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require`
 
 > Get the password from the [Neon Console](https://console.neon.tech) → Project → Connection Details → show password
 
