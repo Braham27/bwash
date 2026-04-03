@@ -6,6 +6,5 @@ node_modules/
 .next/
 .env.local
 .env*.local
-# Exclude local prebuild artifacts - EAS runs prebuild remotely
-apps/mobile-customer/android/
-apps/mobile-customer/ios/
+# Include android/ and ios/ from local prebuild so EAS uses correct autolinking
+# (pnpm strict mode causes remote prebuild to resolve packages incorrectly)

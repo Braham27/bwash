@@ -5,8 +5,8 @@
   "scripts": {
     "eas-build-pre-install": "cd ../.. && echo node-linker=hoisted > .npmrc",
     "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
     "web": "expo start --web"
   },
   "dependencies": {
