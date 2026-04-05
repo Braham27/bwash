@@ -6,7 +6,7 @@ import { FadeInStagger, usePressAnimation } from "../components/Animations";
 
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
 
-const GOLD = "#C9A84C";
+const GOLD = "#2563EB";
 const API_URL = process.env.EXPO_PUBLIC_API_URL || "http://localhost:3000";
 
 const PACKAGES = [
@@ -208,7 +208,7 @@ export default function BookScreen() {
             opacity: isBooking ? 0.6 : 1,
           }}
         >
-          <Text style={{ color: "#0A0A0A", fontWeight: "bold", fontSize: 16 }}>
+          <Text style={{ color: "#FFFFFF", fontWeight: "bold", fontSize: 16 }}>
             {isBooking ? "Booking..." : "Confirm Booking"}
           </Text>
         </TouchableOpacity>

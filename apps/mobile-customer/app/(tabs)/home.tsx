@@ -13,7 +13,7 @@ import { Ionicons } from "@expo/vector-icons";
 import AnimatedCar from "../components/AnimatedCar";
 import { FadeInStagger, ScaleIn, usePressAnimation } from "../components/Animations";
 
-const GOLD = "#C9A84C";
+const GOLD = "#2563EB";
 const { width: SCREEN_W } = Dimensions.get("window");
 
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
@@ -154,13 +154,13 @@ export default function HomeScreen() {
               borderRadius: 24,
             }}
           >
-            <Text style={{ fontSize: 13, fontWeight: "700", color: "rgba(0,0,0,0.5)", letterSpacing: 2 }}>
+            <Text style={{ fontSize: 13, fontWeight: "700", color: "rgba(255,255,255,0.7)", letterSpacing: 2 }}>
               PREMIUM
             </Text>
-            <Text style={{ fontSize: 26, fontWeight: "800", color: "#0A0A0A", marginTop: 4 }}>
+            <Text style={{ fontSize: 26, fontWeight: "800", color: "#FFFFFF", marginTop: 4 }}>
               Mobile Car Wash
             </Text>
-            <Text style={{ fontSize: 14, color: "rgba(0,0,0,0.55)", marginTop: 6, lineHeight: 20 }}>
+            <Text style={{ fontSize: 14, color: "rgba(255,255,255,0.75)", marginTop: 6, lineHeight: 20 }}>
               We come to you. Professional detailing at your doorstep.
             </Text>
             <View
@@ -179,7 +179,7 @@ export default function HomeScreen() {
               <Text style={{ color: "#fff", fontWeight: "700", fontSize: 15 }}>Book Now</Text>
               <Ionicons name="arrow-forward" size={16} color="#fff" />
             </View>
-            <Text style={{ fontSize: 12, color: "rgba(0,0,0,0.4)", marginTop: 12 }}>
+            <Text style={{ fontSize: 12, color: "rgba(255,255,255,0.6)", marginTop: 12 }}>
               Starting at $35
             </Text>
           </View>

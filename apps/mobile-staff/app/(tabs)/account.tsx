@@ -2,7 +2,7 @@ import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import { useUser, useAuth } from "@clerk/clerk-expo";
 import { Ionicons } from "@expo/vector-icons";
 
-const GOLD = "#C9A84C";
+const GOLD = "#2563EB";
 
 export default function AccountScreen() {
   const { user } = useUser();

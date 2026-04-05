@@ -14,7 +14,7 @@ import Animated, {
   ZoomIn,
 } from "react-native-reanimated";
 
-const GOLD = "#C9A84C";
+const GOLD = "#2563EB";
 
 /**
  * Staggered fade-in from bottom (like Apple product reveals)

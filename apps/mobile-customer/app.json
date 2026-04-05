@@ -25,11 +25,14 @@
     },
     "plugins": [
       "expo-router",
-      "expo-secure-store"
+      "expo-secure-store",
+      "expo-asset"
     ],
     "extra": {
       "router": {
-        "origin": false
+        "origin": false,
+        "unstable_src": "./app",
+        "exclude": ["components/**"]
       },
       "eas": {
         "projectId": "a2a2e256-13f2-4278-8fe7-1c95d2fc425c"

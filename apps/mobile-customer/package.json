@@ -4,42 +4,45 @@
   "main": "expo-router/entry",
   "scripts": {
     "eas-build-pre-install": "cd ../.. && echo node-linker=hoisted > .npmrc",
-    "start": "expo start",
-    "android": "expo run:android",
-    "ios": "expo run:ios",
-    "web": "expo start --web"
+    "start": "node ../../node_modules/expo/bin/cli start",
+    "android": "node ../../node_modules/expo/bin/cli run:android",
+    "ios": "node ../../node_modules/expo/bin/cli run:ios",
+    "web": "node ../../node_modules/expo/bin/cli start --web"
   },
   "dependencies": {
     "@babel/runtime": "^7.26.0",
     "@clerk/clerk-expo": "^2.3.0",
-    "@expo/vector-icons": "^14.0.4",
-    "expo": "~52.0.0",
-    "expo-asset": "~11.0.0",
-    "expo-auth-session": "~6.0.3",
-    "expo-constants": "~17.0.0",
-    "expo-crypto": "~14.0.2",
-    "expo-linking": "~7.0.0",
-    "expo-router": "~4.0.0",
-    "expo-secure-store": "~14.0.0",
-    "expo-status-bar": "~2.0.0",
-    "expo-web-browser": "~14.0.2",
+    "@expo/vector-icons": "^15.1.1",
+    "expo": "~54.0.33",
+    "expo-asset": "~12.0.12",
+    "expo-auth-session": "~7.0.10",
+    "expo-constants": "~18.0.13",
+    "expo-crypto": "~15.0.8",
+    "expo-linking": "~8.0.11",
+    "expo-router": "~6.0.23",
+    "expo-secure-store": "~15.0.8",
+    "expo-status-bar": "~3.0.9",
+    "expo-web-browser": "~15.0.10",
     "nativewind": "^4.1.0",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.76.9",
-    "react-native-gesture-handler": "~2.20.2",
-    "react-native-reanimated": "~3.16.1",
-    "react-native-safe-area-context": "4.12.0",
-    "react-native-screens": "~4.4.0",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-native": "0.81.5",
+    "react-native-gesture-handler": "~2.28.0",
+    "react-native-reanimated": "~4.1.7",
+    "react-native-safe-area-context": "5.6.2",
+    "react-native-worklets": "0.5.1",
+    "react-native-screens": "~4.16.0",
     "tailwindcss": "^3.4.0"
   },
   "devDependencies": {
     "@types/react": "~18.3.12",
-    "typescript": "~5.6.0"
+    "typescript": "~5.9.3"
   },
   "expo": {
     "install": {
-      "exclude": ["@types/react"]
+      "exclude": [
+        "@types/react"
+      ]
     }
   }
 }

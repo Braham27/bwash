@@ -12,7 +12,7 @@ import Animated, {
 } from "react-native-reanimated";
 import { Ionicons } from "@expo/vector-icons";
 
-const GOLD = "#C9A84C";
+const GOLD = "#2563EB";
 
 /**
  * Water droplet that falls and fades

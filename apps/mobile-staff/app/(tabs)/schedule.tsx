@@ -2,7 +2,7 @@ import { View, Text, ScrollView, RefreshControl } from "react-native";
 import { useState, useCallback, useEffect } from "react";
 import { useAuth } from "@clerk/clerk-expo";
 
-const GOLD = "#C9A84C";
+const GOLD = "#2563EB";
 const API_URL = process.env.EXPO_PUBLIC_API_URL || "http://localhost:3000";
 
 interface Job {

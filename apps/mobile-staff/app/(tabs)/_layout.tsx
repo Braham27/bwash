@@ -1,7 +1,7 @@
 import { Tabs } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 
-const GOLD = "#C9A84C";
+const GOLD = "#2563EB";
 const DIM = "rgba(255,255,255,0.3)";
 
 export default function TabsLayout() {

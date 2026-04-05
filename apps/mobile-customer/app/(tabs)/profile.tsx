@@ -5,7 +5,7 @@ import { useRouter } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { FadeInStagger } from "../components/Animations";
 
-const GOLD = "#C9A84C";
+const GOLD = "#2563EB";
 
 export default function ProfileScreen() {
   const { user } = useUser();

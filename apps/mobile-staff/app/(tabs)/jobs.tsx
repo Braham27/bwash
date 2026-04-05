@@ -3,7 +3,7 @@ import { useState, useCallback, useEffect } from "react";
 import { useAuth } from "@clerk/clerk-expo";
 import { Ionicons } from "@expo/vector-icons";
 
-const GOLD = "#C9A84C";
+const GOLD = "#2563EB";
 const API_URL = process.env.EXPO_PUBLIC_API_URL || "http://localhost:3000";
 
 interface Job {

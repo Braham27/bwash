@@ -33,7 +33,7 @@ function AuthGuard() {
     const inAuth = segments[0] === "(auth)";
 
     if (!isSignedIn && !inAuth) {
-      router.replace("/(auth)/sign-in");
+      router.replace("/(auth)/welcome");
     } else if (isSignedIn && inAuth) {
       router.replace("/(tabs)/jobs");
     }
