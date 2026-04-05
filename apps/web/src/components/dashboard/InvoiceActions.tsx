@@ -183,13 +183,13 @@ function InvoicePreviewContent({
           body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 40px; color: #111; }
           .header { display: flex; justify-content: space-between; margin-bottom: 32px; }
           .brand { font-size: 28px; font-weight: bold; }
-          .brand span { color: #C9A84C; }
+          .brand span { color: #2563EB; }
           .meta { font-size: 13px; color: #666; }
           table { width: 100%; border-collapse: collapse; margin: 20px 0; }
           th { text-align: left; border-bottom: 2px solid #ddd; padding: 10px 0; font-size: 12px; text-transform: uppercase; color: #888; }
           td { padding: 10px 0; border-bottom: 1px solid #eee; font-size: 14px; }
           .total-row td { border-bottom: none; font-weight: bold; font-size: 16px; }
-          .total-amount { color: #C9A84C; font-size: 20px; }
+          .total-amount { color: #2563EB; font-size: 20px; }
           .status { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; }
           .status-paid { background: #dcfce7; color: #166534; }
           .status-pending { background: #fef9c3; color: #854d0e; }

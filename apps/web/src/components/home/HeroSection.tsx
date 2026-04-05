@@ -87,7 +87,7 @@ export function HeroSection() {
             style={{
               left: sweepX,
               background:
-                "linear-gradient(90deg, transparent, rgba(255,255,255,0.025), rgba(201,168,76,0.015), transparent)",
+                "linear-gradient(90deg, transparent, rgba(255,255,255,0.025), rgba(37,99,235,0.015), transparent)",
               filter: "blur(50px)",
             }}
           />
@@ -143,7 +143,7 @@ export function HeroSection() {
             >
               <Link
                 href="/book"
-                className="group inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-semibold text-black shadow-[0_0_20px_rgba(201,168,76,0.15)] transition-all duration-300 hover:shadow-[0_0_40px_rgba(201,168,76,0.3)] hover:bg-gold/90"
+                className="group inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-semibold text-white shadow-[0_0_20px_rgba(37,99,235,0.15)] transition-all duration-300 hover:shadow-[0_0_40px_rgba(37,99,235,0.3)] hover:bg-gold/90"
               >
                 Book Now
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />

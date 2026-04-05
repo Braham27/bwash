@@ -1,0 +1,48 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - complementary [ref=e3]:
+      - generic [ref=e4]:
+        - img [ref=e5]
+        - generic [ref=e7]: BWash
+      - navigation [ref=e8]:
+        - link "Overview" [ref=e9] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e10]
+          - text: Overview
+        - link "Bookings" [ref=e15] [cursor=pointer]:
+          - /url: /dashboard/bookings
+          - img [ref=e16]
+          - text: Bookings
+        - link "Vehicles" [ref=e18] [cursor=pointer]:
+          - /url: /dashboard/vehicles
+          - img [ref=e19]
+          - text: Vehicles
+        - link "Invoices" [ref=e23] [cursor=pointer]:
+          - /url: /dashboard/invoices
+          - img [ref=e24]
+          - text: Invoices
+        - link "Membership" [ref=e27] [cursor=pointer]:
+          - /url: /dashboard/membership
+          - img [ref=e28]
+          - text: Membership
+        - link "Notifications" [ref=e30] [cursor=pointer]:
+          - /url: /dashboard/notifications
+          - img [ref=e31]
+          - text: Notifications
+        - link "Profile" [ref=e34] [cursor=pointer]:
+          - /url: /dashboard/profile
+          - img [ref=e35]
+          - text: Profile
+      - link "← Back to Website" [ref=e39] [cursor=pointer]:
+        - /url: /
+    - main [ref=e40]:
+      - generic [ref=e43]:
+        - generic [ref=e45]:
+          - heading "My Invoices" [level=1] [ref=e46]
+          - paragraph [ref=e47]: Create, preview, and send your invoices
+        - generic [ref=e48]:
+          - img [ref=e50]
+          - heading "No invoices yet" [level=3] [ref=e53]
+          - paragraph [ref=e54]: Your invoices will appear here after your first completed service.
+  - region "Notifications alt+T"
+  - alert [ref=e55]

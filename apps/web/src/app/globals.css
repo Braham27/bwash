@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-gold: #C9A84C;
-  --color-gold-light: #D4B86A;
-  --color-gold-dark: #A8893E;
+  --color-gold: #2563EB;
+  --color-gold-light: #60A5FA;
+  --color-gold-dark: #1D4ED8;
   --color-luxury-black: #0A0A0A;
   --color-luxury-dark: #111111;
   --color-luxury-gray: #1A1A1A;
@@ -35,7 +35,7 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-gold px-6 py-3 text-sm font-semibold text-black transition-all duration-300 hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20 active:scale-[0.98];
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-gold px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20 active:scale-[0.98];
   }
 
   .btn-secondary {

@@ -16,7 +16,7 @@ export function FloatingButtons() {
       </a>
       <a
         href="tel:+13055559274"
-        className="flex h-14 w-14 items-center justify-center rounded-full bg-gold text-black shadow-lg shadow-gold/30 transition-all duration-300 hover:scale-110 hover:shadow-xl"
+        className="flex h-14 w-14 items-center justify-center rounded-full bg-gold text-white shadow-lg shadow-gold/30 transition-all duration-300 hover:scale-110 hover:shadow-xl"
         aria-label="Call us"
       >
         <Phone className="h-6 w-6" />

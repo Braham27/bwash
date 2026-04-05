@@ -216,7 +216,7 @@ export function BookingForm() {
                   className={cn(
                     "rounded-lg px-4 py-2 text-sm font-medium transition-all",
                     form.tipAmount === String(amount)
-                      ? "bg-gold text-black"
+                      ? "bg-gold text-white"
                       : "border border-gold/30 text-gold hover:bg-gold/10"
                   )}
                 >

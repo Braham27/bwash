@@ -35,7 +35,7 @@ export default function RootLayout({
       appearance={{
         baseTheme: dark,
         variables: {
-          colorPrimary: "#C9A84C",
+          colorPrimary: "#2563EB",
           colorBackground: "#111111",
           colorInputBackground: "#1A1A1A",
           colorText: "#FFFFFF",

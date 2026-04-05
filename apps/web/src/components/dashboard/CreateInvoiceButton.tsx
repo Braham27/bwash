@@ -67,7 +67,7 @@ export function CreateInvoiceButton({
     <>
       <button
         onClick={() => setOpen(true)}
-        className="inline-flex items-center gap-2 rounded-lg bg-gold px-4 py-2.5 text-sm font-semibold text-black transition-all hover:bg-gold/90 hover:shadow-lg hover:shadow-gold/20"
+        className="inline-flex items-center gap-2 rounded-lg bg-gold px-4 py-2.5 text-sm font-semibold text-white transition-all hover:bg-gold/90 hover:shadow-lg hover:shadow-gold/20"
       >
         <Plus className="h-4 w-4" />
         Create Invoice

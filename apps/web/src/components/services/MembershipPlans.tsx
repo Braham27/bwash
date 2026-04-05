@@ -82,7 +82,7 @@ export function MembershipPlans() {
               >
                 {plan.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="rounded-full bg-gold px-4 py-1 text-xs font-bold text-black">
+                    <span className="rounded-full bg-gold px-4 py-1 text-xs font-bold text-white">
                       BEST VALUE
                     </span>
                   </div>
@@ -149,7 +149,7 @@ export function MembershipPlans() {
                   className={cn(
                     "mt-8 flex w-full items-center justify-center gap-2 rounded-lg py-3.5 text-sm font-semibold transition-all duration-300 group",
                     plan.popular
-                      ? "bg-gold text-black hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20"
+                      ? "bg-gold text-white hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20"
                       : "border border-gold/30 text-gold hover:bg-gold/10"
                   )}
                 >

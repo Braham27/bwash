@@ -89,7 +89,7 @@ export default async function InvoicesPage() {
             eligibleBookings.length === 0 ? (
               <a
                 href="/book"
-                className="inline-flex items-center gap-2 rounded-lg bg-gold px-6 py-3 text-sm font-semibold text-black transition-all hover:bg-gold/90 hover:shadow-lg hover:shadow-gold/20"
+                className="inline-flex items-center gap-2 rounded-lg bg-gold px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-gold/90 hover:shadow-lg hover:shadow-gold/20"
               >
                 Book a Service
               </a>

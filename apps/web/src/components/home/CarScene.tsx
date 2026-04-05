@@ -23,7 +23,7 @@ function Ferrari() {
     });
 
     const detailsMaterial = new THREE.MeshStandardMaterial({
-      color: new THREE.Color(0xc9a84c),
+      color: new THREE.Color(0x2563eb),
       metalness: 1,
       roughness: 0.5,
     });
@@ -124,7 +124,7 @@ export default function CarScene({
         angle={0.4}
         penumbra={1}
         intensity={0.5}
-        color="#C9A84C"
+        color="#2563EB"
       />
 
       {/* Car */}
