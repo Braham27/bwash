@@ -39,7 +39,7 @@ export function TestimonialsSection() {
             <p className="text-sm font-semibold uppercase tracking-widest text-gold">
               Testimonials
             </p>
-            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
+            <h2 className="mt-3 text-3xl font-bold text-gray-900 sm:text-4xl">
               What Our Clients Say
             </h2>
 
@@ -50,8 +50,8 @@ export function TestimonialsSection() {
                   <Star key={s} className="h-5 w-5 fill-gold text-gold" />
                 ))}
               </div>
-              <span className="text-sm text-white/50">
-                <strong className="text-white">4.9</strong> out of 5 based on 200+ reviews
+              <span className="text-sm text-gray-500">
+                <strong className="text-gray-900">4.9</strong> out of 5 based on 200+ reviews
               </span>
             </div>
           </div>
@@ -68,20 +68,20 @@ export function TestimonialsSection() {
                     <Star
                       key={s}
                       className={`h-4 w-4 ${
-                        s <= t.rating ? "fill-gold text-gold" : "text-white/20"
+                        s <= t.rating ? "fill-gold text-gold" : "text-gray-200"
                       }`}
                     />
                   ))}
                 </div>
 
-                <p className="text-sm text-white/70 leading-relaxed">
+                <p className="text-sm text-gray-600 leading-relaxed">
                   &ldquo;{t.text}&rdquo;
                 </p>
 
                 <div className="mt-4 flex items-center justify-between border-t border-luxury-border pt-4">
                   <div>
-                    <p className="text-sm font-semibold text-white">{t.name}</p>
-                    <p className="text-xs text-white/40">{t.vehicle} Owner</p>
+                    <p className="text-sm font-semibold text-gray-900">{t.name}</p>
+                    <p className="text-xs text-gray-400">{t.vehicle} Owner</p>
                   </div>
                 </div>
               </div>

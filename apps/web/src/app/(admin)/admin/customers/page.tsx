@@ -21,7 +21,7 @@ export default async function AdminCustomersPage() {
     <div className="space-y-8">
       <div>
         <h1 className="text-2xl font-bold">Customers</h1>
-        <p className="mt-1 text-sm text-white/50">
+        <p className="mt-1 text-sm text-gray-500">
           {customers.length} registered customer{customers.length !== 1 ? "s" : ""}
         </p>
       </div>
@@ -42,7 +42,7 @@ export default async function AdminCustomersPage() {
             <TableBody>
               {customers.length === 0 ? (
                 <TableRow>
-                  <TableCell colSpan={6} className="text-center text-white/40 py-8">
+                  <TableCell colSpan={6} className="text-center text-gray-400 py-8">
                     No customers yet
                   </TableCell>
                 </TableRow>
@@ -52,13 +52,13 @@ export default async function AdminCustomersPage() {
                     <TableCell className="font-medium">
                       {u.firstName} {u.lastName}
                     </TableCell>
-                    <TableCell className="text-sm text-white/60">{u.email}</TableCell>
-                    <TableCell className="text-sm text-white/60">{u.phone || "—"}</TableCell>
+                    <TableCell className="text-sm text-gray-600">{u.email}</TableCell>
+                    <TableCell className="text-sm text-gray-600">{u.phone || "—"}</TableCell>
                     <TableCell>
                       <Badge variant={bookingCount > 0 ? "gold" : "default"}>{bookingCount}</Badge>
                     </TableCell>
                     <TableCell className="text-sm">{vehicleCount}</TableCell>
-                    <TableCell className="text-sm text-white/40">{formatDate(u.createdAt)}</TableCell>
+                    <TableCell className="text-sm text-gray-400">{formatDate(u.createdAt)}</TableCell>
                   </TableRow>
                 ))
               )}

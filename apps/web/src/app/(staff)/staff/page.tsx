@@ -63,7 +63,7 @@ export default async function StaffJobsPage() {
     <div className="space-y-8">
       <div>
         <h1 className="text-2xl font-bold">My Jobs</h1>
-        <p className="mt-1 text-sm text-white/50">
+        <p className="mt-1 text-sm text-gray-500">
           {activeJobs.length} active • {completedToday.length} completed today
         </p>
       </div>
@@ -95,7 +95,7 @@ export default async function StaffJobsPage() {
                   <p className="text-lg font-bold text-gold">{formatCurrency(b.price)}</p>
                 </div>
 
-                <div className="grid gap-2 text-sm text-white/50">
+                <div className="grid gap-2 text-sm text-gray-500">
                   <div className="flex items-center gap-2">
                     <User className="h-3.5 w-3.5" />
                     <span>
@@ -129,7 +129,7 @@ export default async function StaffJobsPage() {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="font-medium text-sm">{pkg.name}</p>
-                    <p className="text-xs text-white/40 capitalize">
+                    <p className="text-xs text-gray-400 capitalize">
                       {b.vehicleType} • {formatTime(b.preferredTime)}
                     </p>
                   </div>

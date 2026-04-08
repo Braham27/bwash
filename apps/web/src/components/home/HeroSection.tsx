@@ -8,7 +8,7 @@ export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background gradient effect */}
-      <div className="absolute inset-0 bg-gradient-to-b from-luxury-black via-luxury-black to-luxury-dark" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-white to-luxury-dark" />
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-gold/5 blur-[150px]" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 py-32 text-center sm:px-6 lg:px-8">
@@ -26,13 +26,13 @@ export function HeroSection() {
           </div>
 
           {/* Headline */}
-          <h1 className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+          <h1 className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-7xl">
             Premium Mobile Car Wash{" "}
             <span className="text-gradient-gold">at Your Doorstep</span>
           </h1>
 
           {/* Subheadline */}
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-white/50 sm:text-xl">
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-500 sm:text-xl">
             We bring the shine to you — fast, reliable, and professional.
             Experience luxury car care without leaving your home or office.
           </p>
@@ -60,7 +60,7 @@ export function HeroSection() {
             ].map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="text-2xl font-bold text-gold sm:text-3xl">{stat.value}</div>
-                <div className="mt-1 text-xs text-white/40 sm:text-sm">{stat.label}</div>
+                <div className="mt-1 text-xs text-gray-400 sm:text-sm">{stat.label}</div>
               </div>
             ))}
           </div>

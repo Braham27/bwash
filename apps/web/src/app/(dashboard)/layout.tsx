@@ -8,11 +8,11 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-luxury-black">
+    <div className="min-h-screen bg-luxury-dark">
       <DashboardSidebar />
 
       {/* Mobile Header */}
-      <div className="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-luxury-border bg-luxury-dark/90 px-4 backdrop-blur-xl lg:hidden">
+      <div className="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-luxury-border bg-white/90 px-4 backdrop-blur-xl lg:hidden">
         <DashboardMobileNav />
         <UserButton afterSignOutUrl="/" />
       </div>
@@ -20,7 +20,7 @@ export default function DashboardLayout({
       {/* Main Content */}
       <main className="lg:pl-64">
         {/* Desktop Header */}
-        <div className="hidden lg:flex h-16 items-center justify-end border-b border-luxury-border bg-luxury-dark/50 px-8">
+        <div className="hidden lg:flex h-16 items-center justify-end border-b border-luxury-border bg-white/50 px-8">
           <UserButton afterSignOutUrl="/" />
         </div>
 

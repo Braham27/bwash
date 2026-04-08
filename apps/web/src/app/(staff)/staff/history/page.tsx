@@ -36,7 +36,7 @@ export default async function StaffHistoryPage() {
     <div className="space-y-8">
       <div>
         <h1 className="text-2xl font-bold">Job History</h1>
-        <p className="mt-1 text-sm text-white/50">{completedJobs.length} completed jobs</p>
+        <p className="mt-1 text-sm text-gray-500">{completedJobs.length} completed jobs</p>
       </div>
 
       {completedJobs.length === 0 ? (
@@ -52,7 +52,7 @@ export default async function StaffHistoryPage() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="font-medium text-sm">{pkg.name}</p>
-                  <p className="text-xs text-white/40 mt-1 capitalize">
+                  <p className="text-xs text-gray-400 mt-1 capitalize">
                     {b.vehicleType} • {formatDate(b.completedAt!)} • {formatTime(b.preferredTime)}
                   </p>
                 </div>

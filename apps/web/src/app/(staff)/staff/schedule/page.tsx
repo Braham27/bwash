@@ -46,7 +46,7 @@ export default async function StaffSchedulePage() {
     <div className="space-y-8">
       <div>
         <h1 className="text-2xl font-bold">Schedule</h1>
-        <p className="mt-1 text-sm text-white/50">Upcoming assigned jobs</p>
+        <p className="mt-1 text-sm text-gray-500">Upcoming assigned jobs</p>
       </div>
 
       {upcomingJobs.length === 0 ? (
@@ -67,7 +67,7 @@ export default async function StaffSchedulePage() {
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="font-medium text-sm">{pkg.name}</p>
-                      <div className="flex items-center gap-3 text-xs text-white/40 mt-1">
+                      <div className="flex items-center gap-3 text-xs text-gray-400 mt-1">
                         <span className="flex items-center gap-1">
                           <Clock className="h-3 w-3" />
                           {formatTime(b.preferredTime)}

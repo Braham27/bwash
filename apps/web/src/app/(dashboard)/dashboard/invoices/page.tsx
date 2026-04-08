@@ -34,7 +34,7 @@ export default async function InvoicesPage() {
     <div className="space-y-8">
       <div>
         <h1 className="text-2xl font-bold">My Invoices</h1>
-        <p className="mt-1 text-sm text-white/50">View your payment history</p>
+        <p className="mt-1 text-sm text-gray-500">View your payment history</p>
       </div>
 
       {userInvoices.length === 0 ? (
@@ -54,7 +54,7 @@ export default async function InvoicesPage() {
                   </div>
                   <div>
                     <p className="font-semibold">Invoice #{inv.invoiceNumber}</p>
-                    <p className="mt-1 text-xs text-white/40">
+                    <p className="mt-1 text-xs text-gray-400">
                       {formatDate(inv.createdAt)}
                     </p>
                   </div>

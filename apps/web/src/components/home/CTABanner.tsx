@@ -7,19 +7,19 @@ import { ArrowRight, Sparkles } from "lucide-react";
 export function CTABanner() {
   return (
     <section className="relative overflow-hidden">
-      {/* Gold gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-gold-dark/20 via-gold/10 to-gold-dark/20" />
+      {/* Blue gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-r from-gold-dark/10 via-gold/5 to-gold-dark/10" />
       <div className="absolute inset-0 bg-luxury-dark/80" />
 
       <div className="relative section-padding">
         <div className="mx-auto max-w-3xl text-center">
           <ScrollReveal>
             <Sparkles className="mx-auto mb-6 h-10 w-10 text-gold" />
-            <h2 className="text-3xl font-bold sm:text-4xl lg:text-5xl">
+            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl">
               Book your wash today and{" "}
               <span className="text-gradient-gold">drive clean!</span>
             </h2>
-            <p className="mt-4 text-lg text-white/50">
+            <p className="mt-4 text-lg text-gray-500">
               Schedule your premium mobile car wash in under 60 seconds.
             </p>
             <div className="mt-8">

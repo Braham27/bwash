@@ -53,13 +53,13 @@ export function PricingCards() {
                 className={cn(
                   "relative rounded-2xl border p-8 transition-all duration-300 hover:-translate-y-1",
                   pkg.popular
-                    ? "border-gold/50 bg-gradient-to-b from-gold/10 to-luxury-surface shadow-2xl shadow-gold/10"
-                    : "border-luxury-border bg-luxury-surface hover:border-gold/30"
+                    ? "border-gold/50 bg-gradient-to-b from-gold/5 to-white shadow-lg shadow-gold/10"
+                    : "border-luxury-border bg-white hover:border-gold/30 hover:shadow-lg"
                 )}
               >
                 {pkg.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="rounded-full bg-gold px-4 py-1 text-xs font-bold text-black">
+                    <span className="rounded-full bg-gold px-4 py-1 text-xs font-bold text-white">
                       MOST POPULAR
                     </span>
                   </div>
@@ -69,11 +69,11 @@ export function PricingCards() {
                   <pkg.icon
                     className={cn(
                       "mx-auto h-10 w-10 mb-4",
-                      pkg.popular ? "text-gold" : "text-white/30"
+                      pkg.popular ? "text-gold" : "text-gray-300"
                     )}
                   />
-                  <h3 className="text-xl font-bold">{pkg.name}</h3>
-                  <p className="mt-2 text-sm text-white/50">{pkg.description}</p>
+                  <h3 className="text-xl font-bold text-gray-900">{pkg.name}</h3>
+                  <p className="mt-2 text-sm text-gray-500">{pkg.description}</p>
                 </div>
 
                 {/* Prices */}
@@ -81,9 +81,9 @@ export function PricingCards() {
                   {(["sedan", "suv", "truck"] as const).map((type) => (
                     <div
                       key={type}
-                      className="flex items-center justify-between rounded-lg bg-luxury-gray/50 px-4 py-2.5"
+                      className="flex items-center justify-between rounded-lg bg-luxury-gray px-4 py-2.5"
                     >
-                      <span className="text-sm capitalize text-white/70">{type}</span>
+                      <span className="text-sm capitalize text-gray-600">{type}</span>
                       <span className="text-lg font-bold text-gold">
                         ${pkg.prices[type]}
                       </span>
@@ -96,7 +96,7 @@ export function PricingCards() {
                   {pkg.features.map((f) => (
                     <li key={f} className="flex items-start gap-3 text-sm">
                       <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold" />
-                      <span className="text-white/70">{f}</span>
+                      <span className="text-gray-600">{f}</span>
                     </li>
                   ))}
                 </ul>
@@ -107,8 +107,8 @@ export function PricingCards() {
                   className={cn(
                     "mt-8 flex w-full items-center justify-center gap-2 rounded-lg py-3.5 text-sm font-semibold transition-all duration-300 group",
                     pkg.popular
-                      ? "bg-gold text-black hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20"
-                      : "border border-gold/30 text-gold hover:bg-gold/10"
+                      ? "bg-gold text-white hover:bg-gold-light hover:shadow-lg hover:shadow-gold/25"
+                      : "border border-gold/30 text-gold hover:bg-gold/5"
                   )}
                 >
                   Book Now

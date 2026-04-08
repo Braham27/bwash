@@ -35,7 +35,7 @@ export function WhyChooseUs() {
             <p className="text-sm font-semibold uppercase tracking-widest text-gold">
               Why BWash
             </p>
-            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
+            <h2 className="mt-3 text-3xl font-bold text-gray-900 sm:text-4xl">
               Why Choose Us
             </h2>
           </div>
@@ -48,8 +48,8 @@ export function WhyChooseUs() {
                 <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl border border-gold/20 bg-gold/5 transition-all duration-300 group-hover:bg-gold/10 group-hover:border-gold/40 group-hover:scale-110">
                   <item.icon className="h-7 w-7 text-gold" />
                 </div>
-                <h3 className="text-base font-semibold">{item.title}</h3>
-                <p className="mt-2 text-sm text-white/50 leading-relaxed">
+                <h3 className="text-base font-semibold text-gray-900">{item.title}</h3>
+                <p className="mt-2 text-sm text-gray-500 leading-relaxed">
                   {item.description}
                 </p>
               </div>

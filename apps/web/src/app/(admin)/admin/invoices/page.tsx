@@ -39,17 +39,17 @@ export default async function AdminInvoicesPage() {
     <div className="space-y-8">
       <div>
         <h1 className="text-2xl font-bold">Invoices</h1>
-        <p className="mt-1 text-sm text-white/50">Manage invoices and payments</p>
+        <p className="mt-1 text-sm text-gray-500">Manage invoices and payments</p>
       </div>
 
       {/* Revenue Summary */}
       <div className="grid gap-4 sm:grid-cols-2">
         <Card className="p-5">
-          <p className="text-xs text-white/40 uppercase tracking-wider">Total Collected</p>
+          <p className="text-xs text-gray-400 uppercase tracking-wider">Total Collected</p>
           <p className="text-2xl font-bold text-emerald-400 mt-1">{formatCurrency(total)}</p>
         </Card>
         <Card className="p-5">
-          <p className="text-xs text-white/40 uppercase tracking-wider">Pending</p>
+          <p className="text-xs text-gray-400 uppercase tracking-wider">Pending</p>
           <p className="text-2xl font-bold text-amber-400 mt-1">{formatCurrency(pending)}</p>
         </Card>
       </div>
@@ -73,7 +73,7 @@ export default async function AdminInvoicesPage() {
             <TableBody>
               {allInvoices.length === 0 ? (
                 <TableRow>
-                  <TableCell colSpan={8} className="text-center text-white/40 py-8">
+                  <TableCell colSpan={8} className="text-center text-gray-400 py-8">
                     No invoices found
                   </TableCell>
                 </TableRow>
@@ -84,7 +84,7 @@ export default async function AdminInvoicesPage() {
                     <TableCell className="text-sm">
                       {u ? `${u.firstName} ${u.lastName}` : "—"}
                     </TableCell>
-                    <TableCell className="text-sm text-white/60">{formatDate(inv.createdAt)}</TableCell>
+                    <TableCell className="text-sm text-gray-500">{formatDate(inv.createdAt)}</TableCell>
                     <TableCell className="text-sm">{formatCurrency(inv.subtotal)}</TableCell>
                     <TableCell className="text-sm">{formatCurrency(inv.taxAmount || "0")}</TableCell>
                     <TableCell className="font-bold text-gold text-sm">{formatCurrency(inv.total)}</TableCell>

@@ -50,7 +50,7 @@ export default async function MembershipPage() {
     <div className="space-y-8">
       <div>
         <h1 className="text-2xl font-bold">Membership</h1>
-        <p className="mt-1 text-sm text-white/50">Manage your wash plans</p>
+        <p className="mt-1 text-sm text-gray-500">Manage your wash plans</p>
       </div>
 
       {/* Active Membership */}
@@ -65,7 +65,7 @@ export default async function MembershipPage() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold">{plan.name}</h3>
-                    <p className="text-sm text-white/50">{pkg.name} • {plan.interval}</p>
+                    <p className="text-sm text-gray-500">{pkg.name} • {plan.interval}</p>
                   </div>
                 </div>
                 <Badge
@@ -77,15 +77,15 @@ export default async function MembershipPage() {
 
               <div className="mt-6 grid gap-4 sm:grid-cols-3 border-t border-luxury-border pt-6">
                 <div>
-                  <p className="text-xs text-white/40 uppercase tracking-wider">Price</p>
+                  <p className="text-xs text-gray-400 uppercase tracking-wider">Price</p>
                   <p className="mt-1 text-lg font-bold text-gold">{formatCurrency(m.price)}/mo</p>
                 </div>
                 <div>
-                  <p className="text-xs text-white/40 uppercase tracking-wider">Start Date</p>
+                  <p className="text-xs text-gray-400 uppercase tracking-wider">Start Date</p>
                   <p className="mt-1 text-sm">{formatDate(m.startDate)}</p>
                 </div>
                 <div>
-                  <p className="text-xs text-white/40 uppercase tracking-wider">Next Service</p>
+                  <p className="text-xs text-gray-400 uppercase tracking-wider">Next Service</p>
                   <p className="mt-1 text-sm">{m.nextServiceDate ? formatDate(m.nextServiceDate) : "—"}</p>
                 </div>
               </div>
@@ -111,22 +111,22 @@ export default async function MembershipPage() {
                 <Package className="h-5 w-5 text-gold" />
                 <h3 className="font-semibold">{plan.name}</h3>
               </div>
-              <p className="text-sm text-white/50">{plan.description}</p>
+              <p className="text-sm text-gray-500">{plan.description}</p>
               <div className="mt-4 space-y-2">
                 <div className="flex justify-between text-sm">
-                  <span className="text-white/40">Sedan</span>
+                  <span className="text-gray-400">Sedan</span>
                   <span className="font-medium text-gold">{formatCurrency(plan.sedanPrice)}/mo</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-white/40">SUV</span>
+                  <span className="text-gray-400">SUV</span>
                   <span className="font-medium text-gold">{formatCurrency(plan.suvPrice)}/mo</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-white/40">Truck</span>
+                  <span className="text-gray-400">Truck</span>
                   <span className="font-medium text-gold">{formatCurrency(plan.truckPrice)}/mo</span>
                 </div>
               </div>
-              <p className="mt-3 text-xs text-white/30 capitalize">
+              <p className="mt-3 text-xs text-gray-400 capitalize">
                 {pkg.name} • {plan.interval}
               </p>
               <SubscribeButton

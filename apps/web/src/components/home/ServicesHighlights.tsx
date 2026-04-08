@@ -37,7 +37,7 @@ export function ServicesHighlights() {
             <p className="text-sm font-semibold uppercase tracking-widest text-gold">
               Our Services
             </p>
-            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
+            <h2 className="mt-3 text-3xl font-bold text-gray-900 sm:text-4xl">
               Premium Packages for Every Need
             </h2>
           </div>
@@ -55,14 +55,14 @@ export function ServicesHighlights() {
                     <svc.icon className="h-7 w-7 text-gold" />
                   </div>
 
-                  <h3 className="text-xl font-semibold">{svc.title}</h3>
-                  <p className="mt-3 text-sm text-white/50 leading-relaxed">
+                  <h3 className="text-xl font-semibold text-gray-900">{svc.title}</h3>
+                  <p className="mt-3 text-sm text-gray-500 leading-relaxed">
                     {svc.description}
                   </p>
 
                   <div className="mt-6 flex items-end justify-between">
                     <div>
-                      <span className="text-xs text-white/40">Starting at</span>
+                      <span className="text-xs text-gray-400">Starting at</span>
                       <p className="text-2xl font-bold text-gold">{svc.starting}</p>
                     </div>
                     <Link

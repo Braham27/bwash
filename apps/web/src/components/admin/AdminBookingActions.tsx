@@ -75,7 +75,7 @@ export function AdminBookingActions({
   }
 
   if (available.length === 0 && currentStatus !== "completed") {
-    return <span className="text-xs text-white/30">—</span>;
+    return <span className="text-xs text-gray-400">—</span>;
   }
 
   return (

@@ -39,18 +39,18 @@ export function Modal({ isOpen, onClose, title, children, className }: ModalProp
         if (e.target === overlayRef.current) onClose();
       }}
     >
-      <div className="fixed inset-0 bg-black/60 backdrop-blur-sm" />
+      <div className="fixed inset-0 bg-black/30 backdrop-blur-sm" />
       <div
         className={cn(
-          "relative z-10 w-full max-w-lg rounded-2xl border border-luxury-border bg-luxury-dark p-6 shadow-2xl",
+          "relative z-10 w-full max-w-lg rounded-2xl border border-luxury-border bg-white p-6 shadow-2xl",
           className
         )}
       >
         <div className="mb-4 flex items-center justify-between">
-          {title && <h2 className="text-lg font-semibold text-white">{title}</h2>}
+          {title && <h2 className="text-lg font-semibold text-gray-900">{title}</h2>}
           <button
             onClick={onClose}
-            className="rounded-lg p-1.5 text-white/50 transition hover:bg-white/5 hover:text-white"
+            className="rounded-lg p-1.5 text-gray-400 transition hover:bg-gray-100 hover:text-gray-600"
           >
             <X className="h-5 w-5" />
           </button>

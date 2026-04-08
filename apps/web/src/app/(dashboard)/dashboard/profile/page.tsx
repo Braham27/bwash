@@ -20,7 +20,7 @@ export default async function ProfilePage() {
     <div className="space-y-8">
       <div>
         <h1 className="text-2xl font-bold">My Profile</h1>
-        <p className="mt-1 text-sm text-white/50">View and manage your account details</p>
+        <p className="mt-1 text-sm text-gray-500">View and manage your account details</p>
       </div>
 
       <Card className="p-6">
@@ -52,16 +52,16 @@ export default async function ProfilePage() {
 
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="flex items-center gap-3 text-sm">
-                <Mail className="h-4 w-4 text-white/30" />
-                <span className="text-white/70">{user.email}</span>
+                <Mail className="h-4 w-4 text-gray-400" />
+                <span className="text-gray-600">{user.email}</span>
               </div>
               <div className="flex items-center gap-3 text-sm">
-                <Phone className="h-4 w-4 text-white/30" />
-                <span className="text-white/70">{user.phone || "Not provided"}</span>
+                <Phone className="h-4 w-4 text-gray-400" />
+                <span className="text-gray-600">{user.phone || "Not provided"}</span>
               </div>
               <div className="flex items-center gap-3 text-sm">
-                <Calendar className="h-4 w-4 text-white/30" />
-                <span className="text-white/70">Joined {formatDate(user.createdAt)}</span>
+                <Calendar className="h-4 w-4 text-gray-400" />
+                <span className="text-gray-600">Joined {formatDate(user.createdAt)}</span>
               </div>
             </div>
           </div>
@@ -70,7 +70,7 @@ export default async function ProfilePage() {
 
       <Card className="p-6">
         <CardTitle className="mb-4">Account Settings</CardTitle>
-        <p className="text-sm text-white/50">
+        <p className="text-sm text-gray-500">
           To update your name, email, password, or profile picture, use the Clerk account
           manager by clicking on your avatar in the top right corner.
         </p>

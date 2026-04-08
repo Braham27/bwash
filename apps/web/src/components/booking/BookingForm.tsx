@@ -114,8 +114,8 @@ export function BookingForm() {
     return (
       <Card className="text-center py-16">
         <CheckCircle className="mx-auto h-16 w-16 text-gold mb-6" />
-        <h2 className="text-2xl font-bold">Thank You!</h2>
-        <p className="mt-3 text-white/50 max-w-md mx-auto">
+        <h2 className="text-2xl font-bold text-gray-900">Thank You!</h2>
+        <p className="mt-3 text-gray-500 max-w-md mx-auto">
           Your appointment request has been received. We will contact you
           shortly to confirm your booking.
         </p>
@@ -195,8 +195,8 @@ export function BookingForm() {
         </div>
 
         {price && (
-          <div className="rounded-lg bg-gold/10 border border-gold/20 px-4 py-3 flex items-center justify-between">
-            <span className="text-sm text-white/70">Estimated Price</span>
+          <div className="rounded-lg bg-gold/5 border border-gold/20 px-4 py-3 flex items-center justify-between">
+            <span className="text-sm text-gray-600">Estimated Price</span>
             <span className="text-xl font-bold text-gold">${price as number}</span>
           </div>
         )}
@@ -204,7 +204,7 @@ export function BookingForm() {
         {/* Tip Section */}
         {price && (
           <div className="space-y-3">
-            <label className="block text-sm font-medium text-white/70">
+            <label className="block text-sm font-medium text-gray-700">
               Add a Tip (optional)
             </label>
             <div className="flex flex-wrap gap-2">
@@ -216,8 +216,8 @@ export function BookingForm() {
                   className={cn(
                     "rounded-lg px-4 py-2 text-sm font-medium transition-all",
                     form.tipAmount === String(amount)
-                      ? "bg-gold text-black"
-                      : "border border-gold/30 text-gold hover:bg-gold/10"
+                      ? "bg-gold text-white"
+                      : "border border-gold/30 text-gold hover:bg-gold/5"
                   )}
                 >
                   ${amount}
@@ -236,7 +236,7 @@ export function BookingForm() {
             </div>
             {form.tipAmount && (
               <div className="rounded-lg bg-gold/5 border border-gold/10 px-4 py-2 flex items-center justify-between">
-                <span className="text-sm text-white/50">Total with tip</span>
+                <span className="text-sm text-gray-500">Total with tip</span>
                 <span className="text-lg font-bold text-gold">
                   ${(price as number) + parseFloat(form.tipAmount || "0")}
                 </span>
@@ -267,7 +267,7 @@ export function BookingForm() {
         </div>
 
         <div className="space-y-1.5">
-          <label htmlFor="notes" className="block text-sm font-medium text-white/70">
+          <label htmlFor="notes" className="block text-sm font-medium text-gray-700">
             Notes (optional)
           </label>
           <textarea
@@ -281,7 +281,7 @@ export function BookingForm() {
         </div>
 
         <div className="space-y-1.5">
-          <label htmlFor="accessNotes" className="block text-sm font-medium text-white/70">
+          <label htmlFor="accessNotes" className="block text-sm font-medium text-gray-700">
             Gate Code / Access Instructions (optional)
           </label>
           <textarea

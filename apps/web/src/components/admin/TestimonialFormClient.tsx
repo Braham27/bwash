@@ -61,7 +61,7 @@ export function TestimonialFormClient() {
 
           {/* Star Rating */}
           <div>
-            <label className="mb-1.5 block text-sm font-medium text-white/70">Rating</label>
+            <label className="mb-1.5 block text-sm font-medium text-gray-600">Rating</label>
             <div className="flex gap-1">
               {[1, 2, 3, 4, 5].map((star) => (
                 <button
@@ -72,7 +72,7 @@ export function TestimonialFormClient() {
                 >
                   <Star
                     className={`h-6 w-6 transition ${
-                      star <= form.rating ? "text-gold fill-gold" : "text-white/20"
+                      star <= form.rating ? "text-gold fill-gold" : "text-gray-300"
                     }`}
                   />
                 </button>
@@ -81,7 +81,7 @@ export function TestimonialFormClient() {
           </div>
 
           <div>
-            <label htmlFor="comment" className="mb-1.5 block text-sm font-medium text-white/70">
+            <label htmlFor="comment" className="mb-1.5 block text-sm font-medium text-gray-600">
               Comment *
             </label>
             <textarea

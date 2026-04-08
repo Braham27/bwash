@@ -40,13 +40,13 @@ export function DashboardMobileNav() {
         {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         <Sparkles className="h-5 w-5 text-gold" />
         <span className="font-bold">
-          <span className="text-white">B</span>
+          <span className="text-gray-900">B</span>
           <span className="text-gold">Wash</span>
         </span>
       </button>
 
       {isOpen && (
-        <div className="fixed inset-0 top-16 z-20 bg-luxury-dark/95 backdrop-blur-xl p-4">
+        <div className="fixed inset-0 top-16 z-20 bg-white/95 backdrop-blur-xl p-4">
           <nav className="space-y-1">
             {navItems.map((item) => {
               const isActive =
@@ -61,7 +61,7 @@ export function DashboardMobileNav() {
                     "flex items-center gap-3 rounded-lg px-4 py-3 text-base font-medium transition-all",
                     isActive
                       ? "bg-gold/10 text-gold"
-                      : "text-white/50 hover:bg-white/5 hover:text-white"
+                      : "text-gray-500 hover:bg-gray-100 hover:text-gray-900"
                   )}
                 >
                   <item.icon className="h-5 w-5" />
@@ -74,7 +74,7 @@ export function DashboardMobileNav() {
             <Link
               href="/"
               onClick={() => setIsOpen(false)}
-              className="text-sm text-white/40"
+              className="text-sm text-gray-400"
             >
               ← Back to Website
             </Link>

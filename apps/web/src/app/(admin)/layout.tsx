@@ -26,7 +26,7 @@ export default async function AdminLayout({
   }
 
   return (
-    <div className="flex h-screen bg-luxury-black text-white">
+    <div className="flex h-screen bg-white text-gray-900">
       <AdminSidebar />
       <div className="flex flex-1 flex-col overflow-hidden">
         <header className="flex h-16 items-center justify-between border-b border-luxury-border px-6">

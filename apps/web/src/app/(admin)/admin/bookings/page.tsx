@@ -53,7 +53,7 @@ export default async function AdminBookingsPage() {
     <div className="space-y-8">
       <div>
         <h1 className="text-2xl font-bold">Bookings Management</h1>
-        <p className="mt-1 text-sm text-white/50">View and manage all bookings</p>
+        <p className="mt-1 text-sm text-gray-500">View and manage all bookings</p>
       </div>
 
       {/* Status Summary */}
@@ -85,7 +85,7 @@ export default async function AdminBookingsPage() {
             <TableBody>
               {allBookings.length === 0 ? (
                 <TableRow>
-                  <TableCell colSpan={8} className="text-center text-white/40 py-8">
+                  <TableCell colSpan={8} className="text-center text-gray-400 py-8">
                     No bookings found
                   </TableCell>
                 </TableRow>
@@ -96,14 +96,14 @@ export default async function AdminBookingsPage() {
                       <p className="font-medium text-sm">
                         {u ? `${u.firstName} ${u.lastName}` : b.guestName || "Guest"}
                       </p>
-                      <p className="text-xs text-white/40">
+                      <p className="text-xs text-gray-400">
                         {u?.email || b.guestEmail || "—"}
                       </p>
                     </TableCell>
                     <TableCell className="text-sm">{pkg.name}</TableCell>
                     <TableCell>
                       <p className="text-sm">{formatDate(b.preferredDate)}</p>
-                      <p className="text-xs text-white/40">{formatTime(b.preferredTime)}</p>
+                      <p className="text-xs text-gray-400">{formatTime(b.preferredTime)}</p>
                     </TableCell>
                     <TableCell className="text-sm capitalize">{b.vehicleType}</TableCell>
                     <TableCell>

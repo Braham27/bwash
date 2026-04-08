@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X, Droplets } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -34,16 +34,16 @@ export function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         scrolled
-          ? "bg-luxury-black/90 backdrop-blur-xl border-b border-luxury-border shadow-2xl"
+          ? "bg-white/90 backdrop-blur-xl border-b border-luxury-border shadow-sm"
           : "bg-transparent"
       )}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          <Sparkles className="h-6 w-6 text-gold transition-transform duration-300 group-hover:rotate-12" />
+          <Droplets className="h-6 w-6 text-gold transition-transform duration-300 group-hover:rotate-12" />
           <span className="text-2xl font-bold tracking-tight">
-            <span className="text-white">B</span>
+            <span className="text-gray-900">B</span>
             <span className="text-gold">Wash</span>
           </span>
         </Link>
@@ -58,7 +58,7 @@ export function Navbar() {
                 "rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200",
                 pathname === link.href
                   ? "text-gold bg-gold/10"
-                  : "text-white/70 hover:text-white hover:bg-white/5"
+                  : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
               )}
             >
               {link.label}
@@ -72,7 +72,7 @@ export function Navbar() {
                 "rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200",
                 pathname.startsWith("/dashboard")
                   ? "text-gold bg-gold/10"
-                  : "text-white/70 hover:text-white hover:bg-white/5"
+                  : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
               )}
             >
               Dashboard
@@ -105,7 +105,7 @@ export function Navbar() {
         {/* Mobile Toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="rounded-lg p-2 text-white/70 transition hover:bg-white/5 md:hidden"
+          className="rounded-lg p-2 text-gray-600 transition hover:bg-gray-100 md:hidden"
           aria-label="Toggle menu"
         >
           {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -120,7 +120,7 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="border-b border-luxury-border bg-luxury-black/95 backdrop-blur-xl md:hidden"
+            className="border-b border-luxury-border bg-white/95 backdrop-blur-xl md:hidden"
           >
             <div className="space-y-1 px-4 pb-6 pt-2">
               {navLinks.map((link) => (
@@ -131,7 +131,7 @@ export function Navbar() {
                     "block rounded-lg px-4 py-3 text-base font-medium transition-all duration-200",
                     pathname === link.href
                       ? "text-gold bg-gold/10"
-                      : "text-white/70 hover:text-white hover:bg-white/5"
+                      : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
                   )}
                 >
                   {link.label}
@@ -141,7 +141,7 @@ export function Navbar() {
               <SignedIn>
                 <Link
                   href="/dashboard"
-                  className="block rounded-lg px-4 py-3 text-base font-medium text-white/70 hover:text-white hover:bg-white/5"
+                  className="block rounded-lg px-4 py-3 text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100"
                 >
                   Dashboard
                 </Link>
@@ -149,7 +149,7 @@ export function Navbar() {
 
               <div className="pt-4 border-t border-luxury-border">
                 <SignedOut>
-                  <Link href="/sign-in" className="block rounded-lg px-4 py-3 text-base font-medium text-white/70">
+                  <Link href="/sign-in" className="block rounded-lg px-4 py-3 text-base font-medium text-gray-600">
                     Login
                   </Link>
                   <Link href="/book" className="btn-primary mt-2 w-full text-center">
@@ -159,7 +159,7 @@ export function Navbar() {
                 <SignedIn>
                   <div className="flex items-center gap-3 px-4 py-3">
                     <UserButton afterSignOutUrl="/" />
-                    <span className="text-sm text-white/70">Account</span>
+                    <span className="text-sm text-gray-600">Account</span>
                   </div>
                 </SignedIn>
               </div>

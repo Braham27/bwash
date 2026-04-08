@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
-import { dark } from "@clerk/themes";
 import { Toaster } from "sonner";
 import "./globals.css";
 
@@ -33,26 +32,25 @@ export default function RootLayout({
   return (
     <ClerkProvider
       appearance={{
-        baseTheme: dark,
         variables: {
-          colorPrimary: "#C9A84C",
-          colorBackground: "#111111",
-          colorInputBackground: "#1A1A1A",
-          colorText: "#FFFFFF",
+          colorPrimary: "#2563EB",
+          colorBackground: "#FFFFFF",
+          colorInputBackground: "#F1F5F9",
+          colorText: "#0F172A",
         },
       }}
     >
-      <html lang="en" className="dark">
-        <body className="min-h-screen bg-luxury-black">
+      <html lang="en">
+        <body className="min-h-screen bg-white">
           {children}
           <Toaster
-            theme="dark"
+            theme="light"
             position="top-right"
             toastOptions={{
               style: {
-                background: "#1A1A1A",
-                border: "1px solid #2A2A2A",
-                color: "#fff",
+                background: "#FFFFFF",
+                border: "1px solid #E2E8F0",
+                color: "#0F172A",
               },
             }}
           />

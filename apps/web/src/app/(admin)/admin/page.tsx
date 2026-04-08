@@ -77,7 +77,7 @@ export default async function AdminOverviewPage() {
     <div className="space-y-8">
       <div>
         <h1 className="text-2xl font-bold">Admin Dashboard</h1>
-        <p className="mt-1 text-sm text-white/50">Business overview and management</p>
+        <p className="mt-1 text-sm text-gray-500">Business overview and management</p>
       </div>
 
       {/* Stats Grid */}
@@ -89,7 +89,7 @@ export default async function AdminOverviewPage() {
                 <stat.icon className={`h-5 w-5 ${stat.color}`} />
               </div>
               <div>
-                <p className="text-xs text-white/40 uppercase tracking-wider">{stat.label}</p>
+                <p className="text-xs text-gray-400 uppercase tracking-wider">{stat.label}</p>
                 <p className="text-2xl font-bold mt-1">{stat.value}</p>
               </div>
             </div>
@@ -102,7 +102,7 @@ export default async function AdminOverviewPage() {
         <h2 className="text-lg font-bold mb-4">Recent Bookings</h2>
         <Card className="divide-y divide-luxury-border">
           {recentBookings.length === 0 ? (
-            <div className="p-8 text-center text-white/40">No bookings yet</div>
+            <div className="p-8 text-center text-gray-400">No bookings yet</div>
           ) : (
             recentBookings.map(({ booking: b, user: u }) => (
               <div key={b.id} className="flex items-center justify-between p-4">
@@ -110,7 +110,7 @@ export default async function AdminOverviewPage() {
                   <p className="font-medium text-sm">
                     {u ? `${u.firstName} ${u.lastName}` : b.guestName || "Guest"}
                   </p>
-                  <p className="text-xs text-white/40 mt-1">
+                  <p className="text-xs text-gray-400 mt-1">
                     {formatDate(b.preferredDate)} at {formatTime(b.preferredTime)} • {b.vehicleType}
                   </p>
                 </div>

@@ -19,7 +19,7 @@ function FeatureIcon({ included }: { included: boolean }) {
   return included ? (
     <Check className="h-5 w-5 text-gold" />
   ) : (
-    <X className="h-5 w-5 text-white/20" />
+    <X className="h-5 w-5 text-gray-300" />
   );
 }
 
@@ -29,28 +29,28 @@ export function ServiceComparison() {
       <div className="mx-auto max-w-4xl">
         <ScrollReveal>
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold">Package Comparison</h2>
-            <p className="mt-3 text-white/50">
+            <h2 className="text-3xl font-bold text-gray-900">Package Comparison</h2>
+            <p className="mt-3 text-gray-500">
               See what&apos;s included in each package at a glance.
             </p>
           </div>
         </ScrollReveal>
 
         <ScrollReveal>
-          <div className="overflow-x-auto rounded-2xl border border-luxury-border">
+          <div className="overflow-x-auto rounded-2xl border border-luxury-border bg-white">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-luxury-border bg-luxury-gray/50">
-                  <th className="px-6 py-4 text-left text-white/70 font-medium">
+                <tr className="border-b border-luxury-border bg-luxury-gray">
+                  <th className="px-6 py-4 text-left text-gray-600 font-medium">
                     Feature
                   </th>
-                  <th className="px-6 py-4 text-center text-white/70 font-medium">
+                  <th className="px-6 py-4 text-center text-gray-600 font-medium">
                     Basic
                   </th>
                   <th className="px-6 py-4 text-center font-medium">
                     <span className="text-gold">Premium</span>
                   </th>
-                  <th className="px-6 py-4 text-center text-white/70 font-medium">
+                  <th className="px-6 py-4 text-center text-gray-600 font-medium">
                     Deluxe
                   </th>
                 </tr>
@@ -59,9 +59,9 @@ export function ServiceComparison() {
                 {features.map((f) => (
                   <tr
                     key={f.name}
-                    className="transition-colors hover:bg-white/[0.02]"
+                    className="transition-colors hover:bg-gray-50"
                   >
-                    <td className="px-6 py-3.5 text-white/80">{f.name}</td>
+                    <td className="px-6 py-3.5 text-gray-700">{f.name}</td>
                     <td className="px-6 py-3.5 text-center">
                       <span className="inline-flex justify-center">
                         <FeatureIcon included={f.basic} />

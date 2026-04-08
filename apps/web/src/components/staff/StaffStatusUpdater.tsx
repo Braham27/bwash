@@ -45,7 +45,7 @@ export function StaffStatusUpdater({
       <Button
         onClick={handleUpdate}
         isLoading={isUpdating}
-        className={`w-full py-4 text-base font-semibold text-white ${nextAction.color}`}
+        className={`w-full py-4 text-base font-semibold text-gray-900 ${nextAction.color}`}
       >
         <nextAction.icon className="h-5 w-5" />
         {nextAction.label}

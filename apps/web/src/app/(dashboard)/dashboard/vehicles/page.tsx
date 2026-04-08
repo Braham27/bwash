@@ -23,7 +23,7 @@ export default async function VehiclesPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold">My Vehicles</h1>
-          <p className="mt-1 text-sm text-white/50">Manage your saved vehicles</p>
+          <p className="mt-1 text-sm text-gray-500">Manage your saved vehicles</p>
         </div>
         <VehicleFormClient />
       </div>
@@ -48,7 +48,7 @@ export default async function VehiclesPage() {
                 <p className="text-lg font-semibold">
                   {v.year} {v.make} {v.model}
                 </p>
-                <p className="mt-1 text-sm text-white/50 capitalize">
+                <p className="mt-1 text-sm text-gray-500 capitalize">
                   {v.vehicleType}
                   {v.color && ` • ${v.color}`}
                   {v.licensePlate && ` • ${v.licensePlate}`}

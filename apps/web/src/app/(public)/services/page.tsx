@@ -17,10 +17,10 @@ export default function ServicesPage() {
           <p className="text-sm font-semibold uppercase tracking-widest text-gold">
             Services & Pricing
           </p>
-          <h1 className="mt-3 text-4xl font-bold sm:text-5xl">
+          <h1 className="mt-3 text-4xl font-bold text-gray-900 sm:text-5xl">
             Choose Your <span className="text-gradient-gold">Package</span>
           </h1>
-          <p className="mt-4 text-lg text-white/50">
+          <p className="mt-4 text-lg text-gray-500">
             Transparent pricing for every vehicle type. No hidden fees, no
             surprises — just premium results.
           </p>

@@ -74,48 +74,48 @@ export default async function StaffJobDetailPage({
         <CardTitle className="mb-4">Job Details</CardTitle>
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="flex items-start gap-3">
-            <User className="h-4 w-4 text-white/30 mt-0.5" />
+            <User className="h-4 w-4 text-gray-400 mt-0.5" />
             <div>
-              <p className="text-xs text-white/40">Customer</p>
+              <p className="text-xs text-gray-400">Customer</p>
               <p className="text-sm font-medium">
                 {customer ? `${customer.firstName} ${customer.lastName}` : b.guestName || "Guest"}
               </p>
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <Phone className="h-4 w-4 text-white/30 mt-0.5" />
+            <Phone className="h-4 w-4 text-gray-400 mt-0.5" />
             <div>
-              <p className="text-xs text-white/40">Phone</p>
+              <p className="text-xs text-gray-400">Phone</p>
               <p className="text-sm">{customer?.phone || b.guestPhone || "—"}</p>
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <Clock className="h-4 w-4 text-white/30 mt-0.5" />
+            <Clock className="h-4 w-4 text-gray-400 mt-0.5" />
             <div>
-              <p className="text-xs text-white/40">Scheduled</p>
+              <p className="text-xs text-gray-400">Scheduled</p>
               <p className="text-sm">{formatDate(b.preferredDate)} at {formatTime(b.preferredTime)}</p>
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <Car className="h-4 w-4 text-white/30 mt-0.5" />
+            <Car className="h-4 w-4 text-gray-400 mt-0.5" />
             <div>
-              <p className="text-xs text-white/40">Vehicle</p>
+              <p className="text-xs text-gray-400">Vehicle</p>
               <p className="text-sm capitalize">{b.vehicleType}</p>
             </div>
           </div>
           <div className="flex items-start gap-3 sm:col-span-2">
-            <MapPin className="h-4 w-4 text-white/30 mt-0.5" />
+            <MapPin className="h-4 w-4 text-gray-400 mt-0.5" />
             <div>
-              <p className="text-xs text-white/40">Address</p>
+              <p className="text-xs text-gray-400">Address</p>
               <p className="text-sm">{b.address}</p>
             </div>
           </div>
           {b.notes && (
             <div className="flex items-start gap-3 sm:col-span-2">
-              <FileText className="h-4 w-4 text-white/30 mt-0.5" />
+              <FileText className="h-4 w-4 text-gray-400 mt-0.5" />
               <div>
-                <p className="text-xs text-white/40">Notes</p>
-                <p className="text-sm text-white/70">{b.notes}</p>
+                <p className="text-xs text-gray-400">Notes</p>
+                <p className="text-sm text-gray-600">{b.notes}</p>
               </div>
             </div>
           )}
@@ -126,7 +126,7 @@ export default async function StaffJobDetailPage({
       {b.accessNotes && (
         <Card className="p-6">
           <CardTitle className="mb-3">Access / Gate Info</CardTitle>
-          <p className="text-sm text-white/70">{b.accessNotes}</p>
+          <p className="text-sm text-gray-600">{b.accessNotes}</p>
         </Card>
       )}
 
@@ -150,10 +150,10 @@ export default async function StaffJobDetailPage({
                     {entry.status.replace("_", " ")}
                   </Badge>
                   {entry.notes && (
-                    <p className="text-xs text-white/40 mt-1">{entry.notes}</p>
+                    <p className="text-xs text-gray-400 mt-1">{entry.notes}</p>
                   )}
                 </div>
-                <div className="text-right text-xs text-white/40">
+                <div className="text-right text-xs text-gray-400">
                   <p>{changedByUser ? `${changedByUser.firstName} ${changedByUser.lastName}` : "System"}</p>
                   <p>{formatDate(entry.createdAt)}</p>
                 </div>

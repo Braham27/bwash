@@ -10,10 +10,10 @@ export function AboutSection() {
         <ScrollReveal>
           <div className="text-center">
             <p className="text-sm font-semibold uppercase tracking-widest text-gold">About Us</p>
-            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
+            <h2 className="mt-3 text-3xl font-bold text-gray-900 sm:text-4xl">
               The <span className="text-gradient-gold">BWash</span> Difference
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-white/50">
+            <p className="mx-auto mt-4 max-w-2xl text-gray-500">
               BWash is a professional mobile car wash service delivering
               high-quality cleaning directly to your home or workplace. We
               combine convenience with premium results.
@@ -47,8 +47,8 @@ export function AboutSection() {
                 <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-gold/10">
                   <item.icon className="h-7 w-7 text-gold" />
                 </div>
-                <h3 className="text-lg font-semibold">{item.title}</h3>
-                <p className="mt-3 text-sm text-white/50 leading-relaxed">
+                <h3 className="text-lg font-semibold text-gray-900">{item.title}</h3>
+                <p className="mt-3 text-sm text-gray-500 leading-relaxed">
                   {item.description}
                 </p>
               </div>

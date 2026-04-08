@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Sparkles, Phone, Mail, MapPin } from "lucide-react";
+import { Droplets, Phone, Mail, MapPin } from "lucide-react";
 
 export function Footer() {
   return (
@@ -9,13 +9,13 @@ export function Footer() {
           {/* Brand */}
           <div>
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <Sparkles className="h-6 w-6 text-gold" />
+              <Droplets className="h-6 w-6 text-gold" />
               <span className="text-2xl font-bold tracking-tight">
-                <span className="text-white">B</span>
+                <span className="text-gray-900">B</span>
                 <span className="text-gold">Wash</span>
               </span>
             </Link>
-            <p className="text-white/50 text-sm leading-relaxed">
+            <p className="text-gray-500 text-sm leading-relaxed">
               Premium mobile car wash service delivering high-quality cleaning
               directly to your home or workplace.
             </p>
@@ -36,7 +36,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-white/50 transition hover:text-gold"
+                    className="text-sm text-gray-500 transition hover:text-gold"
                   >
                     {link.label}
                   </Link>
@@ -51,15 +51,15 @@ export function Footer() {
               Contact
             </h3>
             <ul className="space-y-3">
-              <li className="flex items-center gap-3 text-sm text-white/50">
+              <li className="flex items-center gap-3 text-sm text-gray-500">
                 <Phone className="h-4 w-4 text-gold/70" />
                 <span>(305) 555-WASH</span>
               </li>
-              <li className="flex items-center gap-3 text-sm text-white/50">
+              <li className="flex items-center gap-3 text-sm text-gray-500">
                 <Mail className="h-4 w-4 text-gold/70" />
                 <span>info@bwash.com</span>
               </li>
-              <li className="flex items-center gap-3 text-sm text-white/50">
+              <li className="flex items-center gap-3 text-sm text-gray-500">
                 <MapPin className="h-4 w-4 text-gold/70" />
                 <span>Serving Miami-Dade County</span>
               </li>
@@ -68,7 +68,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 border-t border-luxury-border pt-8 text-center">
-          <p className="text-sm text-white/30">
+          <p className="text-sm text-gray-400">
             &copy; {new Date().getFullYear()} BWash. All rights reserved.
           </p>
         </div>

@@ -18,7 +18,7 @@ export default async function AdminAreasPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold">Service Areas</h1>
-          <p className="mt-1 text-sm text-white/50">Manage operational zones and zip codes</p>
+          <p className="mt-1 text-sm text-gray-500">Manage operational zones and zip codes</p>
         </div>
         <AreaFormClient />
       </div>
@@ -38,7 +38,7 @@ export default async function AdminAreasPage() {
             <TableBody>
               {areas.length === 0 ? (
                 <TableRow>
-                  <TableCell colSpan={5} className="text-center text-white/40 py-8">
+                  <TableCell colSpan={5} className="text-center text-gray-400 py-8">
                     No service areas configured
                   </TableCell>
                 </TableRow>
@@ -52,8 +52,8 @@ export default async function AdminAreasPage() {
                       </div>
                     </TableCell>
                     <TableCell className="font-mono text-sm">{area.zipCode}</TableCell>
-                    <TableCell className="text-sm text-white/60">{area.city}</TableCell>
-                    <TableCell className="text-sm text-white/60">{area.state}</TableCell>
+                    <TableCell className="text-sm text-gray-500">{area.city}</TableCell>
+                    <TableCell className="text-sm text-gray-500">{area.state}</TableCell>
                     <TableCell>
                       <Badge variant={area.isActive ? "success" : "danger"}>
                         {area.isActive ? "Active" : "Inactive"}
