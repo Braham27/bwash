@@ -28,7 +28,7 @@ export default async function AdminSettingsPage() {
     <div className="space-y-8">
       <div>
         <h1 className="text-2xl font-bold">Business Settings</h1>
-        <p className="mt-1 text-sm text-white/50">Configure business hours, taxes, and contact info</p>
+        <p className="mt-1 text-sm text-foreground/50">Configure business hours, taxes, and contact info</p>
       </div>
 
       <SettingsFormClient initialData={initialData} />

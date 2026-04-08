@@ -1,15 +1,45 @@
 @import "tailwindcss";
 
+/* Light theme (default) */
+:root {
+  --app-bg-primary: #FFFFFF;
+  --app-bg-secondary: #F8FAFC;
+  --app-bg-surface: #FFFFFF;
+  --app-bg-card: #F1F5F9;
+  --app-text-muted: #64748B;
+  --app-border: #E2E8F0;
+  --app-foreground: #0F172A;
+  --app-scrollbar-track: #F8FAFC;
+  --app-scrollbar-thumb: #CBD5E1;
+  --app-scrollbar-hover: #94A3B8;
+}
+
+/* Dark theme */
+.dark {
+  --app-bg-primary: #0A0A0A;
+  --app-bg-secondary: #111111;
+  --app-bg-surface: #141414;
+  --app-bg-card: #1A1A1A;
+  --app-text-muted: #888888;
+  --app-border: #2A2A2A;
+  --app-foreground: #FFFFFF;
+  --app-scrollbar-track: #0A0A0A;
+  --app-scrollbar-thumb: #333333;
+  --app-scrollbar-hover: #555555;
+}
+
 @theme {
   --color-gold: #2563EB;
   --color-gold-light: #60A5FA;
   --color-gold-dark: #1D4ED8;
-  --color-luxury-black: #0A0A0A;
-  --color-luxury-dark: #111111;
-  --color-luxury-gray: #1A1A1A;
-  --color-luxury-muted: #888888;
-  --color-luxury-border: #2A2A2A;
-  --color-luxury-surface: #141414;
+  --color-luxury-black: var(--app-bg-primary);
+  --color-luxury-dark: var(--app-bg-secondary);
+  --color-luxury-gray: var(--app-bg-card);
+  --color-luxury-muted: var(--app-text-muted);
+  --color-luxury-border: var(--app-border);
+  --color-luxury-surface: var(--app-bg-surface);
+  --color-luxury-card: var(--app-bg-secondary);
+  --color-foreground: var(--app-foreground);
   --font-heading: "Inter", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
 }
@@ -20,7 +50,7 @@
   }
 
   body {
-    @apply bg-luxury-black text-white antialiased;
+    @apply bg-luxury-black text-foreground antialiased;
     font-family: var(--font-body);
   }
 
@@ -29,7 +59,7 @@
   }
 
   ::selection {
-    @apply bg-gold/30 text-white;
+    @apply bg-gold/30 text-foreground;
   }
 }
 
@@ -43,7 +73,7 @@
   }
 
   .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-white/5 active:scale-[0.98];
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold text-foreground transition-all duration-300 hover:bg-foreground/5 active:scale-[0.98];
   }
 
   .card-luxury {
@@ -55,7 +85,7 @@
   }
 
   .input-luxury {
-    @apply w-full rounded-lg border border-luxury-border bg-luxury-gray px-4 py-3 text-white placeholder:text-luxury-muted transition-all duration-200 focus:border-gold/50 focus:outline-none focus:ring-1 focus:ring-gold/30;
+    @apply w-full rounded-lg border border-luxury-border bg-luxury-gray px-4 py-3 text-foreground placeholder:text-luxury-muted transition-all duration-200 focus:border-gold/50 focus:outline-none focus:ring-1 focus:ring-gold/30;
   }
 
   .section-padding {
@@ -76,12 +106,12 @@
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: var(--app-scrollbar-track);
 }
 ::-webkit-scrollbar-thumb {
-  background: #333;
+  background: var(--app-scrollbar-thumb);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: var(--app-scrollbar-hover);
 }

@@ -33,7 +33,7 @@ export function DashboardSidebar() {
       <div className="flex h-16 items-center gap-2 border-b border-luxury-border px-6">
         <Sparkles className="h-5 w-5 text-gold" />
         <span className="text-lg font-bold">
-          <span className="text-white">B</span>
+          <span className="text-foreground">B</span>
           <span className="text-gold">Wash</span>
         </span>
       </div>
@@ -52,7 +52,7 @@ export function DashboardSidebar() {
                 "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-200",
                 isActive
                   ? "bg-gold/10 text-gold"
-                  : "text-white/50 hover:bg-white/5 hover:text-white"
+                  : "text-foreground/50 hover:bg-foreground/5 hover:text-foreground"
               )}
             >
               <item.icon className="h-5 w-5" />
@@ -66,7 +66,7 @@ export function DashboardSidebar() {
       <div className="border-t border-luxury-border p-4">
         <Link
           href="/"
-          className="block rounded-lg px-3 py-2 text-sm text-white/40 transition hover:text-white/60"
+          className="block rounded-lg px-3 py-2 text-sm text-foreground/40 transition hover:text-foreground/60"
         >
           ← Back to Website
         </Link>

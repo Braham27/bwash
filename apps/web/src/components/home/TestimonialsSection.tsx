@@ -50,8 +50,8 @@ export function TestimonialsSection() {
                   <Star key={s} className="h-5 w-5 fill-gold text-gold" />
                 ))}
               </div>
-              <span className="text-sm text-white/50">
-                <strong className="text-white">4.9</strong> out of 5 based on 200+ reviews
+              <span className="text-sm text-foreground/50">
+                <strong className="text-foreground">4.9</strong> out of 5 based on 200+ reviews
               </span>
             </div>
           </div>
@@ -68,20 +68,20 @@ export function TestimonialsSection() {
                     <Star
                       key={s}
                       className={`h-4 w-4 ${
-                        s <= t.rating ? "fill-gold text-gold" : "text-white/20"
+                        s <= t.rating ? "fill-gold text-gold" : "text-foreground/20"
                       }`}
                     />
                   ))}
                 </div>
 
-                <p className="text-sm text-white/70 leading-relaxed">
+                <p className="text-sm text-foreground/70 leading-relaxed">
                   &ldquo;{t.text}&rdquo;
                 </p>
 
                 <div className="mt-4 flex items-center justify-between border-t border-luxury-border pt-4">
                   <div>
-                    <p className="text-sm font-semibold text-white">{t.name}</p>
-                    <p className="text-xs text-white/40">{t.vehicle} Owner</p>
+                    <p className="text-sm font-semibold text-foreground">{t.name}</p>
+                    <p className="text-xs text-foreground/40">{t.vehicle} Owner</p>
                   </div>
                 </div>
               </div>

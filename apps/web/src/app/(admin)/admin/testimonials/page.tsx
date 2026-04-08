@@ -18,7 +18,7 @@ export default async function AdminTestimonialsPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold">Testimonials</h1>
-          <p className="mt-1 text-sm text-white/50">Manage customer reviews for the website</p>
+          <p className="mt-1 text-sm text-foreground/50">Manage customer reviews for the website</p>
         </div>
         <TestimonialFormClient />
       </div>
@@ -37,7 +37,7 @@ export default async function AdminTestimonialsPage() {
             <TableBody>
               {allTestimonials.length === 0 ? (
                 <TableRow>
-                  <TableCell colSpan={4} className="text-center text-white/40 py-8">
+                  <TableCell colSpan={4} className="text-center text-foreground/40 py-8">
                     No testimonials yet
                   </TableCell>
                 </TableRow>
@@ -47,7 +47,7 @@ export default async function AdminTestimonialsPage() {
                     <TableCell>
                       <p className="font-medium text-sm">{t.name}</p>
                       {t.vehicleType && (
-                        <p className="text-xs text-white/40">{t.vehicleType}</p>
+                        <p className="text-xs text-foreground/40">{t.vehicleType}</p>
                       )}
                     </TableCell>
                     <TableCell>
@@ -56,14 +56,14 @@ export default async function AdminTestimonialsPage() {
                           <Star
                             key={i}
                             className={`h-3.5 w-3.5 ${
-                              i < t.rating ? "text-gold fill-gold" : "text-white/10"
+                              i < t.rating ? "text-gold fill-gold" : "text-foreground/10"
                             }`}
                           />
                         ))}
                       </div>
                     </TableCell>
                     <TableCell className="max-w-xs">
-                      <p className="text-sm text-white/60 truncate">{t.text}</p>
+                      <p className="text-sm text-foreground/60 truncate">{t.text}</p>
                     </TableCell>
                     <TableCell>
                       <Badge variant={t.isPublished ? "success" : "danger"}>

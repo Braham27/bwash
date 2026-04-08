@@ -4,6 +4,7 @@ import { useUser, useAuth } from "@clerk/clerk-expo";
 import { useRouter } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { FadeInStagger } from "../components/Animations";
+import { useThemeContext } from "../../lib/ThemeContext";
 
 const GOLD = "#2563EB";
 
@@ -11,10 +12,11 @@ export default function ProfileScreen() {
   const { user } = useUser();
   const { signOut } = useAuth();
   const router = useRouter();
+  const { theme, toggleTheme, colors } = useThemeContext();
 
   return (
     <ScrollView
-      style={{ flex: 1, backgroundColor: "#0A0A0A" }}
+      style={{ flex: 1, backgroundColor: colors.background }}
       contentContainerStyle={{ padding: 20 }}
     >
       {/* Avatar & Name */}
@@ -32,13 +34,58 @@ export default function ProfileScreen() {
         >
           <Ionicons name="person" size={32} color={GOLD} />
         </View>
-        <Animated.Text entering={FadeInDown.delay(200).duration(500)} style={{ color: "#fff", fontSize: 22, fontWeight: "bold" }}>
+        <Animated.Text entering={FadeInDown.delay(200).duration(500)} style={{ color: colors.text, fontSize: 22, fontWeight: "bold" }}>
           {user?.firstName} {user?.lastName}
         </Animated.Text>
-        <Animated.Text entering={FadeInDown.delay(350).duration(500)} style={{ color: "rgba(255,255,255,0.4)", fontSize: 13, marginTop: 4 }}>
+        <Animated.Text entering={FadeInDown.delay(350).duration(500)} style={{ color: colors.textFaint, fontSize: 13, marginTop: 4 }}>
           {user?.emailAddresses[0]?.emailAddress}
         </Animated.Text>
       </Animated.View>
+
+      {/* Theme Toggle */}
+      <TouchableOpacity
+        onPress={toggleTheme}
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          backgroundColor: colors.card,
+          borderRadius: 12,
+          padding: 16,
+          marginBottom: 16,
+          borderWidth: 1,
+          borderColor: colors.border,
+        }}
+      >
+        <Ionicons
+          name={theme === "dark" ? "sunny" : "moon"}
+          size={20}
+          color={GOLD}
+          style={{ marginRight: 12 }}
+        />
+        <Text style={{ color: colors.text, flex: 1, fontWeight: "500" }}>
+          {theme === "dark" ? "Light Mode" : "Dark Mode"}
+        </Text>
+        <View
+          style={{
+            width: 44,
+            height: 24,
+            borderRadius: 12,
+            backgroundColor: theme === "dark" ? GOLD : colors.border,
+            justifyContent: "center",
+            paddingHorizontal: 2,
+          }}
+        >
+          <View
+            style={{
+              width: 20,
+              height: 20,
+              borderRadius: 10,
+              backgroundColor: "#FFFFFF",
+              alignSelf: theme === "dark" ? "flex-end" : "flex-start",
+            }}
+          />
+        </View>
+      </TouchableOpacity>
 
       {/* Menu Items */}
       {[
@@ -53,17 +100,17 @@ export default function ProfileScreen() {
             style={{
               flexDirection: "row",
               alignItems: "center",
-              backgroundColor: "#111111",
+              backgroundColor: colors.card,
               borderRadius: 12,
               padding: 16,
               marginBottom: 8,
               borderWidth: 1,
-              borderColor: "rgba(255,255,255,0.05)",
+              borderColor: colors.border,
             }}
           >
-            <Ionicons name={item.icon} size={20} color="rgba(255,255,255,0.5)" style={{ marginRight: 12 }} />
-            <Text style={{ color: "rgba(255,255,255,0.7)", flex: 1 }}>{item.label}</Text>
-            <Ionicons name="chevron-forward" size={16} color="rgba(255,255,255,0.2)" />
+            <Ionicons name={item.icon} size={20} color={colors.textMuted} style={{ marginRight: 12 }} />
+            <Text style={{ color: colors.text, flex: 1 }}>{item.label}</Text>
+            <Ionicons name="chevron-forward" size={16} color={colors.textFaint} />
           </TouchableOpacity>
         </FadeInStagger>
       ))}

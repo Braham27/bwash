@@ -98,7 +98,7 @@ export function InvoiceActions({ invoice }: { invoice: Invoice }) {
       <div className="flex items-center gap-2">
         <button
           onClick={() => setShowPreview(true)}
-          className="rounded-lg p-2 text-white/40 transition hover:bg-white/5 hover:text-white"
+          className="rounded-lg p-2 text-foreground/40 transition hover:bg-foreground/5 hover:text-foreground"
           title="Preview"
         >
           <Eye className="h-4 w-4" />
@@ -106,7 +106,7 @@ export function InvoiceActions({ invoice }: { invoice: Invoice }) {
         <button
           onClick={() => handleSend("email")}
           disabled={sending !== null}
-          className="rounded-lg p-2 text-white/40 transition hover:bg-white/5 hover:text-blue-400 disabled:opacity-40"
+          className="rounded-lg p-2 text-foreground/40 transition hover:bg-foreground/5 hover:text-blue-400 disabled:opacity-40"
           title="Send via Email"
         >
           {sending === "email" ? (
@@ -118,7 +118,7 @@ export function InvoiceActions({ invoice }: { invoice: Invoice }) {
         <button
           onClick={() => handleSend("sms")}
           disabled={sending !== null}
-          className="rounded-lg p-2 text-white/40 transition hover:bg-white/5 hover:text-green-400 disabled:opacity-40"
+          className="rounded-lg p-2 text-foreground/40 transition hover:bg-foreground/5 hover:text-green-400 disabled:opacity-40"
           title="Send via SMS"
         >
           {sending === "sms" ? (
@@ -244,7 +244,7 @@ function InvoicePreviewContent({
       <div ref={printRef}>
         {/* Status + date */}
         <div className="flex items-center justify-between mb-5">
-          <div className="text-xs text-white/40">{formatDate(invoice.createdAt)}</div>
+          <div className="text-xs text-foreground/40">{formatDate(invoice.createdAt)}</div>
           <Badge variant={paymentVariant[invoice.paymentStatus] || "default"}>
             {invoice.paymentStatus}
           </Badge>
@@ -254,17 +254,17 @@ function InvoicePreviewContent({
         <div className="border border-luxury-border rounded-xl overflow-hidden">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-luxury-border bg-white/[0.02]">
-                <th className="text-left px-4 py-3 text-[11px] font-medium tracking-wider uppercase text-white/40">
+              <tr className="border-b border-luxury-border bg-foreground/[0.02]">
+                <th className="text-left px-4 py-3 text-[11px] font-medium tracking-wider uppercase text-foreground/40">
                   Service
                 </th>
-                <th className="text-right px-4 py-3 text-[11px] font-medium tracking-wider uppercase text-white/40">
+                <th className="text-right px-4 py-3 text-[11px] font-medium tracking-wider uppercase text-foreground/40">
                   Qty
                 </th>
-                <th className="text-right px-4 py-3 text-[11px] font-medium tracking-wider uppercase text-white/40">
+                <th className="text-right px-4 py-3 text-[11px] font-medium tracking-wider uppercase text-foreground/40">
                   Price
                 </th>
-                <th className="text-right px-4 py-3 text-[11px] font-medium tracking-wider uppercase text-white/40">
+                <th className="text-right px-4 py-3 text-[11px] font-medium tracking-wider uppercase text-foreground/40">
                   Total
                 </th>
               </tr>
@@ -275,12 +275,12 @@ function InvoicePreviewContent({
                   key={i}
                   className="border-b border-luxury-border last:border-0"
                 >
-                  <td className="px-4 py-3 text-white/80">{item.description}</td>
-                  <td className="px-4 py-3 text-right text-white/50">{item.quantity}</td>
-                  <td className="px-4 py-3 text-right text-white/50">
+                  <td className="px-4 py-3 text-foreground/80">{item.description}</td>
+                  <td className="px-4 py-3 text-right text-foreground/50">{item.quantity}</td>
+                  <td className="px-4 py-3 text-right text-foreground/50">
                     {formatCurrency(item.unitPrice)}
                   </td>
-                  <td className="px-4 py-3 text-right text-white font-medium">
+                  <td className="px-4 py-3 text-right text-foreground font-medium">
                     {formatCurrency(item.total)}
                   </td>
                 </tr>
@@ -291,12 +291,12 @@ function InvoicePreviewContent({
 
         {/* Totals */}
         <div className="mt-4 space-y-2 text-sm">
-          <div className="flex justify-between text-white/40">
+          <div className="flex justify-between text-foreground/40">
             <span>Subtotal</span>
             <span>{formatCurrency(invoice.subtotal)}</span>
           </div>
           {invoice.taxAmount && parseFloat(invoice.taxAmount) > 0 && (
-            <div className="flex justify-between text-white/40">
+            <div className="flex justify-between text-foreground/40">
               <span>
                 Tax ({(parseFloat(invoice.taxRate || "0") * 100).toFixed(1)}%)
               </span>
@@ -304,20 +304,20 @@ function InvoicePreviewContent({
             </div>
           )}
           {invoice.tipAmount && parseFloat(invoice.tipAmount) > 0 && (
-            <div className="flex justify-between text-white/40">
+            <div className="flex justify-between text-foreground/40">
               <span>Tip</span>
               <span>{formatCurrency(invoice.tipAmount)}</span>
             </div>
           )}
           <div className="flex justify-between border-t border-luxury-border pt-3 text-base font-bold">
-            <span className="text-white">Total</span>
+            <span className="text-foreground">Total</span>
             <span className="text-gold">{formatCurrency(invoice.total)}</span>
           </div>
         </div>
 
         {/* Notes */}
         {invoice.notes && (
-          <div className="mt-4 rounded-lg bg-white/[0.03] p-3 text-xs text-white/40">
+          <div className="mt-4 rounded-lg bg-foreground/[0.03] p-3 text-xs text-foreground/40">
             {invoice.notes}
           </div>
         )}
@@ -359,7 +359,7 @@ function InvoicePreviewContent({
         </button>
         <button
           onClick={handlePrint}
-          className="inline-flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-4 py-2.5 text-sm font-medium text-white/60 transition hover:bg-white/10 hover:text-white"
+          className="inline-flex items-center gap-2 rounded-lg bg-foreground/5 border border-foreground/10 px-4 py-2.5 text-sm font-medium text-foreground/60 transition hover:bg-foreground/10 hover:text-foreground"
         >
           <Printer className="h-4 w-4" />
           Print

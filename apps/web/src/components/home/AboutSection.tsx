@@ -13,7 +13,7 @@ export function AboutSection() {
             <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
               The <span className="text-gradient-gold">BWash</span> Difference
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-white/50">
+            <p className="mx-auto mt-4 max-w-2xl text-foreground/50">
               BWash is a professional mobile car wash service delivering
               high-quality cleaning directly to your home or workplace. We
               combine convenience with premium results.
@@ -48,7 +48,7 @@ export function AboutSection() {
                   <item.icon className="h-7 w-7 text-gold" />
                 </div>
                 <h3 className="text-lg font-semibold">{item.title}</h3>
-                <p className="mt-3 text-sm text-white/50 leading-relaxed">
+                <p className="mt-3 text-sm text-foreground/50 leading-relaxed">
                   {item.description}
                 </p>
               </div>

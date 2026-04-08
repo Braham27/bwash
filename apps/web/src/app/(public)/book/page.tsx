@@ -19,7 +19,7 @@ export default function BookPage() {
             <h1 className="mt-3 text-4xl font-bold sm:text-5xl">
               Schedule Your <span className="text-gradient-gold">Service</span>
             </h1>
-            <p className="mt-4 text-lg text-white/50">
+            <p className="mt-4 text-lg text-foreground/50">
               Fill out the form below and we&apos;ll confirm your appointment
               shortly. Quick, easy, and hassle-free.
             </p>
@@ -35,14 +35,14 @@ export default function BookPage() {
                 (method) => (
                   <div
                     key={method}
-                    className="rounded-lg border border-luxury-border bg-luxury-gray px-4 py-2 text-sm text-white/70"
+                    className="rounded-lg border border-luxury-border bg-luxury-gray px-4 py-2 text-sm text-foreground/70"
                   >
                     {method}
                   </div>
                 )
               )}
             </div>
-            <p className="mt-4 text-xs text-white/40">
+            <p className="mt-4 text-xs text-foreground/40">
               Payment is collected after service completion. No upfront charges.
             </p>
           </div>

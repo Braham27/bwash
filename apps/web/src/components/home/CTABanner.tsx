@@ -19,7 +19,7 @@ export function CTABanner() {
               Book your wash today and{" "}
               <span className="text-gradient-gold">drive clean!</span>
             </h2>
-            <p className="mt-4 text-lg text-white/50">
+            <p className="mt-4 text-lg text-foreground/50">
               Schedule your premium mobile car wash in under 60 seconds.
             </p>
             <div className="mt-8">

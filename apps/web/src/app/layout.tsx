@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { ClerkProvider } from "@clerk/nextjs";
-import { dark } from "@clerk/themes";
-import { Toaster } from "sonner";
+import { Providers } from "@/components/Providers";
+import { ThemedToaster } from "@/components/ThemedToaster";
 import "./globals.css";
 
 export const dynamic = "force-dynamic";
@@ -31,33 +30,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider
-      appearance={{
-        baseTheme: dark,
-        variables: {
-          colorPrimary: "#2563EB",
-          colorBackground: "#111111",
-          colorInputBackground: "#1A1A1A",
-          colorText: "#FFFFFF",
-        },
-      }}
-    >
-      <html lang="en" className="dark">
-        <body className="min-h-screen bg-luxury-black">
+    <html lang="en" suppressHydrationWarning>
+      <body className="min-h-screen bg-luxury-black">
+        <Providers>
           {children}
-          <Toaster
-            theme="dark"
-            position="top-right"
-            toastOptions={{
-              style: {
-                background: "#1A1A1A",
-                border: "1px solid #2A2A2A",
-                color: "#fff",
-              },
-            }}
-          />
-        </body>
-      </html>
-    </ClerkProvider>
+          <ThemedToaster />
+        </Providers>
+      </body>
+    </html>
   );
 }

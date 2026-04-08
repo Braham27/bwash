@@ -1,16 +1,18 @@
 import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import { useUser, useAuth } from "@clerk/clerk-expo";
 import { Ionicons } from "@expo/vector-icons";
+import { useThemeContext } from "../../lib/ThemeContext";
 
 const GOLD = "#2563EB";
 
 export default function AccountScreen() {
   const { user } = useUser();
   const { signOut } = useAuth();
+  const { theme, toggleTheme, colors } = useThemeContext();
 
   return (
     <ScrollView
-      style={{ flex: 1, backgroundColor: "#0A0A0A" }}
+      style={{ flex: 1, backgroundColor: colors.background }}
       contentContainerStyle={{ padding: 20 }}
     >
       {/* Avatar & Name */}
@@ -20,7 +22,7 @@ export default function AccountScreen() {
             width: 80,
             height: 80,
             borderRadius: 24,
-            backgroundColor: "rgba(201,168,76,0.1)",
+            backgroundColor: "rgba(37,99,235,0.1)",
             justifyContent: "center",
             alignItems: "center",
             marginBottom: 12,
@@ -28,14 +30,59 @@ export default function AccountScreen() {
         >
           <Ionicons name="person" size={32} color={GOLD} />
         </View>
-        <Text style={{ color: "#fff", fontSize: 22, fontWeight: "bold" }}>
+        <Text style={{ color: colors.text, fontSize: 22, fontWeight: "bold" }}>
           {user?.firstName} {user?.lastName}
         </Text>
         <Text style={{ color: GOLD, fontSize: 13, marginTop: 4 }}>Staff</Text>
-        <Text style={{ color: "rgba(255,255,255,0.4)", fontSize: 13, marginTop: 2 }}>
+        <Text style={{ color: colors.textFaint, fontSize: 13, marginTop: 2 }}>
           {user?.emailAddresses[0]?.emailAddress}
         </Text>
       </View>
+
+      {/* Theme Toggle */}
+      <TouchableOpacity
+        onPress={toggleTheme}
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          backgroundColor: colors.card,
+          borderRadius: 12,
+          padding: 16,
+          marginBottom: 16,
+          borderWidth: 1,
+          borderColor: colors.border,
+        }}
+      >
+        <Ionicons
+          name={theme === "dark" ? "sunny" : "moon"}
+          size={20}
+          color={GOLD}
+          style={{ marginRight: 12 }}
+        />
+        <Text style={{ color: colors.text, flex: 1, fontWeight: "500" }}>
+          {theme === "dark" ? "Light Mode" : "Dark Mode"}
+        </Text>
+        <View
+          style={{
+            width: 44,
+            height: 24,
+            borderRadius: 12,
+            backgroundColor: theme === "dark" ? GOLD : colors.border,
+            justifyContent: "center",
+            paddingHorizontal: 2,
+          }}
+        >
+          <View
+            style={{
+              width: 20,
+              height: 20,
+              borderRadius: 10,
+              backgroundColor: "#FFFFFF",
+              alignSelf: theme === "dark" ? "flex-end" : "flex-start",
+            }}
+          />
+        </View>
+      </TouchableOpacity>
 
       {/* Sign Out */}
       <TouchableOpacity

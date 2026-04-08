@@ -47,10 +47,10 @@ export function Modal({ isOpen, onClose, title, children, className }: ModalProp
         )}
       >
         <div className="mb-4 flex items-center justify-between">
-          {title && <h2 className="text-lg font-semibold text-white">{title}</h2>}
+          {title && <h2 className="text-lg font-semibold text-foreground">{title}</h2>}
           <button
             onClick={onClose}
-            className="rounded-lg p-1.5 text-white/50 transition hover:bg-white/5 hover:text-white"
+            className="rounded-lg p-1.5 text-foreground/50 transition hover:bg-foreground/5 hover:text-foreground"
           >
             <X className="h-5 w-5" />
           </button>

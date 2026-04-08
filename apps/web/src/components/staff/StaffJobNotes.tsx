@@ -56,9 +56,9 @@ export function StaffJobNotes({
             </Button>
           </div>
         ) : notes ? (
-          <p className="text-sm text-white/70 whitespace-pre-wrap">{notes}</p>
+          <p className="text-sm text-foreground/70 whitespace-pre-wrap">{notes}</p>
         ) : (
-          <p className="text-sm text-white/30 italic">No notes added</p>
+          <p className="text-sm text-foreground/30 italic">No notes added</p>
         )}
       </Card>
 
@@ -67,9 +67,9 @@ export function StaffJobNotes({
         <CardTitle className="mb-4">Service Photos</CardTitle>
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border-2 border-dashed border-luxury-border p-8 text-center">
-            <Camera className="mx-auto h-10 w-10 text-white/20 mb-3" />
-            <p className="text-sm font-medium text-white/50">Before Photos</p>
-            <p className="text-xs text-white/30 mt-1">
+            <Camera className="mx-auto h-10 w-10 text-foreground/20 mb-3" />
+            <p className="text-sm font-medium text-foreground/50">Before Photos</p>
+            <p className="text-xs text-foreground/30 mt-1">
               {isEditable ? "Photo upload coming soon" : "No photos uploaded"}
             </p>
             {isEditable && (
@@ -85,9 +85,9 @@ export function StaffJobNotes({
             )}
           </div>
           <div className="rounded-xl border-2 border-dashed border-luxury-border p-8 text-center">
-            <ImageIcon className="mx-auto h-10 w-10 text-white/20 mb-3" />
-            <p className="text-sm font-medium text-white/50">After Photos</p>
-            <p className="text-xs text-white/30 mt-1">
+            <ImageIcon className="mx-auto h-10 w-10 text-foreground/20 mb-3" />
+            <p className="text-sm font-medium text-foreground/50">After Photos</p>
+            <p className="text-xs text-foreground/30 mt-1">
               {isEditable ? "Photo upload coming soon" : "No photos uploaded"}
             </p>
             {isEditable && (

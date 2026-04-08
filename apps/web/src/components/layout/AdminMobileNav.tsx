@@ -38,7 +38,7 @@ export function AdminMobileNav() {
 
   return (
     <>
-      <button onClick={() => setIsOpen(true)} className="rounded-lg p-2 hover:bg-white/5 lg:hidden">
+      <button onClick={() => setIsOpen(true)} className="rounded-lg p-2 hover:bg-foreground/5 lg:hidden">
         <Menu className="h-5 w-5" />
       </button>
       <AnimatePresence>
@@ -66,7 +66,7 @@ export function AdminMobileNav() {
                     href={item.href}
                     onClick={() => setIsOpen(false)}
                     className={`flex items-center gap-3 rounded-lg px-4 py-3 text-sm ${
-                      isActive ? "bg-gold/10 text-gold font-medium" : "text-white/50 hover:text-white/80"
+                      isActive ? "bg-gold/10 text-gold font-medium" : "text-foreground/50 hover:text-foreground/80"
                     }`}
                   >
                     <item.icon className="h-4 w-4" />

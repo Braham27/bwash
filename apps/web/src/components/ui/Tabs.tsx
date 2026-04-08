@@ -29,7 +29,7 @@ export function Tabs({ tabs, defaultTab, className }: TabsProps) {
               "flex-shrink-0 rounded-lg px-4 py-2.5 text-sm font-medium transition-all duration-200",
               activeTab === tab.id
                 ? "bg-gold text-white shadow-sm"
-                : "text-white/50 hover:text-white hover:bg-white/5"
+                : "text-foreground/50 hover:text-foreground hover:bg-foreground/5"
             )}
           >
             {tab.label}

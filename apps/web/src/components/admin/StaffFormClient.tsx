@@ -66,7 +66,7 @@ export function StaffFormClient() {
           </div>
           <Input label="Email *" id="email" type="email" value={form.email} onChange={(e) => updateField("email", e.target.value)} />
           <Input label="Phone" id="phone" type="tel" placeholder="+1 (555) 123-4567" value={form.phone} onChange={(e) => updateField("phone", e.target.value)} />
-          <p className="text-xs text-white/40">
+          <p className="text-xs text-foreground/40">
             An invitation will be sent to create their account with staff access.
           </p>
           <div className="flex justify-end gap-3 pt-2">

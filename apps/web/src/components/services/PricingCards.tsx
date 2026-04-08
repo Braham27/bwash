@@ -69,11 +69,11 @@ export function PricingCards() {
                   <pkg.icon
                     className={cn(
                       "mx-auto h-10 w-10 mb-4",
-                      pkg.popular ? "text-gold" : "text-white/30"
+                      pkg.popular ? "text-gold" : "text-foreground/30"
                     )}
                   />
                   <h3 className="text-xl font-bold">{pkg.name}</h3>
-                  <p className="mt-2 text-sm text-white/50">{pkg.description}</p>
+                  <p className="mt-2 text-sm text-foreground/50">{pkg.description}</p>
                 </div>
 
                 {/* Prices */}
@@ -83,7 +83,7 @@ export function PricingCards() {
                       key={type}
                       className="flex items-center justify-between rounded-lg bg-luxury-gray/50 px-4 py-2.5"
                     >
-                      <span className="text-sm capitalize text-white/70">{type}</span>
+                      <span className="text-sm capitalize text-foreground/70">{type}</span>
                       <span className="text-lg font-bold text-gold">
                         ${pkg.prices[type]}
                       </span>
@@ -96,7 +96,7 @@ export function PricingCards() {
                   {pkg.features.map((f) => (
                     <li key={f} className="flex items-start gap-3 text-sm">
                       <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold" />
-                      <span className="text-white/70">{f}</span>
+                      <span className="text-foreground/70">{f}</span>
                     </li>
                   ))}
                 </ul>

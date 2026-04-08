@@ -27,7 +27,7 @@ export function TableBody({ className, children }: TableProps) {
 
 export function TableRow({ className, children }: TableProps) {
   return (
-    <tr className={cn("transition-colors hover:bg-white/[0.02]", className)}>
+    <tr className={cn("transition-colors hover:bg-foreground/[0.02]", className)}>
       {children}
     </tr>
   );
@@ -35,12 +35,12 @@ export function TableRow({ className, children }: TableProps) {
 
 export function TableHead({ className, children }: { className?: string; children: React.ReactNode }) {
   return (
-    <th className={cn("px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-white/50", className)}>
+    <th className={cn("px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-foreground/50", className)}>
       {children}
     </th>
   );
 }
 
 export function TableCell({ className, children, colSpan }: { className?: string; children: React.ReactNode; colSpan?: number }) {
-  return <td className={cn("px-4 py-3 text-white/80", className)} colSpan={colSpan}>{children}</td>;
+  return <td className={cn("px-4 py-3 text-foreground/80", className)} colSpan={colSpan}>{children}</td>;
 }

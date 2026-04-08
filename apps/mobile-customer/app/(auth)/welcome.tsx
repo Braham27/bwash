@@ -21,6 +21,7 @@ import Animated, {
 } from "react-native-reanimated";
 import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
+import { useThemeContext } from "../../lib/ThemeContext";
 
 const { width, height } = Dimensions.get("window");
 const GOLD = "#2563EB";
@@ -97,6 +98,7 @@ function SlideItem({
   index: number;
   scrollX: Animated.SharedValue<number>;
 }) {
+  const { colors } = useThemeContext();
   const animStyle = useAnimatedStyle(() => {
     const inputRange = [(index - 1) * width, index * width, (index + 1) * width];
     return {
@@ -117,11 +119,11 @@ function SlideItem({
         </View>
       </Animated.View>
       <Animated.View style={animStyle}>
-        <Text style={styles.title}>{item.title}</Text>
+        <Text style={[styles.title, { color: colors.text }]}>{item.title}</Text>
         <View style={styles.badgeContainer}>
           <Text style={styles.badge}>{item.subtitle}</Text>
         </View>
-        <Text style={styles.description}>{item.description}</Text>
+        <Text style={[styles.description, { color: colors.textMuted }]}>{item.description}</Text>
       </Animated.View>
     </View>
   );
@@ -132,6 +134,7 @@ export default function WelcomeScreen() {
   const scrollX = useSharedValue(0);
   const flatListRef = useRef<FlatList>(null);
   const router = useRouter();
+  const { colors } = useThemeContext();
 
   const onViewableItemsChanged = useCallback(
     ({ viewableItems }: { viewableItems: ViewToken[] }) => {
@@ -159,7 +162,7 @@ export default function WelcomeScreen() {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: colors.background }]}>
       {/* Skip button */}
       <Animated.View entering={FadeIn.delay(500)} style={styles.skipContainer}>
         <TouchableOpacity onPress={handleSkip} style={styles.skipButton}>
@@ -227,7 +230,6 @@ export default function WelcomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#0A0A0A",
   },
   skipContainer: {
     position: "absolute",
@@ -240,7 +242,7 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
   },
   skipText: {
-    color: "rgba(255,255,255,0.5)",
+    color: "rgba(128,128,128,0.7)",
     fontSize: 16,
     fontWeight: "500",
   },
@@ -330,7 +332,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   loginText: {
-    color: "rgba(255,255,255,0.4)",
+    color: "rgba(128,128,128,0.6)",
     fontSize: 14,
   },
 });

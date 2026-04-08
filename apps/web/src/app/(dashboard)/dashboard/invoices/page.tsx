@@ -61,7 +61,7 @@ export default async function InvoicesPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold">My Invoices</h1>
-          <p className="mt-1 text-sm text-white/50">
+          <p className="mt-1 text-sm text-foreground/50">
             Create, preview, and send your invoices
           </p>
         </div>
@@ -107,10 +107,10 @@ export default async function InvoicesPage() {
                   </div>
                   <div>
                     <p className="font-semibold">Invoice #{inv.invoiceNumber}</p>
-                    <p className="mt-1 text-xs text-white/40">
+                    <p className="mt-1 text-xs text-foreground/40">
                       {formatDate(inv.createdAt)}
                     </p>
-                    <p className="mt-0.5 text-xs text-white/30">
+                    <p className="mt-0.5 text-xs text-foreground/30">
                       {(inv.items as { description: string }[])
                         .map((i) => i.description)
                         .join(", ")}

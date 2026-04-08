@@ -3,6 +3,7 @@ import { Slot, useRouter, useSegments } from "expo-router";
 import { useEffect } from "react";
 import { StatusBar } from "expo-status-bar";
 import * as SecureStore from "expo-secure-store";
+import { ThemeProvider, useThemeContext } from "../lib/ThemeContext";
 
 const CLERK_PUBLISHABLE_KEY = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!;
 
@@ -42,11 +43,18 @@ function AuthGuard() {
   return <Slot />;
 }
 
+function ThemedStatusBar() {
+  const { colors } = useThemeContext();
+  return <StatusBar style={colors.statusBarStyle} />;
+}
+
 export default function RootLayout() {
   return (
-    <ClerkProvider publishableKey={CLERK_PUBLISHABLE_KEY} tokenCache={tokenCache}>
-      <StatusBar style="light" />
-      <AuthGuard />
-    </ClerkProvider>
+    <ThemeProvider>
+      <ClerkProvider publishableKey={CLERK_PUBLISHABLE_KEY} tokenCache={tokenCache}>
+        <ThemedStatusBar />
+        <AuthGuard />
+      </ClerkProvider>
+    </ThemeProvider>
   );
 }

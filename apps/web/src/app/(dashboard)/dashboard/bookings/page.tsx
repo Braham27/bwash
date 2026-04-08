@@ -36,7 +36,7 @@ export default async function BookingsPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold">My Bookings</h1>
-          <p className="mt-1 text-sm text-white/50">View and track your appointments</p>
+          <p className="mt-1 text-sm text-foreground/50">View and track your appointments</p>
         </div>
         <Link href="/book" className="btn-primary text-sm">Book New</Link>
       </div>
@@ -64,7 +64,7 @@ export default async function BookingsPage() {
                         {b.status.replace("_", " ")}
                       </Badge>
                     </div>
-                    <div className="mt-2 flex flex-wrap items-center gap-3 text-xs text-white/40">
+                    <div className="mt-2 flex flex-wrap items-center gap-3 text-xs text-foreground/40">
                       <span className="flex items-center gap-1">
                         <Clock className="h-3 w-3" />
                         {formatDate(b.preferredDate)} at {formatTime(b.preferredTime)}
@@ -74,14 +74,14 @@ export default async function BookingsPage() {
                         {(b.address ?? "").length > 50 ? `${(b.address ?? "").slice(0, 50)}...` : (b.address ?? "")}
                       </span>
                     </div>
-                    <p className="mt-1 text-xs text-white/30 capitalize">
+                    <p className="mt-1 text-xs text-foreground/30 capitalize">
                       {b.vehicleType}
                     </p>
                   </div>
                 </div>
                 <div className="text-right flex flex-col items-end gap-2">
                   <p className="text-lg font-bold text-gold">{formatCurrency(b.price)}</p>
-                  <p className="text-xs text-white/40 capitalize">{b.paymentStatus}</p>
+                  <p className="text-xs text-foreground/40 capitalize">{b.paymentStatus}</p>
                   {b.status === "completed" && (
                     <Link
                       href={`/book?rebook=${b.id}&package=${pkg.slug}&vehicle=${b.vehicleType}&address=${encodeURIComponent(b.address ?? "")}`}

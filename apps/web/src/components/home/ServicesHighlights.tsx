@@ -56,13 +56,13 @@ export function ServicesHighlights() {
                   </div>
 
                   <h3 className="text-xl font-semibold">{svc.title}</h3>
-                  <p className="mt-3 text-sm text-white/50 leading-relaxed">
+                  <p className="mt-3 text-sm text-foreground/50 leading-relaxed">
                     {svc.description}
                   </p>
 
                   <div className="mt-6 flex items-end justify-between">
                     <div>
-                      <span className="text-xs text-white/40">Starting at</span>
+                      <span className="text-xs text-foreground/40">Starting at</span>
                       <p className="text-2xl font-bold text-gold">{svc.starting}</p>
                     </div>
                     <Link

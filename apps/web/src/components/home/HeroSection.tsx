@@ -54,7 +54,7 @@ export function HeroSection() {
             <Suspense
               fallback={
                 <div className="flex h-full items-center justify-center">
-                  <div className="h-[2px] w-32 overflow-hidden rounded-full bg-white/[0.06]">
+                  <div className="h-[2px] w-32 overflow-hidden rounded-full bg-foreground/[0.06]">
                     <motion.div
                       className="h-full rounded-full bg-gradient-to-r from-gold/30 to-gold/50"
                       animate={{ width: ["0%", "70%", "90%", "70%"] }}
@@ -121,7 +121,7 @@ export function HeroSection() {
               transition={{ duration: 1, delay: 0.5 }}
               className="text-center text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl lg:text-8xl"
             >
-              <span className="text-white">The Art of</span>
+              <span className="text-foreground">The Art of</span>
               <br />
               <span className="text-gradient-gold">Pristine.</span>
             </motion.h1>
@@ -130,7 +130,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="mt-5 max-w-md text-center text-sm sm:text-base text-white/40 leading-relaxed"
+              className="mt-5 max-w-md text-center text-sm sm:text-base text-foreground/40 leading-relaxed"
             >
               Luxury mobile car wash and detailing, delivered to your door.
             </motion.p>
@@ -150,7 +150,7 @@ export function HeroSection() {
               </Link>
               <Link
                 href="/services"
-                className="inline-flex items-center rounded-full border border-white/10 bg-white/[0.03] px-7 py-3.5 text-sm font-medium text-white/70 backdrop-blur-sm transition-all duration-300 hover:border-gold/20 hover:bg-white/[0.06] hover:text-white"
+                className="inline-flex items-center rounded-full border border-foreground/10 bg-foreground/[0.03] px-7 py-3.5 text-sm font-medium text-foreground/70 backdrop-blur-sm transition-all duration-300 hover:border-gold/20 hover:bg-foreground/[0.06] hover:text-foreground"
               >
                 View Services
               </Link>
@@ -169,10 +169,10 @@ export function HeroSection() {
                 { value: "2K+", label: "Detailed" },
               ].map((s) => (
                 <div key={s.label} className="text-center">
-                  <div className="text-xl font-bold text-white sm:text-2xl">
+                  <div className="text-xl font-bold text-foreground sm:text-2xl">
                     {s.value}
                   </div>
-                  <div className="mt-1 text-[10px] tracking-[0.15em] uppercase text-white/25">
+                  <div className="mt-1 text-[10px] tracking-[0.15em] uppercase text-foreground/25">
                     {s.label}
                   </div>
                 </div>
@@ -185,7 +185,7 @@ export function HeroSection() {
             className="absolute bottom-[3%] left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
             style={{ opacity: textOpacity }}
           >
-            <span className="text-[10px] tracking-[0.25em] uppercase text-white/15">
+            <span className="text-[10px] tracking-[0.25em] uppercase text-foreground/15">
               Scroll
             </span>
             <motion.div

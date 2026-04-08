@@ -31,7 +31,7 @@ export default async function AdminMembershipsPage() {
     <div className="space-y-8">
       <div>
         <h1 className="text-2xl font-bold">Memberships</h1>
-        <p className="mt-1 text-sm text-white/50">Manage membership plans and subscribers</p>
+        <p className="mt-1 text-sm text-foreground/50">Manage membership plans and subscribers</p>
       </div>
 
       {/* Plans */}
@@ -46,9 +46,9 @@ export default async function AdminMembershipsPage() {
                   {plan.isActive ? "Active" : "Inactive"}
                 </Badge>
               </div>
-              <p className="text-sm text-white/50">{plan.description}</p>
+              <p className="text-sm text-foreground/50">{plan.description}</p>
               <div className="mt-3 flex items-center justify-between border-t border-luxury-border pt-3">
-                <span className="text-xs text-white/40">{pkg.name} • {plan.interval}</span>
+                <span className="text-xs text-foreground/40">{pkg.name} • {plan.interval}</span>
                 <span className="text-sm font-medium text-gold">{subscriberCount} subscribers</span>
               </div>
             </Card>
@@ -75,7 +75,7 @@ export default async function AdminMembershipsPage() {
               <TableBody>
                 {activeMemberships.length === 0 ? (
                   <TableRow>
-                    <TableCell colSpan={6} className="text-center text-white/40 py-8">
+                    <TableCell colSpan={6} className="text-center text-foreground/40 py-8">
                       No subscribers yet
                     </TableCell>
                   </TableRow>
@@ -94,8 +94,8 @@ export default async function AdminMembershipsPage() {
                           {m.status}
                         </Badge>
                       </TableCell>
-                      <TableCell className="text-sm text-white/60">{formatDate(m.startDate)}</TableCell>
-                      <TableCell className="text-sm text-white/60">
+                      <TableCell className="text-sm text-foreground/60">{formatDate(m.startDate)}</TableCell>
+                      <TableCell className="text-sm text-foreground/60">
                         {m.nextServiceDate ? formatDate(m.nextServiceDate) : "—"}
                       </TableCell>
                     </TableRow>

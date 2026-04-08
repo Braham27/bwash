@@ -35,7 +35,7 @@ export function AdminSidebar() {
     <aside className="hidden lg:flex h-full w-64 flex-col border-r border-luxury-border bg-luxury-card">
       <div className="flex h-16 items-center gap-2 px-6 border-b border-luxury-border">
         <span className="text-xl font-bold text-gold">BWash</span>
-        <span className="text-xs text-white/30 uppercase tracking-wider">Admin</span>
+        <span className="text-xs text-foreground/30 uppercase tracking-wider">Admin</span>
       </div>
       <nav className="flex-1 overflow-y-auto p-3 space-y-1">
         {navItems.map((item) => {
@@ -50,7 +50,7 @@ export function AdminSidebar() {
               className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm transition-all ${
                 isActive
                   ? "bg-gold/10 text-gold font-medium"
-                  : "text-white/50 hover:bg-white/5 hover:text-white/80"
+                  : "text-foreground/50 hover:bg-foreground/5 hover:text-foreground/80"
               }`}
             >
               <item.icon className="h-4 w-4" />

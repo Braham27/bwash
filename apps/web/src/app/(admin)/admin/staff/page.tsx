@@ -23,7 +23,7 @@ export default async function AdminStaffPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold">Staff Management</h1>
-          <p className="mt-1 text-sm text-white/50">
+          <p className="mt-1 text-sm text-foreground/50">
             {staffMembers.length} staff member{staffMembers.length !== 1 ? "s" : ""}
           </p>
         </div>
@@ -46,7 +46,7 @@ export default async function AdminStaffPage() {
             <TableBody>
               {staffMembers.length === 0 ? (
                 <TableRow>
-                  <TableCell colSpan={6} className="text-center text-white/40 py-8">
+                  <TableCell colSpan={6} className="text-center text-foreground/40 py-8">
                     No staff members yet
                   </TableCell>
                 </TableRow>
@@ -56,15 +56,15 @@ export default async function AdminStaffPage() {
                     <TableCell className="font-medium">
                       {u.firstName} {u.lastName}
                     </TableCell>
-                    <TableCell className="text-sm text-white/60">{u.email}</TableCell>
-                    <TableCell className="text-sm text-white/60">{u.phone || "—"}</TableCell>
+                    <TableCell className="text-sm text-foreground/60">{u.email}</TableCell>
+                    <TableCell className="text-sm text-foreground/60">{u.phone || "—"}</TableCell>
                     <TableCell>
                       <Badge variant="gold">{jobCount}</Badge>
                     </TableCell>
                     <TableCell>
                       <Badge variant="success">{completedCount}</Badge>
                     </TableCell>
-                    <TableCell className="text-sm text-white/40">{formatDate(u.createdAt)}</TableCell>
+                    <TableCell className="text-sm text-foreground/40">{formatDate(u.createdAt)}</TableCell>
                   </TableRow>
                 ))
               )}

@@ -8,10 +8,10 @@ export default function GlobalError({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className="flex min-h-screen items-center justify-center bg-[#040404] text-white">
+      <body className="flex min-h-screen items-center justify-center bg-luxury-black text-foreground">
         <div className="text-center px-6">
           <h1 className="text-4xl font-bold mb-4">Something went wrong</h1>
-          <p className="text-white/50 mb-8">
+          <p className="text-foreground/50 mb-8">
             We&apos;re sorry — please try again.
           </p>
           <button

@@ -73,7 +73,7 @@ export default async function DashboardPage() {
         <h1 className="text-2xl font-bold sm:text-3xl">
           Welcome back, <span className="text-gradient-gold">{user.firstName}</span>
         </h1>
-        <p className="mt-1 text-white/50">
+        <p className="mt-1 text-foreground/50">
           Here&apos;s an overview of your BWash account.
         </p>
       </div>
@@ -107,11 +107,11 @@ export default async function DashboardPage() {
           },
         ].map((stat) => (
           <Card key={stat.label} className="flex items-center gap-4 p-5">
-            <div className={`rounded-xl bg-white/5 p-3 ${stat.color}`}>
+            <div className={`rounded-xl bg-foreground/5 p-3 ${stat.color}`}>
               <stat.icon className="h-5 w-5" />
             </div>
             <div>
-              <p className="text-xs text-white/40 uppercase tracking-wider">{stat.label}</p>
+              <p className="text-xs text-foreground/40 uppercase tracking-wider">{stat.label}</p>
               <p className="text-xl font-bold">{stat.value}</p>
             </div>
           </Card>
@@ -128,8 +128,8 @@ export default async function DashboardPage() {
         </div>
         {upcomingBookings.length === 0 ? (
           <div className="text-center py-8">
-            <Calendar className="mx-auto h-10 w-10 text-white/20 mb-3" />
-            <p className="text-sm text-white/40">No upcoming bookings</p>
+            <Calendar className="mx-auto h-10 w-10 text-foreground/20 mb-3" />
+            <p className="text-sm text-foreground/40">No upcoming bookings</p>
             <Link href="/book" className="btn-primary mt-4 inline-flex text-sm">
               Book a Wash
             </Link>
@@ -149,7 +149,7 @@ export default async function DashboardPage() {
                     <p className="text-sm font-medium">
                       {formatDate(b.preferredDate)}
                     </p>
-                    <p className="text-xs text-white/40 flex items-center gap-1">
+                    <p className="text-xs text-foreground/40 flex items-center gap-1">
                       <MapPin className="h-3 w-3" />
                       {(b.address ?? "").slice(0, 40)}...
                     </p>
@@ -182,8 +182,8 @@ export default async function DashboardPage() {
         </div>
         {completedBookings.length === 0 ? (
           <div className="text-center py-8">
-            <RotateCcw className="mx-auto h-10 w-10 text-white/20 mb-3" />
-            <p className="text-sm text-white/40">No completed bookings to rebook</p>
+            <RotateCcw className="mx-auto h-10 w-10 text-foreground/20 mb-3" />
+            <p className="text-sm text-foreground/40">No completed bookings to rebook</p>
             <Link href="/book" className="btn-primary mt-4 inline-flex text-sm">
               Book Your First Wash
             </Link>
@@ -201,7 +201,7 @@ export default async function DashboardPage() {
                   </div>
                   <div>
                     <p className="text-sm font-medium">{pkg.name}</p>
-                    <p className="text-xs text-white/40 capitalize">
+                    <p className="text-xs text-foreground/40 capitalize">
                       {b.vehicleType} &bull; {formatCurrency(b.price)}
                     </p>
                   </div>
@@ -228,8 +228,8 @@ export default async function DashboardPage() {
         </div>
         {userVehicles.length === 0 ? (
           <div className="text-center py-8">
-            <Car className="mx-auto h-10 w-10 text-white/20 mb-3" />
-            <p className="text-sm text-white/40">No vehicles saved</p>
+            <Car className="mx-auto h-10 w-10 text-foreground/20 mb-3" />
+            <p className="text-sm text-foreground/40">No vehicles saved</p>
             <Link href="/dashboard/vehicles" className="btn-secondary mt-4 inline-flex text-sm">
               Add Vehicle
             </Link>
@@ -247,7 +247,7 @@ export default async function DashboardPage() {
                   </p>
                   {v.isDefault && <Badge variant="gold">Default</Badge>}
                 </div>
-                <p className="mt-1 text-xs text-white/40 capitalize">
+                <p className="mt-1 text-xs text-foreground/40 capitalize">
                   {v.vehicleType} {v.color && `• ${v.color}`}
                 </p>
               </div>
@@ -264,9 +264,9 @@ export default async function DashboardPage() {
           </div>
           <div>
             <p className="font-medium">Book a Wash</p>
-            <p className="text-xs text-white/40">Schedule your next service</p>
+            <p className="text-xs text-foreground/40">Schedule your next service</p>
           </div>
-          <ArrowRight className="ml-auto h-4 w-4 text-white/20 transition-transform group-hover:translate-x-1 group-hover:text-gold" />
+          <ArrowRight className="ml-auto h-4 w-4 text-foreground/20 transition-transform group-hover:translate-x-1 group-hover:text-gold" />
         </Link>
 
         <Link href="/dashboard/vehicles" className="card-luxury-hover flex items-center gap-4 p-5 group">
@@ -275,9 +275,9 @@ export default async function DashboardPage() {
           </div>
           <div>
             <p className="font-medium">Add Vehicle</p>
-            <p className="text-xs text-white/40">Save a new vehicle</p>
+            <p className="text-xs text-foreground/40">Save a new vehicle</p>
           </div>
-          <ArrowRight className="ml-auto h-4 w-4 text-white/20 transition-transform group-hover:translate-x-1 group-hover:text-gold" />
+          <ArrowRight className="ml-auto h-4 w-4 text-foreground/20 transition-transform group-hover:translate-x-1 group-hover:text-gold" />
         </Link>
 
         <Link href="/dashboard/invoices" className="card-luxury-hover flex items-center gap-4 p-5 group">
@@ -286,9 +286,9 @@ export default async function DashboardPage() {
           </div>
           <div>
             <p className="font-medium">View Invoices</p>
-            <p className="text-xs text-white/40">Check payment history</p>
+            <p className="text-xs text-foreground/40">Check payment history</p>
           </div>
-          <ArrowRight className="ml-auto h-4 w-4 text-white/20 transition-transform group-hover:translate-x-1 group-hover:text-gold" />
+          <ArrowRight className="ml-auto h-4 w-4 text-foreground/20 transition-transform group-hover:translate-x-1 group-hover:text-gold" />
         </Link>
       </div>
     </div>

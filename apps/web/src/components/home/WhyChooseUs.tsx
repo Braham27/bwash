@@ -49,7 +49,7 @@ export function WhyChooseUs() {
                   <item.icon className="h-7 w-7 text-gold" />
                 </div>
                 <h3 className="text-base font-semibold">{item.title}</h3>
-                <p className="mt-2 text-sm text-white/50 leading-relaxed">
+                <p className="mt-2 text-sm text-foreground/50 leading-relaxed">
                   {item.description}
                 </p>
               </div>

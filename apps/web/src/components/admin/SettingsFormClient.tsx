@@ -95,7 +95,7 @@ export function SettingsFormClient({ initialData }: { initialData?: SettingsData
 
         {/* Business Days */}
         <div className="mt-4">
-          <label className="mb-2 block text-sm font-medium text-white/70">Business Days</label>
+          <label className="mb-2 block text-sm font-medium text-foreground/70">Business Days</label>
           <div className="flex flex-wrap gap-2">
             {DAYS.map((day) => (
               <button
@@ -105,7 +105,7 @@ export function SettingsFormClient({ initialData }: { initialData?: SettingsData
                 className={`rounded-lg px-3 py-2 text-xs font-medium capitalize transition ${
                   form.businessDays.includes(day)
                     ? "bg-gold/20 text-gold border border-gold/30"
-                    : "bg-luxury-card text-white/40 border border-luxury-border hover:text-white/60"
+                    : "bg-luxury-card text-foreground/40 border border-luxury-border hover:text-foreground/60"
                 }`}
               >
                 {day.slice(0, 3)}

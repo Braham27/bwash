@@ -54,7 +54,7 @@ export function CreateInvoiceButton({
     return (
       <button
         disabled
-        className="inline-flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-4 py-2.5 text-sm font-medium text-white/30 cursor-not-allowed"
+        className="inline-flex items-center gap-2 rounded-lg bg-foreground/5 border border-foreground/10 px-4 py-2.5 text-sm font-medium text-foreground/30 cursor-not-allowed"
         title="Complete a booking first to create an invoice"
       >
         <Plus className="h-4 w-4" />
@@ -82,7 +82,7 @@ export function CreateInvoiceButton({
         title="Create Invoice"
         className="max-w-lg"
       >
-        <p className="text-sm text-white/40 mb-4">
+        <p className="text-sm text-foreground/40 mb-4">
           Select a completed booking to generate an invoice:
         </p>
 
@@ -107,13 +107,13 @@ export function CreateInvoiceButton({
           {bookings.map((b) => (
             <div
               key={b.id}
-              className="flex items-center justify-between gap-4 rounded-xl border border-luxury-border bg-white/[0.02] p-4 transition hover:border-gold/20"
+              className="flex items-center justify-between gap-4 rounded-xl border border-luxury-border bg-foreground/[0.02] p-4 transition hover:border-gold/20"
             >
               <div className="min-w-0">
-                <p className="text-sm font-medium text-white truncate">
+                <p className="text-sm font-medium text-foreground truncate">
                   {b.packageName}
                 </p>
-                <p className="text-xs text-white/40">
+                <p className="text-xs text-foreground/40">
                   {b.vehicleType} &middot;{" "}
                   {new Intl.DateTimeFormat("en-US", {
                     month: "short",

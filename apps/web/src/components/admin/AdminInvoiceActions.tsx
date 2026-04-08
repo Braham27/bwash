@@ -33,7 +33,7 @@ export function AdminInvoiceActions({
     }
   }
 
-  if (currentStatus === "paid") return <span className="text-xs text-white/30">Paid</span>;
+  if (currentStatus === "paid") return <span className="text-xs text-foreground/30">Paid</span>;
 
   return (
     <Button size="sm" onClick={markPaid} isLoading={isUpdating} className="text-xs">

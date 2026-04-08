@@ -1,22 +1,22 @@
 import { Tabs } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
-
-const GOLD = "#2563EB";
-const DIM = "rgba(255,255,255,0.3)";
+import { useThemeContext } from "../../lib/ThemeContext";
 
 export default function TabsLayout() {
+  const { colors } = useThemeContext();
+
   return (
     <Tabs
       screenOptions={{
-        headerStyle: { backgroundColor: "#0A0A0A" },
-        headerTintColor: "#fff",
+        headerStyle: { backgroundColor: colors.headerBg },
+        headerTintColor: colors.text,
         tabBarStyle: {
-          backgroundColor: "#111111",
-          borderTopColor: "rgba(255,255,255,0.05)",
+          backgroundColor: colors.tabBar,
+          borderTopColor: colors.tabBarBorder,
           borderTopWidth: 1,
         },
-        tabBarActiveTintColor: GOLD,
-        tabBarInactiveTintColor: DIM,
+        tabBarActiveTintColor: colors.gold,
+        tabBarInactiveTintColor: colors.dim,
       }}
     >
       <Tabs.Screen

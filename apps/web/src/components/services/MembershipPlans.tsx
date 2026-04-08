@@ -62,7 +62,7 @@ export function MembershipPlans() {
             <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
               Monthly <span className="text-gradient-gold">Membership</span> Plans
             </h2>
-            <p className="mt-4 text-lg text-white/50 max-w-2xl mx-auto">
+            <p className="mt-4 text-lg text-foreground/50 max-w-2xl mx-auto">
               Subscribe and save. Get recurring washes at a fraction of the
               one-time price — delivered on your schedule.
             </p>
@@ -92,21 +92,21 @@ export function MembershipPlans() {
                   <div
                     className={cn(
                       "mx-auto flex h-12 w-12 items-center justify-center rounded-xl mb-4",
-                      plan.popular ? "bg-gold/20" : "bg-white/5"
+                      plan.popular ? "bg-gold/20" : "bg-foreground/5"
                     )}
                   >
                     <Repeat
                       className={cn(
                         "h-6 w-6",
-                        plan.popular ? "text-gold" : "text-white/40"
+                        plan.popular ? "text-gold" : "text-foreground/40"
                       )}
                     />
                   </div>
                   <h3 className="text-xl font-bold">{plan.name}</h3>
-                  <p className="mt-1 text-xs text-white/40 uppercase tracking-wider">
+                  <p className="mt-1 text-xs text-foreground/40 uppercase tracking-wider">
                     {plan.package} • every {plan.interval}
                   </p>
-                  <p className="mt-3 text-sm text-white/50">
+                  <p className="mt-3 text-sm text-foreground/50">
                     {plan.description}
                   </p>
                 </div>
@@ -118,14 +118,14 @@ export function MembershipPlans() {
                       key={type}
                       className="flex items-center justify-between rounded-lg bg-luxury-gray/50 px-4 py-2.5"
                     >
-                      <span className="text-sm capitalize text-white/70">
+                      <span className="text-sm capitalize text-foreground/70">
                         {type}
                       </span>
                       <div className="text-right">
                         <span className="text-lg font-bold text-gold">
                           ${plan.prices[type]}
                         </span>
-                        <span className="text-xs text-white/40">
+                        <span className="text-xs text-foreground/40">
                           /{plan.interval}
                         </span>
                       </div>
@@ -138,7 +138,7 @@ export function MembershipPlans() {
                   {plan.perks.map((perk) => (
                     <li key={perk} className="flex items-start gap-3 text-sm">
                       <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold" />
-                      <span className="text-white/70">{perk}</span>
+                      <span className="text-foreground/70">{perk}</span>
                     </li>
                   ))}
                 </ul>
