@@ -43,10 +43,10 @@ export function HeroSection() {
 
   return (
     <div ref={containerRef} className="relative h-[250vh]">
-      <div className="sticky top-0 h-screen overflow-hidden bg-[#040404]">
+      <div className="sticky top-0 h-screen overflow-hidden bg-luxury-black">
         {/* ── Background ── */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#020202] via-[#050505] to-[#030303]" />
-        <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[600px] rounded-full bg-gold/[0.02] blur-[160px]" />
+        <div className="absolute inset-0 bg-luxury-black" />
+        <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[600px] rounded-full bg-gold/[0.06] blur-[160px]" />
 
         {/* ── 3D Car (R3F Canvas) ── */}
         <div className="absolute inset-0 z-[5]">
@@ -70,13 +70,13 @@ export function HeroSection() {
         </div>
 
         {/* ── Cinematic overlays ── */}
-        <div className="absolute top-0 left-0 right-0 h-[55%] bg-gradient-to-b from-black/80 via-black/40 to-transparent z-10 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 h-[30%] bg-gradient-to-t from-black/70 via-black/30 to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-[55%] bg-gradient-to-b from-luxury-black/80 via-luxury-black/40 to-transparent z-10 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-[30%] bg-gradient-to-t from-luxury-black/70 via-luxury-black/30 to-transparent z-10 pointer-events-none" />
         <div
-          className="absolute inset-0 z-10 pointer-events-none"
+          className="absolute inset-0 z-10 pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_45%,var(--app-bg-primary)/0.5_100%)]"
           style={{
             background:
-              "radial-gradient(ellipse at center, transparent 45%, rgba(0,0,0,0.5) 100%)",
+              "radial-gradient(ellipse at center, transparent 45%, var(--app-bg-primary) 100%)",
           }}
         />
 

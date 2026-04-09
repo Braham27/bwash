@@ -1,21 +1,22 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useGLTF, Environment, ContactShadows } from "@react-three/drei";
 import * as THREE from "three";
 import type { MotionValue } from "framer-motion";
 import { useMotionValueEvent } from "framer-motion";
+import { useTheme } from "next-themes";
 
 /* ── Ferrari model ── */
-function Ferrari() {
+function Ferrari({ isDark }: { isDark: boolean }) {
   const { scene } = useGLTF("/models/ferrari.glb");
   const ref = useRef<THREE.Group>(null);
 
   useEffect(() => {
     // Apply luxury materials matching three.js car example
     const bodyMaterial = new THREE.MeshPhysicalMaterial({
-      color: new THREE.Color(0x0a0a0a),
+      color: new THREE.Color(isDark ? 0x0a0a0a : 0x1e3a5f),
       metalness: 1,
       roughness: 0.5,
       clearcoat: 1.0,
@@ -51,7 +52,7 @@ function Ferrari() {
       child.castShadow = true;
       child.receiveShadow = true;
     });
-  }, [scene]);
+  }, [scene, isDark]);
 
   return (
     <group ref={ref}>
@@ -96,13 +97,18 @@ export default function CarScene({
 }: {
   scrollProgress: MotionValue<number>;
 }) {
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  const isDark = !mounted || resolvedTheme === "dark";
+
   return (
     <Canvas
       camera={{ position: [4.25, 1.4, -4.5], fov: 40, near: 0.1, far: 100 }}
       gl={{
         antialias: true,
         toneMapping: THREE.ACESFilmicToneMapping,
-        toneMappingExposure: 0.85,
+        toneMappingExposure: isDark ? 0.85 : 1.2,
       }}
       dpr={[1, 1.5]}
       style={{ background: "transparent" }}
@@ -110,12 +116,12 @@ export default function CarScene({
       <CameraRig scrollProgress={scrollProgress} />
 
       {/* Lighting */}
-      <ambientLight intensity={0.15} />
+      <ambientLight intensity={isDark ? 0.15 : 0.6} />
       <spotLight
         position={[10, 8, -5]}
         angle={0.3}
         penumbra={1}
-        intensity={1.5}
+        intensity={isDark ? 1.5 : 2.5}
         castShadow
         shadow-mapSize={[1024, 1024]}
       />
@@ -123,25 +129,25 @@ export default function CarScene({
         position={[-5, 5, 5]}
         angle={0.4}
         penumbra={1}
-        intensity={0.5}
+        intensity={isDark ? 0.5 : 1.0}
         color="#2563EB"
       />
 
       {/* Car */}
-      <Ferrari />
+      <Ferrari isDark={isDark} />
 
       {/* Ground shadow */}
       <ContactShadows
         position={[0, -0.01, 0]}
-        opacity={0.5}
+        opacity={isDark ? 0.5 : 0.25}
         scale={12}
         blur={2.5}
         far={4}
-        color="#000000"
+        color={isDark ? "#000000" : "#94A3B8"}
       />
 
       {/* Environment for reflections */}
-      <Environment preset="night" />
+      <Environment preset={isDark ? "night" : "city"} />
     </Canvas>
   );
 }
